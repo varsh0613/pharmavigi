@@ -1,0 +1,5 @@
+hospitalization_cost: 150000
+death_cost: 1000000
+disability_cost: 500000
+life_threatening_cost: 250000
+high_financial_exposure_threshold: 5000000

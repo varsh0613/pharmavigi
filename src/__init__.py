@@ -1,0 +1,1 @@
+"""Pharmacovigilance risk intelligence package."""
