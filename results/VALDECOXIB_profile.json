@@ -1,0 +1,567 @@
+{
+  "drug_name": "VALDECOXIB",
+  "brand_name": "Bextra",
+  "drug_class": null,
+  "indication": null,
+  "manufacturer": null,
+  "approval_year": 2001,
+  "status": "Withdrawn",
+  "withdrawal_year": 2005,
+  "live_counts": {
+    "total_reports": 349,
+    "serious_reports": 321,
+    "death_reports": 61,
+    "hospitalization_reports": 173,
+    "disability_reports": 15,
+    "life_threatening_reports": 27,
+    "latest_report_year": 2025
+  },
+  "signals": [
+    {
+      "reaction": "GASTRITIS",
+      "drug_reaction_count": 14,
+      "prr": 31.88,
+      "ror": 33.17,
+      "chi_square": 388.69,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "COMA",
+      "drug_reaction_count": 25,
+      "prr": 31.39,
+      "ror": 33.74,
+      "chi_square": 706.73,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "DIABETES MELLITUS",
+      "drug_reaction_count": 18,
+      "prr": 14.03,
+      "ror": 14.74,
+      "chi_square": 205.69,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "RENAL FAILURE",
+      "drug_reaction_count": 24,
+      "prr": 10.68,
+      "ror": 11.39,
+      "chi_square": 202.27,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "RESPIRATORY FAILURE",
+      "drug_reaction_count": 13,
+      "prr": 10.67,
+      "ror": 11.05,
+      "chi_square": 104.85,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ARTHRITIS",
+      "drug_reaction_count": 13,
+      "prr": 9.89,
+      "ror": 10.23,
+      "chi_square": 95.47,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "COMPLETED SUICIDE",
+      "drug_reaction_count": 13,
+      "prr": 9.17,
+      "ror": 9.48,
+      "chi_square": 86.94,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "HYPERTENSION",
+      "drug_reaction_count": 23,
+      "prr": 6.5,
+      "ror": 6.89,
+      "chi_square": 102.64,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "MYOCARDIAL INFARCTION",
+      "drug_reaction_count": 16,
+      "prr": 5.41,
+      "ror": 5.62,
+      "chi_square": 53.64,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "DRUG HYPERSENSITIVITY",
+      "drug_reaction_count": 16,
+      "prr": 4.91,
+      "ror": 5.1,
+      "chi_square": 46.46,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "BACK PAIN",
+      "drug_reaction_count": 16,
+      "prr": 4.12,
+      "ror": 4.27,
+      "chi_square": 35.18,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "FALL",
+      "drug_reaction_count": 18,
+      "prr": 3.25,
+      "ror": 3.37,
+      "chi_square": 26.2,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "PAIN IN EXTREMITY",
+      "drug_reaction_count": 15,
+      "prr": 3.04,
+      "ror": 3.13,
+      "chi_square": 18.79,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "DIZZINESS",
+      "drug_reaction_count": 20,
+      "prr": 2.41,
+      "ror": 2.5,
+      "chi_square": 15.51,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "VOMITING",
+      "drug_reaction_count": 16,
+      "prr": 2.05,
+      "ror": 2.1,
+      "chi_square": 7.8,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PAIN",
+      "drug_reaction_count": 21,
+      "prr": 2.04,
+      "ror": 2.11,
+      "chi_square": 10.45,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "drug_reaction_count": 14,
+      "prr": 2.03,
+      "ror": 2.08,
+      "chi_square": 6.49,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ASTHENIA",
+      "drug_reaction_count": 12,
+      "prr": 1.91,
+      "ror": 1.95,
+      "chi_square": 4.43,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 13,
+      "prr": 1.22,
+      "ror": 1.23,
+      "chi_square": 0.32,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "drug_reaction_count": 21,
+      "prr": 0.96,
+      "ror": 0.95,
+      "chi_square": 0.01,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 8.57,
+    "signal_score": 9.03,
+    "volume_score": 2.54,
+    "risk_index": 76.0,
+    "risk_tier": "CRITICAL",
+    "risk_color": "red"
+  },
+  "cost_of_harm": {
+    "death_cost_usd": 30500000,
+    "hospitalization_cost_usd": 2595000,
+    "disability_cost_usd": 3000000,
+    "total_estimated_cost_usd": 36095000,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 2004,
+      "count": 132
+    },
+    {
+      "year": 2005,
+      "count": 89
+    },
+    {
+      "year": 2006,
+      "count": 21
+    },
+    {
+      "year": 2007,
+      "count": 16
+    },
+    {
+      "year": 2008,
+      "count": 5
+    },
+    {
+      "year": 2009,
+      "count": 1
+    },
+    {
+      "year": 2010,
+      "count": 6
+    },
+    {
+      "year": 2011,
+      "count": 4
+    },
+    {
+      "year": 2012,
+      "count": 13
+    },
+    {
+      "year": 2013,
+      "count": 20
+    },
+    {
+      "year": 2014,
+      "count": 7
+    },
+    {
+      "year": 2015,
+      "count": 5
+    },
+    {
+      "year": 2016,
+      "count": 3
+    },
+    {
+      "year": 2017,
+      "count": 4
+    },
+    {
+      "year": 2018,
+      "count": 5
+    },
+    {
+      "year": 2019,
+      "count": 5
+    },
+    {
+      "year": 2020,
+      "count": 4
+    },
+    {
+      "year": 2021,
+      "count": 5
+    },
+    {
+      "year": 2022,
+      "count": 1
+    },
+    {
+      "year": 2023,
+      "count": 1
+    },
+    {
+      "year": 2024,
+      "count": 1
+    },
+    {
+      "year": 2025,
+      "count": 1
+    }
+  ],
+  "top_reactions": [
+    {
+      "reaction": "Renal failure",
+      "count": 18,
+      "percentage": 5.1
+    },
+    {
+      "reaction": "Hypertension",
+      "count": 17,
+      "percentage": 4.8
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "count": 17,
+      "percentage": 4.8
+    },
+    {
+      "reaction": "MYOCARDIAL INFARCTION",
+      "count": 17,
+      "percentage": 4.8
+    },
+    {
+      "reaction": "PAIN",
+      "count": 14,
+      "percentage": 4.0
+    },
+    {
+      "reaction": "Diabetes mellitus",
+      "count": 13,
+      "percentage": 3.7
+    },
+    {
+      "reaction": "Coma",
+      "count": 13,
+      "percentage": 3.7
+    },
+    {
+      "reaction": "Gastritis",
+      "count": 13,
+      "percentage": 3.7
+    },
+    {
+      "reaction": "DIZZINESS",
+      "count": 13,
+      "percentage": 3.7
+    },
+    {
+      "reaction": "FALL",
+      "count": 13,
+      "percentage": 3.7
+    },
+    {
+      "reaction": "COMPLETED SUICIDE",
+      "count": 13,
+      "percentage": 3.7
+    },
+    {
+      "reaction": "Drug hypersensitivity",
+      "count": 12,
+      "percentage": 3.4
+    },
+    {
+      "reaction": "BACK PAIN",
+      "count": 12,
+      "percentage": 3.4
+    },
+    {
+      "reaction": "COMA",
+      "count": 12,
+      "percentage": 3.4
+    },
+    {
+      "reaction": "Femur fracture",
+      "count": 12,
+      "percentage": 3.4
+    }
+  ],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 1,
+        "percentage": 0.3
+      },
+      "18-44": {
+        "count": 56,
+        "percentage": 16.0
+      },
+      "45-64": {
+        "count": 89,
+        "percentage": 25.4
+      },
+      "65-74": {
+        "count": 66,
+        "percentage": 18.8
+      },
+      "75+": {
+        "count": 42,
+        "percentage": 12.0
+      },
+      "unknown": {
+        "count": 95,
+        "percentage": 27.1
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 109,
+        "percentage": 31.1
+      },
+      "female": {
+        "count": 216,
+        "percentage": 61.5
+      },
+      "unknown": {
+        "count": 26,
+        "percentage": 7.4
+      }
+    },
+    "total_sample_records": 351
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 61,
+      "percentage": 17.4
+    },
+    "hospitalization": {
+      "count": 174,
+      "percentage": 49.6
+    },
+    "disability": {
+      "count": 15,
+      "percentage": 4.3
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 149,
+      "percentage": 42.5
+    },
+    "not_serious": {
+      "count": 28,
+      "percentage": 8.0
+    }
+  },
+  "timeline": [
+    {
+      "year": 2001,
+      "event": "FDA approval as Bextra",
+      "type": "approval",
+      "significance": "Approved for osteoarthritis, rheumatoid arthritis, and dysmenorrhea."
+    },
+    {
+      "year": 2004,
+      "event": "Reports of serious skin reactions (SJS/TEN)",
+      "type": "signal",
+      "significance": "Post-market surveillance flagged rare but severe dermatologic reactions."
+    },
+    {
+      "year": 2005,
+      "event": "Market withdrawal",
+      "type": "withdrawal",
+      "significance": "FDA requested withdrawal citing cardiovascular risk and skin reaction severity, with no demonstrated benefit over other NSAIDs."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": true,
+    "black_box_warning": false,
+    "recall_history": true,
+    "label_updated": false,
+    "withdrawn": true,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "GASTRITIS shows a strong disproportionality signal (PRR=31.88).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "COMA shows a strong disproportionality signal (PRR=31.39).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DIABETES MELLITUS shows a strong disproportionality signal (PRR=14.03).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "RENAL FAILURE shows a strong disproportionality signal (PRR=10.68).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "RESPIRATORY FAILURE shows a strong disproportionality signal (PRR=10.67).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ARTHRITIS shows a strong disproportionality signal (PRR=9.89).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "COMPLETED SUICIDE shows a strong disproportionality signal (PRR=9.17).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "HYPERTENSION shows a strong disproportionality signal (PRR=6.5).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "MYOCARDIAL INFARCTION shows a strong disproportionality signal (PRR=5.41).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DRUG HYPERSENSITIVITY shows a strong disproportionality signal (PRR=4.91).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "BACK PAIN shows a strong disproportionality signal (PRR=4.12).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "FALL shows a strong disproportionality signal (PRR=3.25).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "PAIN IN EXTREMITY shows a strong disproportionality signal (PRR=3.04).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 17.5,
+    "serious_rate_pct": 92.0,
+    "hospitalization_rate_pct": 49.6,
+    "avg_patient_age": 247.0,
+    "flagged_signal_count": 17,
+    "strongest_signal_prr": 31.88,
+    "strongest_signal_reaction": "GASTRITIS"
+  },
+  "meta": {
+    "drug_queried": "VALDECOXIB",
+    "sample_record_count": 351,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-08T12:53:06.774794Z",
+    "cache_expires": "2026-07-09T12:53:06.774794Z"
+  },
+  "ai_summary": null
+}

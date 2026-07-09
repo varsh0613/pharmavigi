@@ -1,0 +1,601 @@
+{
+  "drug_name": "NIMESULIDE",
+  "brand_name": "Nimed",
+  "drug_class": null,
+  "indication": null,
+  "manufacturer": null,
+  "approval_year": null,
+  "status": "Restricted",
+  "withdrawal_year": null,
+  "live_counts": {
+    "total_reports": 2520,
+    "serious_reports": 2477,
+    "death_reports": 410,
+    "hospitalization_reports": 1124,
+    "disability_reports": 106,
+    "life_threatening_reports": 210,
+    "latest_report_year": 2026
+  },
+  "signals": [
+    {
+      "reaction": "TACHYCARDIA",
+      "drug_reaction_count": 235,
+      "prr": 22.02,
+      "ror": 24.18,
+      "chi_square": 4701.8,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "SOMNOLENCE",
+      "drug_reaction_count": 241,
+      "prr": 9.97,
+      "ror": 10.91,
+      "chi_square": 1951.21,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ABDOMINAL PAIN UPPER",
+      "drug_reaction_count": 235,
+      "prr": 9.54,
+      "ror": 10.42,
+      "chi_square": 1804.3,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ABDOMINAL PAIN",
+      "drug_reaction_count": 259,
+      "prr": 9.27,
+      "ror": 10.22,
+      "chi_square": 1921.99,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "DECREASED APPETITE",
+      "drug_reaction_count": 246,
+      "prr": 8.86,
+      "ror": 9.71,
+      "chi_square": 1725.06,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "INSOMNIA",
+      "drug_reaction_count": 244,
+      "prr": 7.59,
+      "ror": 8.29,
+      "chi_square": 1405.01,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "drug_reaction_count": 374,
+      "prr": 7.53,
+      "ror": 8.67,
+      "chi_square": 2152.82,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "COUGH",
+      "drug_reaction_count": 246,
+      "prr": 7.33,
+      "ror": 8.01,
+      "chi_square": 1354.34,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "PRURITUS",
+      "drug_reaction_count": 298,
+      "prr": 6.66,
+      "ror": 7.41,
+      "chi_square": 1451.22,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "PYREXIA",
+      "drug_reaction_count": 270,
+      "prr": 6.47,
+      "ror": 7.12,
+      "chi_square": 1262.73,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "FALL",
+      "drug_reaction_count": 258,
+      "prr": 6.45,
+      "ror": 7.07,
+      "chi_square": 1200.65,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ASTHENIA",
+      "drug_reaction_count": 287,
+      "prr": 6.34,
+      "ror": 7.03,
+      "chi_square": 1308.1,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "MALAISE",
+      "drug_reaction_count": 276,
+      "prr": 5.2,
+      "ror": 5.72,
+      "chi_square": 952.0,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "VOMITING",
+      "drug_reaction_count": 280,
+      "prr": 4.98,
+      "ror": 5.48,
+      "chi_square": 905.98,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "DYSPNOEA",
+      "drug_reaction_count": 321,
+      "prr": 4.71,
+      "ror": 5.26,
+      "chi_square": 961.21,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "DIZZINESS",
+      "drug_reaction_count": 280,
+      "prr": 4.68,
+      "ror": 5.14,
+      "chi_square": 824.9,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "HEADACHE",
+      "drug_reaction_count": 299,
+      "prr": 3.97,
+      "ror": 4.37,
+      "chi_square": 681.18,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 276,
+      "prr": 3.58,
+      "ror": 3.9,
+      "chi_square": 527.54,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "NAUSEA",
+      "drug_reaction_count": 292,
+      "prr": 3.08,
+      "ror": 3.36,
+      "chi_square": 425.12,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "FATIGUE",
+      "drug_reaction_count": 269,
+      "prr": 2.88,
+      "ror": 3.11,
+      "chi_square": 341.18,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 8.56,
+    "signal_score": 7.06,
+    "volume_score": 3.4,
+    "risk_index": 69.28,
+    "risk_tier": "HIGH",
+    "risk_color": "orange"
+  },
+  "cost_of_harm": {
+    "death_cost_usd": 205000000,
+    "hospitalization_cost_usd": 16860000,
+    "disability_cost_usd": 21200000,
+    "total_estimated_cost_usd": 243060000,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 2004,
+      "count": 56
+    },
+    {
+      "year": 2005,
+      "count": 54
+    },
+    {
+      "year": 2006,
+      "count": 51
+    },
+    {
+      "year": 2007,
+      "count": 67
+    },
+    {
+      "year": 2008,
+      "count": 63
+    },
+    {
+      "year": 2009,
+      "count": 61
+    },
+    {
+      "year": 2010,
+      "count": 78
+    },
+    {
+      "year": 2011,
+      "count": 73
+    },
+    {
+      "year": 2012,
+      "count": 114
+    },
+    {
+      "year": 2013,
+      "count": 145
+    },
+    {
+      "year": 2014,
+      "count": 115
+    },
+    {
+      "year": 2015,
+      "count": 122
+    },
+    {
+      "year": 2016,
+      "count": 131
+    },
+    {
+      "year": 2017,
+      "count": 153
+    },
+    {
+      "year": 2018,
+      "count": 166
+    },
+    {
+      "year": 2019,
+      "count": 94
+    },
+    {
+      "year": 2020,
+      "count": 132
+    },
+    {
+      "year": 2021,
+      "count": 103
+    },
+    {
+      "year": 2022,
+      "count": 207
+    },
+    {
+      "year": 2023,
+      "count": 225
+    },
+    {
+      "year": 2024,
+      "count": 155
+    },
+    {
+      "year": 2025,
+      "count": 137
+    },
+    {
+      "year": 2026,
+      "count": 18
+    }
+  ],
+  "top_reactions": [
+    {
+      "reaction": "Arthralgia",
+      "count": 360,
+      "percentage": 14.3
+    },
+    {
+      "reaction": "Dyspnoea",
+      "count": 298,
+      "percentage": 11.8
+    },
+    {
+      "reaction": "Somnolence",
+      "count": 292,
+      "percentage": 11.6
+    },
+    {
+      "reaction": "Pruritus",
+      "count": 284,
+      "percentage": 11.3
+    },
+    {
+      "reaction": "Headache",
+      "count": 281,
+      "percentage": 11.1
+    },
+    {
+      "reaction": "Diarrhoea",
+      "count": 278,
+      "percentage": 11.0
+    },
+    {
+      "reaction": "Nausea",
+      "count": 271,
+      "percentage": 10.7
+    },
+    {
+      "reaction": "Asthenia",
+      "count": 268,
+      "percentage": 10.6
+    },
+    {
+      "reaction": "Dizziness",
+      "count": 265,
+      "percentage": 10.5
+    },
+    {
+      "reaction": "Malaise",
+      "count": 256,
+      "percentage": 10.2
+    },
+    {
+      "reaction": "Vomiting",
+      "count": 255,
+      "percentage": 10.1
+    },
+    {
+      "reaction": "Fatigue",
+      "count": 254,
+      "percentage": 10.1
+    },
+    {
+      "reaction": "Abdominal pain",
+      "count": 246,
+      "percentage": 9.8
+    },
+    {
+      "reaction": "Fall",
+      "count": 245,
+      "percentage": 9.7
+    },
+    {
+      "reaction": "Pyrexia",
+      "count": 244,
+      "percentage": 9.7
+    }
+  ],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 82,
+        "percentage": 3.3
+      },
+      "18-44": {
+        "count": 522,
+        "percentage": 20.7
+      },
+      "45-64": {
+        "count": 638,
+        "percentage": 25.3
+      },
+      "65-74": {
+        "count": 267,
+        "percentage": 10.6
+      },
+      "75+": {
+        "count": 168,
+        "percentage": 6.7
+      },
+      "unknown": {
+        "count": 840,
+        "percentage": 33.3
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 699,
+        "percentage": 27.7
+      },
+      "female": {
+        "count": 1384,
+        "percentage": 54.9
+      },
+      "unknown": {
+        "count": 439,
+        "percentage": 17.4
+      }
+    },
+    "total_sample_records": 2522
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 410,
+      "percentage": 16.3
+    },
+    "hospitalization": {
+      "count": 1126,
+      "percentage": 44.6
+    },
+    "disability": {
+      "count": 106,
+      "percentage": 4.2
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 1353,
+      "percentage": 53.6
+    },
+    "not_serious": {
+      "count": 43,
+      "percentage": 1.7
+    }
+  },
+  "timeline": [
+    {
+      "year": 1985,
+      "event": "First approved in Italy",
+      "type": "approval",
+      "significance": "COX-2 preferential NSAID never approved in the US due to hepatotoxicity concerns."
+    },
+    {
+      "year": 2007,
+      "event": "Ireland suspends marketing authorization",
+      "type": "recall",
+      "significance": "Multiple countries restricted or withdrew nimesulide over liver injury reports."
+    },
+    {
+      "year": 2011,
+      "event": "EMA restricts to short-term use only",
+      "type": "label_change",
+      "significance": "European regulator limited duration and indications due to hepatic risk."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": false,
+    "black_box_warning": false,
+    "recall_history": true,
+    "label_updated": true,
+    "withdrawn": false,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "TACHYCARDIA shows a strong disproportionality signal (PRR=22.02).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "SOMNOLENCE shows a strong disproportionality signal (PRR=9.97).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ABDOMINAL PAIN UPPER shows a strong disproportionality signal (PRR=9.54).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ABDOMINAL PAIN shows a strong disproportionality signal (PRR=9.27).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DECREASED APPETITE shows a strong disproportionality signal (PRR=8.86).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "INSOMNIA shows a strong disproportionality signal (PRR=7.59).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ARTHRALGIA shows a strong disproportionality signal (PRR=7.53).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "COUGH shows a strong disproportionality signal (PRR=7.33).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "PRURITUS shows a strong disproportionality signal (PRR=6.66).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "PYREXIA shows a strong disproportionality signal (PRR=6.47).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "FALL shows a strong disproportionality signal (PRR=6.45).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ASTHENIA shows a strong disproportionality signal (PRR=6.34).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "MALAISE shows a strong disproportionality signal (PRR=5.2).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "VOMITING shows a strong disproportionality signal (PRR=4.98).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DYSPNOEA shows a strong disproportionality signal (PRR=4.71).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DIZZINESS shows a strong disproportionality signal (PRR=4.68).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "HEADACHE shows a strong disproportionality signal (PRR=3.97).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DIARRHOEA shows a strong disproportionality signal (PRR=3.58).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "NAUSEA shows a strong disproportionality signal (PRR=3.08).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 16.3,
+    "serious_rate_pct": 98.3,
+    "hospitalization_rate_pct": 44.6,
+    "avg_patient_age": 103.5,
+    "flagged_signal_count": 20,
+    "strongest_signal_prr": 22.02,
+    "strongest_signal_reaction": "TACHYCARDIA"
+  },
+  "meta": {
+    "drug_queried": "NIMESULIDE",
+    "sample_record_count": 2522,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-08T13:17:22.523884Z",
+    "cache_expires": "2026-07-09T13:17:22.523884Z"
+  },
+  "ai_summary": null
+}

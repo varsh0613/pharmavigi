@@ -1,1 +1,0 @@
-"""FAERS ingestion utilities."""

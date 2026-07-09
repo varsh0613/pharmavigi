@@ -1,0 +1,590 @@
+{
+  "drug_name": "PIROXICAM",
+  "brand_name": "Piroxicam",
+  "drug_class": "Nonsteroidal Anti-inflammatory Drug [EPC]",
+  "indication": "1 INDICATIONS AND USAGE Piroxicam capsules are indicated: \u2022 For relief of the signs and symptoms of osteoarthritis. \u2022 For relief of the signs and symptoms of rheumatoid arthritis. Piroxicam capsules a",
+  "manufacturer": "Bryant Ranch Prepack",
+  "approval_year": 1982,
+  "status": "Active",
+  "withdrawal_year": null,
+  "live_counts": {
+    "total_reports": 6990,
+    "serious_reports": 5792,
+    "death_reports": 1131,
+    "hospitalization_reports": 2824,
+    "disability_reports": 1169,
+    "life_threatening_reports": 1116,
+    "latest_report_year": 2026
+  },
+  "signals": [
+    {
+      "reaction": "SCIATICA",
+      "drug_reaction_count": 767,
+      "prr": 153.21,
+      "ror": 171.97,
+      "chi_square": 110116.74,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "PSORIATIC ARTHROPATHY",
+      "drug_reaction_count": 825,
+      "prr": 63.3,
+      "ror": 71.64,
+      "chi_square": 49544.3,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "SINUSITIS",
+      "drug_reaction_count": 810,
+      "prr": 23.73,
+      "ror": 26.71,
+      "chi_square": 17557.39,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "DRUG INTOLERANCE",
+      "drug_reaction_count": 727,
+      "prr": 22.86,
+      "ror": 25.39,
+      "chi_square": 15124.29,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "RHEUMATOID ARTHRITIS",
+      "drug_reaction_count": 854,
+      "prr": 22.8,
+      "ror": 25.83,
+      "chi_square": 17736.41,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "JOINT SWELLING",
+      "drug_reaction_count": 693,
+      "prr": 17.35,
+      "ror": 19.15,
+      "chi_square": 10658.42,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "DRUG HYPERSENSITIVITY",
+      "drug_reaction_count": 980,
+      "prr": 15.1,
+      "ror": 17.4,
+      "chi_square": 12939.99,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "HYPERTENSION",
+      "drug_reaction_count": 661,
+      "prr": 9.35,
+      "ror": 10.23,
+      "chi_square": 4956.94,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "CONDITION AGGRAVATED",
+      "drug_reaction_count": 917,
+      "prr": 9.17,
+      "ror": 10.4,
+      "chi_square": 6741.51,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "drug_reaction_count": 929,
+      "prr": 6.75,
+      "ror": 7.64,
+      "chi_square": 4628.45,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "RASH",
+      "drug_reaction_count": 932,
+      "prr": 6.48,
+      "ror": 7.32,
+      "chi_square": 4394.31,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "VOMITING",
+      "drug_reaction_count": 675,
+      "prr": 4.33,
+      "ror": 4.69,
+      "chi_square": 1761.96,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "PAIN",
+      "drug_reaction_count": 872,
+      "prr": 4.24,
+      "ror": 4.7,
+      "chi_square": 2215.12,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 873,
+      "prr": 4.09,
+      "ror": 4.53,
+      "chi_square": 2096.22,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "HEADACHE",
+      "drug_reaction_count": 779,
+      "prr": 3.73,
+      "ror": 4.07,
+      "chi_square": 1599.79,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "DYSPNOEA",
+      "drug_reaction_count": 670,
+      "prr": 3.55,
+      "ror": 3.82,
+      "chi_square": 1256.62,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "FATIGUE",
+      "drug_reaction_count": 882,
+      "prr": 3.41,
+      "ror": 3.76,
+      "chi_square": 1554.43,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "NAUSEA",
+      "drug_reaction_count": 861,
+      "prr": 3.28,
+      "ror": 3.6,
+      "chi_square": 1414.55,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "OFF LABEL USE",
+      "drug_reaction_count": 784,
+      "prr": 2.73,
+      "ror": 2.95,
+      "chi_square": 893.95,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "drug_reaction_count": 890,
+      "prr": 2.02,
+      "ror": 2.17,
+      "chi_square": 490.1,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 10.0,
+    "signal_score": 10,
+    "volume_score": 3.84,
+    "risk_index": 87.68,
+    "risk_tier": "CRITICAL",
+    "risk_color": "red"
+  },
+  "cost_of_harm": {
+    "death_cost_usd": 565500000,
+    "hospitalization_cost_usd": 42360000,
+    "disability_cost_usd": 233800000,
+    "total_estimated_cost_usd": 841660000,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 2004,
+      "count": 129
+    },
+    {
+      "year": 2005,
+      "count": 172
+    },
+    {
+      "year": 2006,
+      "count": 170
+    },
+    {
+      "year": 2007,
+      "count": 137
+    },
+    {
+      "year": 2008,
+      "count": 149
+    },
+    {
+      "year": 2009,
+      "count": 139
+    },
+    {
+      "year": 2010,
+      "count": 159
+    },
+    {
+      "year": 2011,
+      "count": 199
+    },
+    {
+      "year": 2012,
+      "count": 214
+    },
+    {
+      "year": 2013,
+      "count": 210
+    },
+    {
+      "year": 2014,
+      "count": 201
+    },
+    {
+      "year": 2015,
+      "count": 310
+    },
+    {
+      "year": 2016,
+      "count": 305
+    },
+    {
+      "year": 2017,
+      "count": 289
+    },
+    {
+      "year": 2018,
+      "count": 444
+    },
+    {
+      "year": 2019,
+      "count": 617
+    },
+    {
+      "year": 2020,
+      "count": 529
+    },
+    {
+      "year": 2021,
+      "count": 447
+    },
+    {
+      "year": 2022,
+      "count": 497
+    },
+    {
+      "year": 2023,
+      "count": 417
+    },
+    {
+      "year": 2024,
+      "count": 717
+    },
+    {
+      "year": 2025,
+      "count": 446
+    },
+    {
+      "year": 2026,
+      "count": 94
+    }
+  ],
+  "top_reactions": [
+    {
+      "reaction": "Drug hypersensitivity",
+      "count": 419,
+      "percentage": 14.0
+    },
+    {
+      "reaction": "Drug ineffective",
+      "count": 365,
+      "percentage": 12.2
+    },
+    {
+      "reaction": "Rash",
+      "count": 362,
+      "percentage": 12.1
+    },
+    {
+      "reaction": "Condition aggravated",
+      "count": 345,
+      "percentage": 11.5
+    },
+    {
+      "reaction": "Sinusitis",
+      "count": 323,
+      "percentage": 10.8
+    },
+    {
+      "reaction": "Drug intolerance",
+      "count": 315,
+      "percentage": 10.5
+    },
+    {
+      "reaction": "Psoriatic arthropathy",
+      "count": 301,
+      "percentage": 10.0
+    },
+    {
+      "reaction": "Rheumatoid arthritis",
+      "count": 297,
+      "percentage": 9.9
+    },
+    {
+      "reaction": "Sciatica",
+      "count": 286,
+      "percentage": 9.5
+    },
+    {
+      "reaction": "Pain",
+      "count": 272,
+      "percentage": 9.1
+    },
+    {
+      "reaction": "Off label use",
+      "count": 250,
+      "percentage": 8.3
+    },
+    {
+      "reaction": "Nausea",
+      "count": 246,
+      "percentage": 8.2
+    },
+    {
+      "reaction": "Fatigue",
+      "count": 246,
+      "percentage": 8.2
+    },
+    {
+      "reaction": "Treatment failure",
+      "count": 241,
+      "percentage": 8.0
+    },
+    {
+      "reaction": "Arthralgia",
+      "count": 231,
+      "percentage": 7.7
+    }
+  ],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 38,
+        "percentage": 1.3
+      },
+      "18-44": {
+        "count": 407,
+        "percentage": 13.6
+      },
+      "45-64": {
+        "count": 796,
+        "percentage": 26.5
+      },
+      "65-74": {
+        "count": 449,
+        "percentage": 15.0
+      },
+      "75+": {
+        "count": 303,
+        "percentage": 10.1
+      },
+      "unknown": {
+        "count": 950,
+        "percentage": 31.7
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 798,
+        "percentage": 26.6
+      },
+      "female": {
+        "count": 1899,
+        "percentage": 63.3
+      },
+      "unknown": {
+        "count": 303,
+        "percentage": 10.1
+      }
+    },
+    "total_sample_records": 3000
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 201,
+      "percentage": 6.7
+    },
+    "hospitalization": {
+      "count": 880,
+      "percentage": 29.3
+    },
+    "disability": {
+      "count": 180,
+      "percentage": 6.0
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 1533,
+      "percentage": 51.1
+    },
+    "not_serious": {
+      "count": 587,
+      "percentage": 19.6
+    }
+  },
+  "timeline": [
+    {
+      "year": 1982,
+      "event": "FDA approval as Feldene",
+      "type": "approval",
+      "significance": "Long half-life NSAID approved for chronic arthritis."
+    },
+    {
+      "year": 2007,
+      "event": "EU restricts first-line use",
+      "type": "warning",
+      "significance": "European review found higher GI risk relative to other NSAIDs."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": true,
+    "black_box_warning": true,
+    "recall_history": false,
+    "label_updated": false,
+    "withdrawn": false,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "SCIATICA shows a strong disproportionality signal (PRR=153.21).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "PSORIATIC ARTHROPATHY shows a strong disproportionality signal (PRR=63.3).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "SINUSITIS shows a strong disproportionality signal (PRR=23.73).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DRUG INTOLERANCE shows a strong disproportionality signal (PRR=22.86).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "RHEUMATOID ARTHRITIS shows a strong disproportionality signal (PRR=22.8).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "JOINT SWELLING shows a strong disproportionality signal (PRR=17.35).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DRUG HYPERSENSITIVITY shows a strong disproportionality signal (PRR=15.1).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "HYPERTENSION shows a strong disproportionality signal (PRR=9.35).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "CONDITION AGGRAVATED shows a strong disproportionality signal (PRR=9.17).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ARTHRALGIA shows a strong disproportionality signal (PRR=6.75).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "RASH shows a strong disproportionality signal (PRR=6.48).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "VOMITING shows a strong disproportionality signal (PRR=4.33).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "PAIN shows a strong disproportionality signal (PRR=4.24).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DIARRHOEA shows a strong disproportionality signal (PRR=4.09).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "HEADACHE shows a strong disproportionality signal (PRR=3.73).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DYSPNOEA shows a strong disproportionality signal (PRR=3.55).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "FATIGUE shows a strong disproportionality signal (PRR=3.41).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "NAUSEA shows a strong disproportionality signal (PRR=3.28).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 16.2,
+    "serious_rate_pct": 82.9,
+    "hospitalization_rate_pct": 40.4,
+    "avg_patient_age": 551.0,
+    "flagged_signal_count": 20,
+    "strongest_signal_prr": 153.21,
+    "strongest_signal_reaction": "SCIATICA"
+  },
+  "meta": {
+    "drug_queried": "PIROXICAM",
+    "sample_record_count": 3000,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-08T13:01:36.967268Z",
+    "cache_expires": "2026-07-09T13:01:36.967268Z"
+  },
+  "ai_summary": null
+}

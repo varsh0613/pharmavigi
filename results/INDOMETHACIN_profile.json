@@ -1,0 +1,534 @@
+{
+  "drug_name": "INDOMETHACIN",
+  "brand_name": "Indomethacin",
+  "drug_class": "Nonsteroidal Anti-inflammatory Drug [EPC]",
+  "indication": "1 INDICATIONS AND USAGE Indomethacin capsules are indicated for: Moderate to severe rheumatoid arthritis including acute flares of chronic disease Moderate to severe ankylosing spondylitis Moderate to",
+  "manufacturer": "PD-Rx Pharmaceuticals, Inc.",
+  "approval_year": 1965,
+  "status": "Active",
+  "withdrawal_year": null,
+  "live_counts": {
+    "total_reports": 12728,
+    "serious_reports": 10253,
+    "death_reports": 1429,
+    "hospitalization_reports": 4206,
+    "disability_reports": 486,
+    "life_threatening_reports": 757,
+    "latest_report_year": 2026
+  },
+  "signals": [
+    {
+      "reaction": "CHRONIC KIDNEY DISEASE",
+      "drug_reaction_count": 547,
+      "prr": 11.71,
+      "ror": 12.19,
+      "chi_square": 5329.11,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ABDOMINAL PAIN UPPER",
+      "drug_reaction_count": 598,
+      "prr": 4.81,
+      "ror": 5.0,
+      "chi_square": 1815.78,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "ABDOMINAL PAIN",
+      "drug_reaction_count": 623,
+      "prr": 4.42,
+      "ror": 4.6,
+      "chi_square": 1659.14,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "drug_reaction_count": 1060,
+      "prr": 4.23,
+      "ror": 4.53,
+      "chi_square": 2658.72,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "INSOMNIA",
+      "drug_reaction_count": 559,
+      "prr": 3.44,
+      "ror": 3.56,
+      "chi_square": 976.95,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "DIZZINESS",
+      "drug_reaction_count": 937,
+      "prr": 3.1,
+      "ror": 3.27,
+      "chi_square": 1361.85,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "FALL",
+      "drug_reaction_count": 597,
+      "prr": 2.96,
+      "ror": 3.05,
+      "chi_square": 781.93,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PYREXIA",
+      "drug_reaction_count": 618,
+      "prr": 2.93,
+      "ror": 3.03,
+      "chi_square": 797.11,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PRURITUS",
+      "drug_reaction_count": 657,
+      "prr": 2.91,
+      "ror": 3.01,
+      "chi_square": 833.2,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ASTHENIA",
+      "drug_reaction_count": 648,
+      "prr": 2.84,
+      "ror": 2.93,
+      "chi_square": 780.87,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "VOMITING",
+      "drug_reaction_count": 792,
+      "prr": 2.79,
+      "ror": 2.91,
+      "chi_square": 926.83,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "HEADACHE",
+      "drug_reaction_count": 1036,
+      "prr": 2.72,
+      "ror": 2.88,
+      "chi_square": 1162.2,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "MALAISE",
+      "drug_reaction_count": 702,
+      "prr": 2.62,
+      "ror": 2.72,
+      "chi_square": 715.97,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FATIGUE",
+      "drug_reaction_count": 1227,
+      "prr": 2.6,
+      "ror": 2.78,
+      "chi_square": 1255.77,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PAIN",
+      "drug_reaction_count": 956,
+      "prr": 2.55,
+      "ror": 2.68,
+      "chi_square": 925.37,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 977,
+      "prr": 2.51,
+      "ror": 2.64,
+      "chi_square": 915.47,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DYSPNOEA",
+      "drug_reaction_count": 735,
+      "prr": 2.14,
+      "ror": 2.21,
+      "chi_square": 455.72,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "OFF LABEL USE",
+      "drug_reaction_count": 1027,
+      "prr": 1.96,
+      "ror": 2.05,
+      "chi_square": 505.33,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "NAUSEA",
+      "drug_reaction_count": 927,
+      "prr": 1.94,
+      "ror": 2.01,
+      "chi_square": 436.84,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "drug_reaction_count": 1516,
+      "prr": 1.89,
+      "ror": 2.01,
+      "chi_square": 679.88,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 8.51,
+    "signal_score": 3.6,
+    "volume_score": 4.1,
+    "risk_index": 56.64,
+    "risk_tier": "HIGH",
+    "risk_color": "orange"
+  },
+  "cost_of_harm": {
+    "death_cost_usd": 714500000,
+    "hospitalization_cost_usd": 63090000,
+    "disability_cost_usd": 97200000,
+    "total_estimated_cost_usd": 874790000,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 1994,
+      "count": 1
+    },
+    {
+      "year": 2004,
+      "count": 251
+    },
+    {
+      "year": 2005,
+      "count": 270
+    },
+    {
+      "year": 2006,
+      "count": 284
+    },
+    {
+      "year": 2007,
+      "count": 267
+    },
+    {
+      "year": 2008,
+      "count": 275
+    },
+    {
+      "year": 2009,
+      "count": 316
+    },
+    {
+      "year": 2010,
+      "count": 333
+    },
+    {
+      "year": 2011,
+      "count": 417
+    },
+    {
+      "year": 2012,
+      "count": 531
+    },
+    {
+      "year": 2013,
+      "count": 413
+    },
+    {
+      "year": 2014,
+      "count": 342
+    },
+    {
+      "year": 2015,
+      "count": 519
+    },
+    {
+      "year": 2016,
+      "count": 655
+    },
+    {
+      "year": 2017,
+      "count": 583
+    },
+    {
+      "year": 2018,
+      "count": 835
+    },
+    {
+      "year": 2019,
+      "count": 957
+    },
+    {
+      "year": 2020,
+      "count": 867
+    },
+    {
+      "year": 2021,
+      "count": 906
+    },
+    {
+      "year": 2022,
+      "count": 1045
+    },
+    {
+      "year": 2023,
+      "count": 884
+    },
+    {
+      "year": 2024,
+      "count": 903
+    },
+    {
+      "year": 2025,
+      "count": 777
+    },
+    {
+      "year": 2026,
+      "count": 98
+    }
+  ],
+  "top_reactions": [
+    {
+      "reaction": "Drug ineffective",
+      "count": 668,
+      "percentage": 13.4
+    },
+    {
+      "reaction": "Chronic kidney disease",
+      "count": 468,
+      "percentage": 9.4
+    },
+    {
+      "reaction": "Fatigue",
+      "count": 394,
+      "percentage": 7.9
+    },
+    {
+      "reaction": "Pain",
+      "count": 373,
+      "percentage": 7.5
+    },
+    {
+      "reaction": "Acute kidney injury",
+      "count": 356,
+      "percentage": 7.1
+    },
+    {
+      "reaction": "Arthralgia",
+      "count": 336,
+      "percentage": 6.7
+    },
+    {
+      "reaction": "Renal failure",
+      "count": 301,
+      "percentage": 6.0
+    },
+    {
+      "reaction": "Nausea",
+      "count": 297,
+      "percentage": 5.9
+    },
+    {
+      "reaction": "Off label use",
+      "count": 287,
+      "percentage": 5.7
+    },
+    {
+      "reaction": "Diarrhoea",
+      "count": 276,
+      "percentage": 5.5
+    },
+    {
+      "reaction": "Headache",
+      "count": 249,
+      "percentage": 5.0
+    },
+    {
+      "reaction": "Dizziness",
+      "count": 239,
+      "percentage": 4.8
+    },
+    {
+      "reaction": "Vomiting",
+      "count": 231,
+      "percentage": 4.6
+    },
+    {
+      "reaction": "Joint swelling",
+      "count": 208,
+      "percentage": 4.2
+    },
+    {
+      "reaction": "Drug hypersensitivity",
+      "count": 204,
+      "percentage": 4.1
+    }
+  ],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 175,
+        "percentage": 3.5
+      },
+      "18-44": {
+        "count": 673,
+        "percentage": 13.5
+      },
+      "45-64": {
+        "count": 1388,
+        "percentage": 27.8
+      },
+      "65-74": {
+        "count": 551,
+        "percentage": 11.0
+      },
+      "75+": {
+        "count": 307,
+        "percentage": 6.1
+      },
+      "unknown": {
+        "count": 1693,
+        "percentage": 33.9
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 2135,
+        "percentage": 42.7
+      },
+      "female": {
+        "count": 2315,
+        "percentage": 46.3
+      },
+      "unknown": {
+        "count": 550,
+        "percentage": 11.0
+      }
+    },
+    "total_sample_records": 5000
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 338,
+      "percentage": 6.8
+    },
+    "hospitalization": {
+      "count": 1381,
+      "percentage": 27.6
+    },
+    "disability": {
+      "count": 151,
+      "percentage": 3.0
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 2329,
+      "percentage": 46.6
+    },
+    "not_serious": {
+      "count": 1290,
+      "percentage": 25.8
+    }
+  },
+  "timeline": [
+    {
+      "year": 1965,
+      "event": "FDA approval",
+      "type": "approval",
+      "significance": "One of the earliest NSAIDs approved, known for a higher GI/CNS side-effect burden."
+    },
+    {
+      "year": 2005,
+      "event": "NSAID class label update",
+      "type": "label_change",
+      "significance": "Cardiovascular/GI warnings added class-wide."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": true,
+    "black_box_warning": true,
+    "recall_history": false,
+    "label_updated": true,
+    "withdrawn": false,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "CHRONIC KIDNEY DISEASE shows a strong disproportionality signal (PRR=11.71).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ABDOMINAL PAIN UPPER shows a strong disproportionality signal (PRR=4.81).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ABDOMINAL PAIN shows a strong disproportionality signal (PRR=4.42).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ARTHRALGIA shows a strong disproportionality signal (PRR=4.23).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "INSOMNIA shows a strong disproportionality signal (PRR=3.44).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DIZZINESS shows a strong disproportionality signal (PRR=3.1).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 11.2,
+    "serious_rate_pct": 80.6,
+    "hospitalization_rate_pct": 33.0,
+    "avg_patient_age": 1217.5,
+    "flagged_signal_count": 17,
+    "strongest_signal_prr": 11.71,
+    "strongest_signal_reaction": "CHRONIC KIDNEY DISEASE"
+  },
+  "meta": {
+    "drug_queried": "INDOMETHACIN",
+    "sample_record_count": 5000,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-08T13:03:02.881060Z",
+    "cache_expires": "2026-07-09T13:03:02.881060Z"
+  },
+  "ai_summary": null
+}

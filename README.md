@@ -137,6 +137,10 @@ The analytics modules write:
 - `outputs/recommendation_output.csv`
 - `outputs/anomaly_detection_results.csv`
 
+Dashboard results:
+
+- Place dashboard-facing JSON/NDJSON files in the `results/` folder. These are the small, derived artifacts intended for the dashboard.
+
 ## Backend API (optional)
 
 A lightweight FastAPI backend is included to trigger ingestion and analysis and to serve CSV outputs.

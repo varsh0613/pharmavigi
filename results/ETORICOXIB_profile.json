@@ -1,0 +1,515 @@
+{
+  "drug_name": "ETORICOXIB",
+  "brand_name": "Arcoxia",
+  "drug_class": null,
+  "indication": null,
+  "manufacturer": null,
+  "approval_year": null,
+  "status": "Restricted",
+  "withdrawal_year": null,
+  "live_counts": {
+    "total_reports": 4534,
+    "serious_reports": 4445,
+    "death_reports": 355,
+    "hospitalization_reports": 2420,
+    "disability_reports": 207,
+    "life_threatening_reports": 367,
+    "latest_report_year": 2026
+  },
+  "signals": [
+    {
+      "reaction": "DRUG INTERACTION",
+      "drug_reaction_count": 229,
+      "prr": 6.67,
+      "ror": 6.97,
+      "chi_square": 1103.94,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "GENERAL PHYSICAL HEALTH DETERIORATION",
+      "drug_reaction_count": 152,
+      "prr": 6.15,
+      "ror": 6.33,
+      "chi_square": 653.48,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ANAEMIA",
+      "drug_reaction_count": 131,
+      "prr": 3.16,
+      "ror": 3.23,
+      "chi_square": 193.09,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "drug_reaction_count": 248,
+      "prr": 2.78,
+      "ror": 2.88,
+      "chi_square": 285.26,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "BACK PAIN",
+      "drug_reaction_count": 119,
+      "prr": 2.36,
+      "ror": 2.4,
+      "chi_square": 92.99,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "CONDITION AGGRAVATED",
+      "drug_reaction_count": 138,
+      "prr": 2.12,
+      "ror": 2.16,
+      "chi_square": 81.87,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "VOMITING",
+      "drug_reaction_count": 194,
+      "prr": 1.92,
+      "ror": 1.96,
+      "chi_square": 86.03,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FALL",
+      "drug_reaction_count": 127,
+      "prr": 1.76,
+      "ror": 1.79,
+      "chi_square": 41.88,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PNEUMONIA",
+      "drug_reaction_count": 119,
+      "prr": 1.7,
+      "ror": 1.72,
+      "chi_square": 34.4,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PAIN",
+      "drug_reaction_count": 222,
+      "prr": 1.66,
+      "ror": 1.7,
+      "chi_square": 59.51,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DYSPNOEA",
+      "drug_reaction_count": 202,
+      "prr": 1.65,
+      "ror": 1.68,
+      "chi_square": 52.27,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ASTHENIA",
+      "drug_reaction_count": 134,
+      "prr": 1.64,
+      "ror": 1.66,
+      "chi_square": 33.8,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PYREXIA",
+      "drug_reaction_count": 121,
+      "prr": 1.61,
+      "ror": 1.63,
+      "chi_square": 27.83,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "NAUSEA",
+      "drug_reaction_count": 245,
+      "prr": 1.44,
+      "ror": 1.46,
+      "chi_square": 33.53,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 191,
+      "prr": 1.38,
+      "ror": 1.39,
+      "chi_square": 20.06,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIZZINESS",
+      "drug_reaction_count": 144,
+      "prr": 1.34,
+      "ror": 1.35,
+      "chi_square": 12.14,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FATIGUE",
+      "drug_reaction_count": 180,
+      "prr": 1.07,
+      "ror": 1.07,
+      "chi_square": 0.82,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "HEADACHE",
+      "drug_reaction_count": 127,
+      "prr": 0.94,
+      "ror": 0.93,
+      "chi_square": 0.5,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "OFF LABEL USE",
+      "drug_reaction_count": 168,
+      "prr": 0.9,
+      "ror": 0.9,
+      "chi_square": 1.79,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "drug_reaction_count": 228,
+      "prr": 0.8,
+      "ror": 0.79,
+      "chi_square": 12.12,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 8.61,
+    "signal_score": 3.87,
+    "volume_score": 3.66,
+    "risk_index": 57.24,
+    "risk_tier": "HIGH",
+    "risk_color": "orange"
+  },
+  "cost_of_harm": {
+    "death_cost_usd": 177500000,
+    "hospitalization_cost_usd": 36300000,
+    "disability_cost_usd": 41400000,
+    "total_estimated_cost_usd": 255200000,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 2004,
+      "count": 30
+    },
+    {
+      "year": 2005,
+      "count": 44
+    },
+    {
+      "year": 2006,
+      "count": 27
+    },
+    {
+      "year": 2007,
+      "count": 50
+    },
+    {
+      "year": 2008,
+      "count": 73
+    },
+    {
+      "year": 2009,
+      "count": 59
+    },
+    {
+      "year": 2010,
+      "count": 68
+    },
+    {
+      "year": 2011,
+      "count": 71
+    },
+    {
+      "year": 2012,
+      "count": 67
+    },
+    {
+      "year": 2013,
+      "count": 101
+    },
+    {
+      "year": 2014,
+      "count": 103
+    },
+    {
+      "year": 2015,
+      "count": 143
+    },
+    {
+      "year": 2016,
+      "count": 108
+    },
+    {
+      "year": 2017,
+      "count": 147
+    },
+    {
+      "year": 2018,
+      "count": 360
+    },
+    {
+      "year": 2019,
+      "count": 374
+    },
+    {
+      "year": 2020,
+      "count": 369
+    },
+    {
+      "year": 2021,
+      "count": 360
+    },
+    {
+      "year": 2022,
+      "count": 512
+    },
+    {
+      "year": 2023,
+      "count": 361
+    },
+    {
+      "year": 2024,
+      "count": 415
+    },
+    {
+      "year": 2025,
+      "count": 607
+    },
+    {
+      "year": 2026,
+      "count": 85
+    }
+  ],
+  "top_reactions": [
+    {
+      "reaction": "Arthralgia",
+      "count": 248,
+      "percentage": 5.5
+    },
+    {
+      "reaction": "Nausea",
+      "count": 228,
+      "percentage": 5.0
+    },
+    {
+      "reaction": "Pain",
+      "count": 213,
+      "percentage": 4.7
+    },
+    {
+      "reaction": "Drug ineffective",
+      "count": 211,
+      "percentage": 4.7
+    },
+    {
+      "reaction": "Drug interaction",
+      "count": 193,
+      "percentage": 4.3
+    },
+    {
+      "reaction": "Diarrhoea",
+      "count": 186,
+      "percentage": 4.1
+    },
+    {
+      "reaction": "Vomiting",
+      "count": 184,
+      "percentage": 4.1
+    },
+    {
+      "reaction": "Dyspnoea",
+      "count": 174,
+      "percentage": 3.8
+    },
+    {
+      "reaction": "Fatigue",
+      "count": 171,
+      "percentage": 3.8
+    },
+    {
+      "reaction": "Off label use",
+      "count": 169,
+      "percentage": 3.7
+    },
+    {
+      "reaction": "General physical health deterioration",
+      "count": 146,
+      "percentage": 3.2
+    },
+    {
+      "reaction": "Dizziness",
+      "count": 132,
+      "percentage": 2.9
+    },
+    {
+      "reaction": "Asthenia",
+      "count": 131,
+      "percentage": 2.9
+    },
+    {
+      "reaction": "Anaemia",
+      "count": 127,
+      "percentage": 2.8
+    },
+    {
+      "reaction": "Condition aggravated",
+      "count": 125,
+      "percentage": 2.8
+    }
+  ],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 113,
+        "percentage": 2.5
+      },
+      "18-44": {
+        "count": 666,
+        "percentage": 14.7
+      },
+      "45-64": {
+        "count": 1380,
+        "percentage": 30.4
+      },
+      "65-74": {
+        "count": 693,
+        "percentage": 15.3
+      },
+      "75+": {
+        "count": 522,
+        "percentage": 11.5
+      },
+      "unknown": {
+        "count": 1157,
+        "percentage": 25.5
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 1746,
+        "percentage": 38.5
+      },
+      "female": {
+        "count": 2442,
+        "percentage": 53.8
+      },
+      "unknown": {
+        "count": 348,
+        "percentage": 7.7
+      }
+    },
+    "total_sample_records": 4536
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 355,
+      "percentage": 7.8
+    },
+    "hospitalization": {
+      "count": 2422,
+      "percentage": 53.4
+    },
+    "disability": {
+      "count": 207,
+      "percentage": 4.6
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 2025,
+      "percentage": 44.6
+    },
+    "not_serious": {
+      "count": 89,
+      "percentage": 2.0
+    }
+  },
+  "timeline": [
+    {
+      "year": 2002,
+      "event": "Approved in Europe and other markets as Arcoxia",
+      "type": "approval",
+      "significance": "COX-2 selective inhibitor; FDA has not approved it for the US market."
+    },
+    {
+      "year": 2007,
+      "event": "FDA declines US approval",
+      "type": "warning",
+      "significance": "FDA advisory panel cited cardiovascular risk concerns similar to other COX-2 drugs."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": false,
+    "black_box_warning": false,
+    "recall_history": false,
+    "label_updated": false,
+    "withdrawn": false,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DRUG INTERACTION shows a strong disproportionality signal (PRR=6.67).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "GENERAL PHYSICAL HEALTH DETERIORATION shows a strong disproportionality signal (PRR=6.15).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ANAEMIA shows a strong disproportionality signal (PRR=3.16).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 7.8,
+    "serious_rate_pct": 98.0,
+    "hospitalization_rate_pct": 53.4,
+    "avg_patient_age": 80.3,
+    "flagged_signal_count": 6,
+    "strongest_signal_prr": 6.67,
+    "strongest_signal_reaction": "DRUG INTERACTION"
+  },
+  "meta": {
+    "drug_queried": "ETORICOXIB",
+    "sample_record_count": 4536,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-08T13:14:15.996966Z",
+    "cache_expires": "2026-07-09T13:14:15.996966Z"
+  },
+  "ai_summary": null
+}

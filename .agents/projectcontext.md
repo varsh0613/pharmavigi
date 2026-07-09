@@ -229,7 +229,7 @@ React Frontend (Lovable)
          ↕
    FastAPI Backend
     ↕          ↕          ↕
-openFDA     Your CSVs   Claude
+openFDA     Your CSVs   Gemini
 Live API    61K + 500K  API
          ↕
     JSON Cache

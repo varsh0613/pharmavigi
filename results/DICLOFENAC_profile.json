@@ -1,0 +1,602 @@
+{
+  "drug_name": "DICLOFENAC",
+  "brand_name": "Diclofenac Sodium",
+  "drug_class": null,
+  "indication": "Uses for the temporary relief of arthritis pain ONLY in the following areas: hand, wrist, elbow (upper body areas) foot, ankle, knee (lower body areas) this product may take up to 7 days to work for a",
+  "manufacturer": "NuCare Pharmaceuticals,Inc.",
+  "approval_year": 1988,
+  "status": "Active",
+  "withdrawal_year": null,
+  "live_counts": {
+    "total_reports": 97776,
+    "serious_reports": 77358,
+    "death_reports": 11576,
+    "hospitalization_reports": 35111,
+    "disability_reports": 10624,
+    "life_threatening_reports": 10852,
+    "latest_report_year": 2026
+  },
+  "signals": [
+    {
+      "reaction": "PEMPHIGUS",
+      "drug_reaction_count": 7945,
+      "prr": 411.08,
+      "ror": 447.35,
+      "chi_square": 1088686.62,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "HAND DEFORMITY",
+      "drug_reaction_count": 7142,
+      "prr": 268.44,
+      "ror": 289.51,
+      "chi_square": 828704.27,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "GLOSSODYNIA",
+      "drug_reaction_count": 7754,
+      "prr": 115.36,
+      "ror": 125.21,
+      "chi_square": 564907.17,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "SYSTEMIC LUPUS ERYTHEMATOSUS",
+      "drug_reaction_count": 8179,
+      "prr": 65.0,
+      "ror": 70.84,
+      "chi_square": 392814.67,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ARTHROPATHY",
+      "drug_reaction_count": 7463,
+      "prr": 32.96,
+      "ror": 35.6,
+      "chi_square": 199998.5,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "RHEUMATOID ARTHRITIS",
+      "drug_reaction_count": 9995,
+      "prr": 20.73,
+      "ror": 22.98,
+      "chi_square": 171521.31,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "SWELLING",
+      "drug_reaction_count": 7703,
+      "prr": 19.23,
+      "ror": 20.79,
+      "chi_square": 122349.6,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "DRUG INTOLERANCE",
+      "drug_reaction_count": 7112,
+      "prr": 17.09,
+      "ror": 18.36,
+      "chi_square": 99988.19,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "JOINT SWELLING",
+      "drug_reaction_count": 8334,
+      "prr": 15.89,
+      "ror": 17.28,
+      "chi_square": 108634.68,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ABDOMINAL DISCOMFORT",
+      "drug_reaction_count": 9155,
+      "prr": 12.41,
+      "ror": 13.59,
+      "chi_square": 91301.24,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ALOPECIA",
+      "drug_reaction_count": 8520,
+      "prr": 9.63,
+      "ror": 10.45,
+      "chi_square": 63552.2,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "HYPERSENSITIVITY",
+      "drug_reaction_count": 7478,
+      "prr": 8.97,
+      "ror": 9.63,
+      "chi_square": 51211.54,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "drug_reaction_count": 9704,
+      "prr": 5.13,
+      "ror": 5.59,
+      "chi_square": 32143.51,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "RASH",
+      "drug_reaction_count": 9589,
+      "prr": 4.84,
+      "ror": 5.26,
+      "chi_square": 29187.78,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "PAIN",
+      "drug_reaction_count": 13615,
+      "prr": 4.81,
+      "ror": 5.43,
+      "chi_square": 41375.03,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "FATIGUE",
+      "drug_reaction_count": 12459,
+      "prr": 3.48,
+      "ror": 3.84,
+      "chi_square": 22488.19,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "HEADACHE",
+      "drug_reaction_count": 7549,
+      "prr": 2.6,
+      "ror": 2.74,
+      "chi_square": 7576.25,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "drug_reaction_count": 15490,
+      "prr": 2.54,
+      "ror": 2.82,
+      "chi_square": 15179.22,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "OFF LABEL USE",
+      "drug_reaction_count": 10003,
+      "prr": 2.51,
+      "ror": 2.68,
+      "chi_square": 9335.37,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "NAUSEA",
+      "drug_reaction_count": 7841,
+      "prr": 2.15,
+      "ror": 2.25,
+      "chi_square": 4933.88,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 9.45,
+    "signal_score": 10,
+    "volume_score": 4.99,
+    "risk_index": 87.78,
+    "risk_tier": "CRITICAL",
+    "risk_color": "red"
+  },
+  "cost_of_harm": {
+    "death_cost_usd": 5788000000,
+    "hospitalization_cost_usd": 526665000,
+    "disability_cost_usd": 2124800000,
+    "total_estimated_cost_usd": 8439465000,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 1999,
+      "count": 1
+    },
+    {
+      "year": 2001,
+      "count": 2
+    },
+    {
+      "year": 2002,
+      "count": 2
+    },
+    {
+      "year": 2003,
+      "count": 2
+    },
+    {
+      "year": 2004,
+      "count": 936
+    },
+    {
+      "year": 2005,
+      "count": 1059
+    },
+    {
+      "year": 2006,
+      "count": 1055
+    },
+    {
+      "year": 2007,
+      "count": 1151
+    },
+    {
+      "year": 2008,
+      "count": 1340
+    },
+    {
+      "year": 2009,
+      "count": 1455
+    },
+    {
+      "year": 2010,
+      "count": 1675
+    },
+    {
+      "year": 2011,
+      "count": 2043
+    },
+    {
+      "year": 2012,
+      "count": 2218
+    },
+    {
+      "year": 2013,
+      "count": 2231
+    },
+    {
+      "year": 2014,
+      "count": 2396
+    },
+    {
+      "year": 2015,
+      "count": 3018
+    },
+    {
+      "year": 2016,
+      "count": 4333
+    },
+    {
+      "year": 2017,
+      "count": 4444
+    },
+    {
+      "year": 2018,
+      "count": 7390
+    },
+    {
+      "year": 2019,
+      "count": 8079
+    },
+    {
+      "year": 2020,
+      "count": 8917
+    },
+    {
+      "year": 2021,
+      "count": 8946
+    },
+    {
+      "year": 2022,
+      "count": 7868
+    },
+    {
+      "year": 2023,
+      "count": 7614
+    },
+    {
+      "year": 2024,
+      "count": 9244
+    },
+    {
+      "year": 2025,
+      "count": 8786
+    },
+    {
+      "year": 2026,
+      "count": 1596
+    }
+  ],
+  "top_reactions": [
+    {
+      "reaction": "Drug ineffective",
+      "count": 356,
+      "percentage": 7.1
+    },
+    {
+      "reaction": "Pain",
+      "count": 286,
+      "percentage": 5.7
+    },
+    {
+      "reaction": "Nausea",
+      "count": 281,
+      "percentage": 5.6
+    },
+    {
+      "reaction": "Headache",
+      "count": 277,
+      "percentage": 5.5
+    },
+    {
+      "reaction": "Arthralgia",
+      "count": 248,
+      "percentage": 5.0
+    },
+    {
+      "reaction": "Fatigue",
+      "count": 243,
+      "percentage": 4.9
+    },
+    {
+      "reaction": "Diarrhoea",
+      "count": 223,
+      "percentage": 4.5
+    },
+    {
+      "reaction": "Dyspnoea",
+      "count": 202,
+      "percentage": 4.0
+    },
+    {
+      "reaction": "Vomiting",
+      "count": 192,
+      "percentage": 3.8
+    },
+    {
+      "reaction": "Malaise",
+      "count": 182,
+      "percentage": 3.6
+    },
+    {
+      "reaction": "Pain in extremity",
+      "count": 169,
+      "percentage": 3.4
+    },
+    {
+      "reaction": "Dizziness",
+      "count": 162,
+      "percentage": 3.2
+    },
+    {
+      "reaction": "Asthenia",
+      "count": 151,
+      "percentage": 3.0
+    },
+    {
+      "reaction": "Pyrexia",
+      "count": 142,
+      "percentage": 2.8
+    },
+    {
+      "reaction": "Fall",
+      "count": 135,
+      "percentage": 2.7
+    }
+  ],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 139,
+        "percentage": 2.8
+      },
+      "18-44": {
+        "count": 783,
+        "percentage": 15.7
+      },
+      "45-64": {
+        "count": 1654,
+        "percentage": 33.1
+      },
+      "65-74": {
+        "count": 765,
+        "percentage": 15.3
+      },
+      "75+": {
+        "count": 578,
+        "percentage": 11.6
+      },
+      "unknown": {
+        "count": 1061,
+        "percentage": 21.2
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 1653,
+        "percentage": 33.1
+      },
+      "female": {
+        "count": 3023,
+        "percentage": 60.5
+      },
+      "unknown": {
+        "count": 324,
+        "percentage": 6.5
+      }
+    },
+    "total_sample_records": 5000
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 369,
+      "percentage": 7.4
+    },
+    "hospitalization": {
+      "count": 1789,
+      "percentage": 35.8
+    },
+    "disability": {
+      "count": 267,
+      "percentage": 5.3
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 2005,
+      "percentage": 40.1
+    },
+    "not_serious": {
+      "count": 1206,
+      "percentage": 24.1
+    }
+  },
+  "timeline": [
+    {
+      "year": 1988,
+      "event": "FDA approval",
+      "type": "approval",
+      "significance": "Approved as a non-selective NSAID for pain and inflammation."
+    },
+    {
+      "year": 2005,
+      "event": "NSAID class label update",
+      "type": "label_change",
+      "significance": "FDA required cardiovascular and GI warning language across all prescription NSAIDs."
+    },
+    {
+      "year": 2013,
+      "event": "European review flags CV risk at high doses",
+      "type": "warning",
+      "significance": "EMA restricted use in patients with cardiovascular disease."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": true,
+    "black_box_warning": false,
+    "recall_history": false,
+    "label_updated": true,
+    "withdrawn": false,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "PEMPHIGUS shows a strong disproportionality signal (PRR=411.08).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "HAND DEFORMITY shows a strong disproportionality signal (PRR=268.44).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "GLOSSODYNIA shows a strong disproportionality signal (PRR=115.36).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "SYSTEMIC LUPUS ERYTHEMATOSUS shows a strong disproportionality signal (PRR=65.0).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ARTHROPATHY shows a strong disproportionality signal (PRR=32.96).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "RHEUMATOID ARTHRITIS shows a strong disproportionality signal (PRR=20.73).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "SWELLING shows a strong disproportionality signal (PRR=19.23).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DRUG INTOLERANCE shows a strong disproportionality signal (PRR=17.09).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "JOINT SWELLING shows a strong disproportionality signal (PRR=15.89).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ABDOMINAL DISCOMFORT shows a strong disproportionality signal (PRR=12.41).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ALOPECIA shows a strong disproportionality signal (PRR=9.63).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "HYPERSENSITIVITY shows a strong disproportionality signal (PRR=8.97).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ARTHRALGIA shows a strong disproportionality signal (PRR=5.13).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "RASH shows a strong disproportionality signal (PRR=4.84).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "PAIN shows a strong disproportionality signal (PRR=4.81).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "FATIGUE shows a strong disproportionality signal (PRR=3.48).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 11.8,
+    "serious_rate_pct": 79.1,
+    "hospitalization_rate_pct": 35.9,
+    "avg_patient_age": 144.3,
+    "flagged_signal_count": 20,
+    "strongest_signal_prr": 411.08,
+    "strongest_signal_reaction": "PEMPHIGUS"
+  },
+  "meta": {
+    "drug_queried": "DICLOFENAC",
+    "sample_record_count": 5000,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-08T12:55:48.548624Z",
+    "cache_expires": "2026-07-09T12:55:48.548624Z"
+  },
+  "ai_summary": null
+}

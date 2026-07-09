@@ -1,0 +1,461 @@
+{
+  "drug_name": "IBUPROFEN",
+  "brand_name": "Ibuprofen Dye Free",
+  "drug_class": "Nonsteroidal Anti-inflammatory Drug [EPC]",
+  "indication": "Uses temporarily relieves minor aches and pains due to: headache toothache backache menstrual cramps the common cold muscular aches minor pain of arthritis temporarily reduces fever",
+  "manufacturer": "CVS Pharmacy",
+  "approval_year": 1974,
+  "status": "Active",
+  "withdrawal_year": null,
+  "live_counts": {
+    "total_reports": 215233,
+    "serious_reports": 156358,
+    "death_reports": 17592,
+    "hospitalization_reports": 74552,
+    "disability_reports": 9451,
+    "life_threatening_reports": 13669,
+    "latest_report_year": 2026
+  },
+  "signals": [
+    {
+      "reaction": "JOINT SWELLING",
+      "drug_reaction_count": 6399,
+      "prr": 5.42,
+      "ror": 5.55,
+      "chi_square": 21896.18,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ACUTE KIDNEY INJURY",
+      "drug_reaction_count": 6797,
+      "prr": 4.52,
+      "ror": 4.63,
+      "chi_square": 17890.49,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "DRUG HYPERSENSITIVITY",
+      "drug_reaction_count": 6732,
+      "prr": 3.44,
+      "ror": 3.52,
+      "chi_square": 11330.76,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "drug_reaction_count": 11199,
+      "prr": 2.69,
+      "ror": 2.78,
+      "chi_square": 11749.17,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PAIN",
+      "drug_reaction_count": 15921,
+      "prr": 2.55,
+      "ror": 2.67,
+      "chi_square": 15050.78,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PYREXIA",
+      "drug_reaction_count": 8221,
+      "prr": 2.34,
+      "ror": 2.39,
+      "chi_square": 6237.28,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ANXIETY",
+      "drug_reaction_count": 6631,
+      "prr": 2.28,
+      "ror": 2.32,
+      "chi_square": 4732.56,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "VOMITING",
+      "drug_reaction_count": 10535,
+      "prr": 2.22,
+      "ror": 2.28,
+      "chi_square": 7059.47,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PRURITUS",
+      "drug_reaction_count": 8225,
+      "prr": 2.18,
+      "ror": 2.22,
+      "chi_square": 5200.79,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "RASH",
+      "drug_reaction_count": 9359,
+      "prr": 2.13,
+      "ror": 2.19,
+      "chi_square": 5632.29,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "HEADACHE",
+      "drug_reaction_count": 12777,
+      "prr": 2.01,
+      "ror": 2.07,
+      "chi_square": 6506.53,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FATIGUE",
+      "drug_reaction_count": 15074,
+      "prr": 1.91,
+      "ror": 1.98,
+      "chi_square": 6632.77,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DYSPNOEA",
+      "drug_reaction_count": 11030,
+      "prr": 1.91,
+      "ror": 1.96,
+      "chi_square": 4849.5,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "NAUSEA",
+      "drug_reaction_count": 14240,
+      "prr": 1.78,
+      "ror": 1.83,
+      "chi_square": 4915.18,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ASTHENIA",
+      "drug_reaction_count": 6746,
+      "prr": 1.76,
+      "ror": 1.78,
+      "chi_square": 2201.6,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIZZINESS",
+      "drug_reaction_count": 8721,
+      "prr": 1.72,
+      "ror": 1.75,
+      "chi_square": 2629.99,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 10179,
+      "prr": 1.56,
+      "ror": 1.58,
+      "chi_square": 2052.82,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "MALAISE",
+      "drug_reaction_count": 6317,
+      "prr": 1.4,
+      "ror": 1.41,
+      "chi_square": 723.38,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "drug_reaction_count": 16909,
+      "prr": 1.25,
+      "ror": 1.27,
+      "chi_square": 898.19,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "OFF LABEL USE",
+      "drug_reaction_count": 8723,
+      "prr": 0.99,
+      "ror": 0.99,
+      "chi_square": 1.81,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 8.59,
+    "signal_score": 2.89,
+    "volume_score": 5.33,
+    "risk_index": 56.58,
+    "risk_tier": "HIGH",
+    "risk_color": "orange"
+  },
+  "cost_of_harm": {
+    "death_cost_usd": 8796000000,
+    "hospitalization_cost_usd": 1118280000,
+    "disability_cost_usd": 1890200000,
+    "total_estimated_cost_usd": 11804480000,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 1998,
+      "count": 1
+    },
+    {
+      "year": 2001,
+      "count": 2
+    },
+    {
+      "year": 2002,
+      "count": 1
+    },
+    {
+      "year": 2003,
+      "count": 6
+    },
+    {
+      "year": 2004,
+      "count": 1717
+    },
+    {
+      "year": 2005,
+      "count": 2266
+    },
+    {
+      "year": 2006,
+      "count": 2164
+    },
+    {
+      "year": 2007,
+      "count": 2258
+    },
+    {
+      "year": 2008,
+      "count": 2423
+    },
+    {
+      "year": 2009,
+      "count": 3200
+    },
+    {
+      "year": 2010,
+      "count": 4397
+    },
+    {
+      "year": 2011,
+      "count": 6762
+    },
+    {
+      "year": 2012,
+      "count": 9256
+    },
+    {
+      "year": 2013,
+      "count": 8039
+    },
+    {
+      "year": 2014,
+      "count": 7544
+    },
+    {
+      "year": 2015,
+      "count": 10116
+    },
+    {
+      "year": 2016,
+      "count": 13519
+    },
+    {
+      "year": 2017,
+      "count": 11975
+    },
+    {
+      "year": 2018,
+      "count": 16337
+    },
+    {
+      "year": 2019,
+      "count": 17828
+    },
+    {
+      "year": 2020,
+      "count": 16834
+    },
+    {
+      "year": 2021,
+      "count": 15975
+    },
+    {
+      "year": 2022,
+      "count": 15037
+    },
+    {
+      "year": 2023,
+      "count": 17116
+    },
+    {
+      "year": 2024,
+      "count": 14008
+    },
+    {
+      "year": 2025,
+      "count": 13451
+    },
+    {
+      "year": 2026,
+      "count": 3105
+    }
+  ],
+  "top_reactions": [],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "18-44": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "45-64": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "65-74": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "75+": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "unknown": {
+        "count": 0,
+        "percentage": 0.0
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "female": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "unknown": {
+        "count": 0,
+        "percentage": 0.0
+      }
+    },
+    "total_sample_records": 0
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "hospitalization": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "disability": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "not_serious": {
+      "count": 0,
+      "percentage": 0.0
+    }
+  },
+  "timeline": [
+    {
+      "year": 1974,
+      "event": "FDA approval",
+      "type": "approval",
+      "significance": "Approved as a prescription NSAID, later switched to OTC."
+    },
+    {
+      "year": 1984,
+      "event": "OTC approval",
+      "type": "label_change",
+      "significance": "Made available without prescription at lower doses."
+    },
+    {
+      "year": 2005,
+      "event": "NSAID class label update",
+      "type": "label_change",
+      "significance": "Cardiovascular and GI risk warnings added class-wide."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": true,
+    "black_box_warning": false,
+    "recall_history": false,
+    "label_updated": true,
+    "withdrawn": false,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "JOINT SWELLING shows a strong disproportionality signal (PRR=5.42).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ACUTE KIDNEY INJURY shows a strong disproportionality signal (PRR=4.52).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DRUG HYPERSENSITIVITY shows a strong disproportionality signal (PRR=3.44).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 8.2,
+    "serious_rate_pct": 72.6,
+    "hospitalization_rate_pct": 34.6,
+    "avg_patient_age": null,
+    "flagged_signal_count": 11,
+    "strongest_signal_prr": 5.42,
+    "strongest_signal_reaction": "JOINT SWELLING"
+  },
+  "meta": {
+    "drug_queried": "IBUPROFEN",
+    "sample_record_count": 0,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-08T12:57:10.961318Z",
+    "cache_expires": "2026-07-09T12:57:10.961318Z"
+  },
+  "ai_summary": null
+}

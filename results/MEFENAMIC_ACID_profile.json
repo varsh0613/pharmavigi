@@ -1,0 +1,560 @@
+{
+  "drug_name": "MEFENAMIC ACID",
+  "brand_name": "Mefenamic Acid",
+  "drug_class": "Nonsteroidal Anti-inflammatory Drug [EPC]",
+  "indication": "INDICATIONS AND USAGE Carefully consider the potential benefits and risks of mefenamic acid capsules and other treatment options before deciding to use mefenamic acid capsules. Use the lowest effectiv",
+  "manufacturer": "Advanced Rx of Tennessee, LLC",
+  "approval_year": 1967,
+  "status": "Active",
+  "withdrawal_year": null,
+  "live_counts": {
+    "total_reports": 3586,
+    "serious_reports": 2870,
+    "death_reports": 169,
+    "hospitalization_reports": 1056,
+    "disability_reports": 117,
+    "life_threatening_reports": 188,
+    "latest_report_year": 2026
+  },
+  "signals": [
+    {
+      "reaction": "STRESS",
+      "drug_reaction_count": 151,
+      "prr": 12.31,
+      "ror": 12.8,
+      "chi_square": 1559.06,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "DRUG INTOLERANCE",
+      "drug_reaction_count": 148,
+      "prr": 9.02,
+      "ror": 9.36,
+      "chi_square": 1049.84,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "RHEUMATOID ARTHRITIS",
+      "drug_reaction_count": 149,
+      "prr": 7.71,
+      "ror": 8.0,
+      "chi_square": 866.28,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "PERIPHERAL SWELLING",
+      "drug_reaction_count": 143,
+      "prr": 5.47,
+      "ror": 5.65,
+      "chi_square": 520.66,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "BACK PAIN",
+      "drug_reaction_count": 143,
+      "prr": 3.59,
+      "ror": 3.7,
+      "chi_square": 267.12,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "PAIN IN EXTREMITY",
+      "drug_reaction_count": 181,
+      "prr": 3.57,
+      "ror": 3.71,
+      "chi_square": 336.75,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "HEADACHE",
+      "drug_reaction_count": 372,
+      "prr": 3.47,
+      "ror": 3.76,
+      "chi_square": 671.41,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "FATIGUE",
+      "drug_reaction_count": 422,
+      "prr": 3.18,
+      "ror": 3.47,
+      "chi_square": 651.28,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "MALAISE",
+      "drug_reaction_count": 238,
+      "prr": 3.15,
+      "ror": 3.3,
+      "chi_square": 354.76,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "DIZZINESS",
+      "drug_reaction_count": 265,
+      "prr": 3.11,
+      "ror": 3.28,
+      "chi_square": 386.31,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "drug_reaction_count": 220,
+      "prr": 3.11,
+      "ror": 3.25,
+      "chi_square": 319.44,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "NAUSEA",
+      "drug_reaction_count": 416,
+      "prr": 3.09,
+      "ror": 3.36,
+      "chi_square": 607.97,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "PYREXIA",
+      "drug_reaction_count": 162,
+      "prr": 2.73,
+      "ror": 2.81,
+      "chi_square": 178.24,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PAIN",
+      "drug_reaction_count": 284,
+      "prr": 2.69,
+      "ror": 2.83,
+      "chi_square": 308.17,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "VOMITING",
+      "drug_reaction_count": 180,
+      "prr": 2.25,
+      "ror": 2.31,
+      "chi_square": 126.32,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ASTHENIA",
+      "drug_reaction_count": 145,
+      "prr": 2.25,
+      "ror": 2.3,
+      "chi_square": 101.24,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "drug_reaction_count": 476,
+      "prr": 2.11,
+      "ror": 2.28,
+      "chi_square": 294.93,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DYSPNOEA",
+      "drug_reaction_count": 195,
+      "prr": 2.01,
+      "ror": 2.07,
+      "chi_square": 100.95,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 210,
+      "prr": 1.92,
+      "ror": 1.97,
+      "chi_square": 93.9,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "OFF LABEL USE",
+      "drug_reaction_count": 194,
+      "prr": 1.32,
+      "ror": 1.33,
+      "chi_square": 15.04,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 8.13,
+    "signal_score": 4.16,
+    "volume_score": 3.55,
+    "risk_index": 56.26,
+    "risk_tier": "HIGH",
+    "risk_color": "orange"
+  },
+  "cost_of_harm": {
+    "death_cost_usd": 84500000,
+    "hospitalization_cost_usd": 15840000,
+    "disability_cost_usd": 23400000,
+    "total_estimated_cost_usd": 123740000,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 2004,
+      "count": 60
+    },
+    {
+      "year": 2005,
+      "count": 75
+    },
+    {
+      "year": 2006,
+      "count": 68
+    },
+    {
+      "year": 2007,
+      "count": 36
+    },
+    {
+      "year": 2008,
+      "count": 35
+    },
+    {
+      "year": 2009,
+      "count": 43
+    },
+    {
+      "year": 2010,
+      "count": 26
+    },
+    {
+      "year": 2011,
+      "count": 71
+    },
+    {
+      "year": 2012,
+      "count": 100
+    },
+    {
+      "year": 2013,
+      "count": 73
+    },
+    {
+      "year": 2014,
+      "count": 121
+    },
+    {
+      "year": 2015,
+      "count": 254
+    },
+    {
+      "year": 2016,
+      "count": 327
+    },
+    {
+      "year": 2017,
+      "count": 375
+    },
+    {
+      "year": 2018,
+      "count": 434
+    },
+    {
+      "year": 2019,
+      "count": 436
+    },
+    {
+      "year": 2020,
+      "count": 328
+    },
+    {
+      "year": 2021,
+      "count": 198
+    },
+    {
+      "year": 2022,
+      "count": 142
+    },
+    {
+      "year": 2023,
+      "count": 170
+    },
+    {
+      "year": 2024,
+      "count": 108
+    },
+    {
+      "year": 2025,
+      "count": 83
+    },
+    {
+      "year": 2026,
+      "count": 24
+    }
+  ],
+  "top_reactions": [
+    {
+      "reaction": "Drug ineffective",
+      "count": 472,
+      "percentage": 13.2
+    },
+    {
+      "reaction": "Fatigue",
+      "count": 414,
+      "percentage": 11.5
+    },
+    {
+      "reaction": "Nausea",
+      "count": 394,
+      "percentage": 11.0
+    },
+    {
+      "reaction": "Headache",
+      "count": 343,
+      "percentage": 9.6
+    },
+    {
+      "reaction": "Pain",
+      "count": 274,
+      "percentage": 7.6
+    },
+    {
+      "reaction": "Dizziness",
+      "count": 255,
+      "percentage": 7.1
+    },
+    {
+      "reaction": "Malaise",
+      "count": 219,
+      "percentage": 6.1
+    },
+    {
+      "reaction": "Arthralgia",
+      "count": 205,
+      "percentage": 5.7
+    },
+    {
+      "reaction": "Off label use",
+      "count": 198,
+      "percentage": 5.5
+    },
+    {
+      "reaction": "Diarrhoea",
+      "count": 192,
+      "percentage": 5.4
+    },
+    {
+      "reaction": "Pain in extremity",
+      "count": 172,
+      "percentage": 4.8
+    },
+    {
+      "reaction": "Dyspnoea",
+      "count": 170,
+      "percentage": 4.7
+    },
+    {
+      "reaction": "Vomiting",
+      "count": 159,
+      "percentage": 4.4
+    },
+    {
+      "reaction": "Stress",
+      "count": 150,
+      "percentage": 4.2
+    },
+    {
+      "reaction": "Rheumatoid arthritis",
+      "count": 150,
+      "percentage": 4.2
+    }
+  ],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 188,
+        "percentage": 5.2
+      },
+      "18-44": {
+        "count": 875,
+        "percentage": 24.4
+      },
+      "45-64": {
+        "count": 884,
+        "percentage": 24.6
+      },
+      "65-74": {
+        "count": 270,
+        "percentage": 7.5
+      },
+      "75+": {
+        "count": 210,
+        "percentage": 5.9
+      },
+      "unknown": {
+        "count": 1157,
+        "percentage": 32.3
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 860,
+        "percentage": 24.0
+      },
+      "female": {
+        "count": 2357,
+        "percentage": 65.7
+      },
+      "unknown": {
+        "count": 370,
+        "percentage": 10.3
+      }
+    },
+    "total_sample_records": 3587
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 169,
+      "percentage": 4.7
+    },
+    "hospitalization": {
+      "count": 1056,
+      "percentage": 29.4
+    },
+    "disability": {
+      "count": 117,
+      "percentage": 3.3
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 1814,
+      "percentage": 50.6
+    },
+    "not_serious": {
+      "count": 716,
+      "percentage": 20.0
+    }
+  },
+  "timeline": [
+    {
+      "year": 1967,
+      "event": "FDA approval as Ponstel",
+      "type": "approval",
+      "significance": "Fenamate NSAID approved for short-term pain relief."
+    },
+    {
+      "year": 2005,
+      "event": "NSAID class label update",
+      "type": "label_change",
+      "significance": "Cardiovascular/GI warnings added class-wide."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": true,
+    "black_box_warning": true,
+    "recall_history": false,
+    "label_updated": true,
+    "withdrawn": false,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "STRESS shows a strong disproportionality signal (PRR=12.31).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DRUG INTOLERANCE shows a strong disproportionality signal (PRR=9.02).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "RHEUMATOID ARTHRITIS shows a strong disproportionality signal (PRR=7.71).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "PERIPHERAL SWELLING shows a strong disproportionality signal (PRR=5.47).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "BACK PAIN shows a strong disproportionality signal (PRR=3.59).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "PAIN IN EXTREMITY shows a strong disproportionality signal (PRR=3.57).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "HEADACHE shows a strong disproportionality signal (PRR=3.47).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "FATIGUE shows a strong disproportionality signal (PRR=3.18).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "MALAISE shows a strong disproportionality signal (PRR=3.15).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DIZZINESS shows a strong disproportionality signal (PRR=3.11).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ARTHRALGIA shows a strong disproportionality signal (PRR=3.11).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "NAUSEA shows a strong disproportionality signal (PRR=3.09).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 4.7,
+    "serious_rate_pct": 80.0,
+    "hospitalization_rate_pct": 29.4,
+    "avg_patient_age": 69.4,
+    "flagged_signal_count": 18,
+    "strongest_signal_prr": 12.31,
+    "strongest_signal_reaction": "STRESS"
+  },
+  "meta": {
+    "drug_queried": "MEFENAMIC ACID",
+    "sample_record_count": 3587,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-08T13:09:59.779843Z",
+    "cache_expires": "2026-07-09T13:09:59.779843Z"
+  },
+  "ai_summary": null
+}

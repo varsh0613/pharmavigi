@@ -1,0 +1,510 @@
+{
+  "drug_name": "ETODOLAC",
+  "brand_name": "Etodolac",
+  "drug_class": "Nonsteroidal Anti-inflammatory Drug [EPC]",
+  "indication": "INDICATIONS AND USAGE Carefully consider the potential benefits and risks of etodolac tablets and other treatment options before deciding to use etodolac tablets. Use the lowest effective dose for the",
+  "manufacturer": "A-S Medication Solutions",
+  "approval_year": 1991,
+  "status": "Active",
+  "withdrawal_year": null,
+  "live_counts": {
+    "total_reports": 6182,
+    "serious_reports": 4011,
+    "death_reports": 488,
+    "hospitalization_reports": 2045,
+    "disability_reports": 208,
+    "life_threatening_reports": 269,
+    "latest_report_year": 2026
+  },
+  "signals": [
+    {
+      "reaction": "CHRONIC KIDNEY DISEASE",
+      "drug_reaction_count": 163,
+      "prr": 7.15,
+      "ror": 7.32,
+      "chi_square": 857.57,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "RENAL FAILURE",
+      "drug_reaction_count": 150,
+      "prr": 3.77,
+      "ror": 3.84,
+      "chi_square": 304.26,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "drug_reaction_count": 296,
+      "prr": 2.43,
+      "ror": 2.5,
+      "chi_square": 252.28,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "BACK PAIN",
+      "drug_reaction_count": 149,
+      "prr": 2.17,
+      "ror": 2.2,
+      "chi_square": 93.6,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PAIN IN EXTREMITY",
+      "drug_reaction_count": 182,
+      "prr": 2.08,
+      "ror": 2.11,
+      "chi_square": 102.6,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PAIN",
+      "drug_reaction_count": 367,
+      "prr": 2.01,
+      "ror": 2.08,
+      "chi_square": 192.04,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FALL",
+      "drug_reaction_count": 181,
+      "prr": 1.84,
+      "ror": 1.87,
+      "chi_square": 70.11,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ANXIETY",
+      "drug_reaction_count": 155,
+      "prr": 1.83,
+      "ror": 1.86,
+      "chi_square": 58.71,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PYREXIA",
+      "drug_reaction_count": 182,
+      "prr": 1.78,
+      "ror": 1.8,
+      "chi_square": 62.01,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "RASH",
+      "drug_reaction_count": 209,
+      "prr": 1.64,
+      "ror": 1.66,
+      "chi_square": 52.64,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PRURITUS",
+      "drug_reaction_count": 164,
+      "prr": 1.49,
+      "ror": 1.51,
+      "chi_square": 26.61,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIZZINESS",
+      "drug_reaction_count": 215,
+      "prr": 1.46,
+      "ror": 1.48,
+      "chi_square": 31.84,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DYSPNOEA",
+      "drug_reaction_count": 231,
+      "prr": 1.38,
+      "ror": 1.4,
+      "chi_square": 24.73,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "HEADACHE",
+      "drug_reaction_count": 252,
+      "prr": 1.36,
+      "ror": 1.38,
+      "chi_square": 24.76,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "MALAISE",
+      "drug_reaction_count": 177,
+      "prr": 1.36,
+      "ror": 1.37,
+      "chi_square": 16.8,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "NAUSEA",
+      "drug_reaction_count": 308,
+      "prr": 1.33,
+      "ror": 1.34,
+      "chi_square": 25.32,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 251,
+      "prr": 1.33,
+      "ror": 1.34,
+      "chi_square": 20.67,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FATIGUE",
+      "drug_reaction_count": 286,
+      "prr": 1.25,
+      "ror": 1.26,
+      "chi_square": 14.45,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "VOMITING",
+      "drug_reaction_count": 158,
+      "prr": 1.14,
+      "ror": 1.15,
+      "chi_square": 2.81,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "drug_reaction_count": 380,
+      "prr": 0.98,
+      "ror": 0.97,
+      "chi_square": 0.21,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 8.45,
+    "signal_score": 3.27,
+    "volume_score": 3.79,
+    "risk_index": 54.46,
+    "risk_tier": "HIGH",
+    "risk_color": "orange"
+  },
+  "cost_of_harm": {
+    "death_cost_usd": 244000000,
+    "hospitalization_cost_usd": 30675000,
+    "disability_cost_usd": 41600000,
+    "total_estimated_cost_usd": 316275000,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 2004,
+      "count": 195
+    },
+    {
+      "year": 2005,
+      "count": 255
+    },
+    {
+      "year": 2006,
+      "count": 226
+    },
+    {
+      "year": 2007,
+      "count": 180
+    },
+    {
+      "year": 2008,
+      "count": 179
+    },
+    {
+      "year": 2009,
+      "count": 215
+    },
+    {
+      "year": 2010,
+      "count": 240
+    },
+    {
+      "year": 2011,
+      "count": 369
+    },
+    {
+      "year": 2012,
+      "count": 394
+    },
+    {
+      "year": 2013,
+      "count": 335
+    },
+    {
+      "year": 2014,
+      "count": 311
+    },
+    {
+      "year": 2015,
+      "count": 426
+    },
+    {
+      "year": 2016,
+      "count": 492
+    },
+    {
+      "year": 2017,
+      "count": 403
+    },
+    {
+      "year": 2018,
+      "count": 424
+    },
+    {
+      "year": 2019,
+      "count": 376
+    },
+    {
+      "year": 2020,
+      "count": 312
+    },
+    {
+      "year": 2021,
+      "count": 219
+    },
+    {
+      "year": 2022,
+      "count": 184
+    },
+    {
+      "year": 2023,
+      "count": 153
+    },
+    {
+      "year": 2024,
+      "count": 119
+    },
+    {
+      "year": 2025,
+      "count": 149
+    },
+    {
+      "year": 2026,
+      "count": 28
+    }
+  ],
+  "top_reactions": [
+    {
+      "reaction": "Drug ineffective",
+      "count": 267,
+      "percentage": 5.3
+    },
+    {
+      "reaction": "Pain",
+      "count": 220,
+      "percentage": 4.4
+    },
+    {
+      "reaction": "Arthralgia",
+      "count": 188,
+      "percentage": 3.8
+    },
+    {
+      "reaction": "Fatigue",
+      "count": 181,
+      "percentage": 3.6
+    },
+    {
+      "reaction": "Chronic kidney disease",
+      "count": 164,
+      "percentage": 3.3
+    },
+    {
+      "reaction": "Nausea",
+      "count": 160,
+      "percentage": 3.2
+    },
+    {
+      "reaction": "Diarrhoea",
+      "count": 151,
+      "percentage": 3.0
+    },
+    {
+      "reaction": "Headache",
+      "count": 149,
+      "percentage": 3.0
+    },
+    {
+      "reaction": "Acute kidney injury",
+      "count": 141,
+      "percentage": 2.8
+    },
+    {
+      "reaction": "Rash",
+      "count": 124,
+      "percentage": 2.5
+    },
+    {
+      "reaction": "Drug hypersensitivity",
+      "count": 121,
+      "percentage": 2.4
+    },
+    {
+      "reaction": "Fall",
+      "count": 118,
+      "percentage": 2.4
+    },
+    {
+      "reaction": "Renal failure",
+      "count": 111,
+      "percentage": 2.2
+    },
+    {
+      "reaction": "Pain in extremity",
+      "count": 109,
+      "percentage": 2.2
+    },
+    {
+      "reaction": "Dizziness",
+      "count": 105,
+      "percentage": 2.1
+    }
+  ],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 15,
+        "percentage": 0.3
+      },
+      "18-44": {
+        "count": 504,
+        "percentage": 10.1
+      },
+      "45-64": {
+        "count": 1544,
+        "percentage": 30.9
+      },
+      "65-74": {
+        "count": 767,
+        "percentage": 15.3
+      },
+      "75+": {
+        "count": 489,
+        "percentage": 9.8
+      },
+      "unknown": {
+        "count": 1545,
+        "percentage": 30.9
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 1681,
+        "percentage": 33.6
+      },
+      "female": {
+        "count": 3105,
+        "percentage": 62.1
+      },
+      "unknown": {
+        "count": 214,
+        "percentage": 4.3
+      }
+    },
+    "total_sample_records": 5000
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 366,
+      "percentage": 7.3
+    },
+    "hospitalization": {
+      "count": 1622,
+      "percentage": 32.4
+    },
+    "disability": {
+      "count": 168,
+      "percentage": 3.4
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 1629,
+      "percentage": 32.6
+    },
+    "not_serious": {
+      "count": 1747,
+      "percentage": 34.9
+    }
+  },
+  "timeline": [
+    {
+      "year": 1991,
+      "event": "FDA approval as Lodine",
+      "type": "approval",
+      "significance": "Preferentially COX-2 selective NSAID approved for arthritis."
+    },
+    {
+      "year": 2005,
+      "event": "NSAID class label update",
+      "type": "label_change",
+      "significance": "Cardiovascular/GI warnings added class-wide."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": true,
+    "black_box_warning": true,
+    "recall_history": false,
+    "label_updated": true,
+    "withdrawn": false,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "CHRONIC KIDNEY DISEASE shows a strong disproportionality signal (PRR=7.15).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "RENAL FAILURE shows a strong disproportionality signal (PRR=3.77).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 7.9,
+    "serious_rate_pct": 64.9,
+    "hospitalization_rate_pct": 33.1,
+    "avg_patient_age": 736.7,
+    "flagged_signal_count": 6,
+    "strongest_signal_prr": 7.15,
+    "strongest_signal_reaction": "CHRONIC KIDNEY DISEASE"
+  },
+  "meta": {
+    "drug_queried": "ETODOLAC",
+    "sample_record_count": 5000,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-08T13:05:47.401903Z",
+    "cache_expires": "2026-07-09T13:05:47.401903Z"
+  },
+  "ai_summary": null
+}
