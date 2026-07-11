@@ -1,0 +1,528 @@
+{
+  "drug_name": "FLURBIPROFEN",
+  "brand_name": "Flurbiprofen Sodium",
+  "drug_class": null,
+  "indication": "INDICATIONS AND USAGE Flurbiprofen sodium ophthalmic solution is indicated for the inhibition of intraoperative miosis.",
+  "manufacturer": "Bausch & Lomb Incorporated",
+  "approval_year": 1988,
+  "status": "Active",
+  "withdrawal_year": null,
+  "live_counts": {
+    "total_reports": 1986,
+    "serious_reports": 1760,
+    "death_reports": 275,
+    "hospitalization_reports": 819,
+    "disability_reports": 60,
+    "life_threatening_reports": 204,
+    "latest_report_year": 2026
+  },
+  "signals": [
+    {
+      "reaction": "ANGIOEDEMA",
+      "drug_reaction_count": 91,
+      "prr": 21.75,
+      "ror": 22.75,
+      "chi_square": 1780.64,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "URTICARIA",
+      "drug_reaction_count": 74,
+      "prr": 4.71,
+      "ror": 4.86,
+      "chi_square": 214.29,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "ACUTE KIDNEY INJURY",
+      "drug_reaction_count": 60,
+      "prr": 4.17,
+      "ror": 4.27,
+      "chi_square": 142.35,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "DRUG INTERACTION",
+      "drug_reaction_count": 52,
+      "prr": 3.45,
+      "ror": 3.52,
+      "chi_square": 88.78,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "PYREXIA",
+      "drug_reaction_count": 105,
+      "prr": 3.19,
+      "ror": 3.31,
+      "chi_square": 158.3,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "DRUG HYPERSENSITIVITY",
+      "drug_reaction_count": 52,
+      "prr": 2.81,
+      "ror": 2.85,
+      "chi_square": 59.2,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "SOMNOLENCE",
+      "drug_reaction_count": 52,
+      "prr": 2.73,
+      "ror": 2.77,
+      "chi_square": 55.62,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PNEUMONIA",
+      "drug_reaction_count": 73,
+      "prr": 2.39,
+      "ror": 2.44,
+      "chi_square": 58.27,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ABDOMINAL PAIN",
+      "drug_reaction_count": 51,
+      "prr": 2.31,
+      "ror": 2.35,
+      "chi_square": 37.17,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "drug_reaction_count": 69,
+      "prr": 1.76,
+      "ror": 1.79,
+      "chi_square": 22.42,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "VOMITING",
+      "drug_reaction_count": 75,
+      "prr": 1.69,
+      "ror": 1.72,
+      "chi_square": 20.98,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "RASH",
+      "drug_reaction_count": 64,
+      "prr": 1.56,
+      "ror": 1.58,
+      "chi_square": 12.69,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "OFF LABEL USE",
+      "drug_reaction_count": 111,
+      "prr": 1.36,
+      "ror": 1.38,
+      "chi_square": 10.65,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DYSPNOEA",
+      "drug_reaction_count": 71,
+      "prr": 1.32,
+      "ror": 1.33,
+      "chi_square": 5.42,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "NAUSEA",
+      "drug_reaction_count": 98,
+      "prr": 1.31,
+      "ror": 1.33,
+      "chi_square": 7.29,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "MALAISE",
+      "drug_reaction_count": 54,
+      "prr": 1.29,
+      "ror": 1.3,
+      "chi_square": 3.32,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PAIN",
+      "drug_reaction_count": 75,
+      "prr": 1.28,
+      "ror": 1.29,
+      "chi_square": 4.48,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 67,
+      "prr": 1.1,
+      "ror": 1.11,
+      "chi_square": 0.57,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "drug_reaction_count": 112,
+      "prr": 0.9,
+      "ror": 0.89,
+      "chi_square": 1.34,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FATIGUE",
+      "drug_reaction_count": 52,
+      "prr": 0.71,
+      "ror": 0.7,
+      "chi_square": 6.27,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 8.8,
+    "signal_score": 5.46,
+    "volume_score": 3.3,
+    "risk_index": 58.63,
+    "risk_tier": "HIGH",
+    "risk_color": "orange",
+    "death_pct": 13.85,
+    "hosp_pct": 41.24,
+    "disab_pct": 3.02
+  },
+  "cost_of_harm": {
+    "death_cost_usd": 137500000,
+    "hospitalization_cost_usd": 12285000,
+    "disability_cost_usd": 12000000,
+    "total_estimated_cost_usd": 161785000,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 2004,
+      "count": 63
+    },
+    {
+      "year": 2005,
+      "count": 46
+    },
+    {
+      "year": 2006,
+      "count": 50
+    },
+    {
+      "year": 2007,
+      "count": 60
+    },
+    {
+      "year": 2008,
+      "count": 50
+    },
+    {
+      "year": 2009,
+      "count": 60
+    },
+    {
+      "year": 2010,
+      "count": 78
+    },
+    {
+      "year": 2011,
+      "count": 106
+    },
+    {
+      "year": 2012,
+      "count": 102
+    },
+    {
+      "year": 2013,
+      "count": 52
+    },
+    {
+      "year": 2014,
+      "count": 59
+    },
+    {
+      "year": 2015,
+      "count": 93
+    },
+    {
+      "year": 2016,
+      "count": 113
+    },
+    {
+      "year": 2017,
+      "count": 97
+    },
+    {
+      "year": 2018,
+      "count": 130
+    },
+    {
+      "year": 2019,
+      "count": 117
+    },
+    {
+      "year": 2020,
+      "count": 113
+    },
+    {
+      "year": 2021,
+      "count": 125
+    },
+    {
+      "year": 2022,
+      "count": 104
+    },
+    {
+      "year": 2023,
+      "count": 117
+    },
+    {
+      "year": 2024,
+      "count": 101
+    },
+    {
+      "year": 2025,
+      "count": 131
+    },
+    {
+      "year": 2026,
+      "count": 19
+    }
+  ],
+  "top_reactions": [
+    {
+      "reaction": "Off label use",
+      "count": 230,
+      "percentage": 5.8
+    },
+    {
+      "reaction": "Drug ineffective",
+      "count": 192,
+      "percentage": 4.8
+    },
+    {
+      "reaction": "Angioedema",
+      "count": 180,
+      "percentage": 4.5
+    },
+    {
+      "reaction": "Pyrexia",
+      "count": 158,
+      "percentage": 4.0
+    },
+    {
+      "reaction": "Urticaria",
+      "count": 140,
+      "percentage": 3.5
+    },
+    {
+      "reaction": "Nausea",
+      "count": 130,
+      "percentage": 3.3
+    },
+    {
+      "reaction": "Acute kidney injury",
+      "count": 124,
+      "percentage": 3.1
+    },
+    {
+      "reaction": "Pneumonia",
+      "count": 118,
+      "percentage": 3.0
+    },
+    {
+      "reaction": "Arthralgia",
+      "count": 112,
+      "percentage": 2.8
+    },
+    {
+      "reaction": "Pain",
+      "count": 104,
+      "percentage": 2.6
+    },
+    {
+      "reaction": "Dyspnoea",
+      "count": 102,
+      "percentage": 2.6
+    },
+    {
+      "reaction": "Drug hypersensitivity",
+      "count": 102,
+      "percentage": 2.6
+    },
+    {
+      "reaction": "Rash",
+      "count": 102,
+      "percentage": 2.6
+    },
+    {
+      "reaction": "Diarrhoea",
+      "count": 100,
+      "percentage": 2.5
+    },
+    {
+      "reaction": "Toxicity to various agents",
+      "count": 98,
+      "percentage": 2.5
+    }
+  ],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 292,
+        "percentage": 7.3
+      },
+      "18-44": {
+        "count": 754,
+        "percentage": 19.0
+      },
+      "45-64": {
+        "count": 882,
+        "percentage": 22.2
+      },
+      "65-74": {
+        "count": 576,
+        "percentage": 14.5
+      },
+      "75+": {
+        "count": 392,
+        "percentage": 9.9
+      },
+      "unknown": {
+        "count": 1042,
+        "percentage": 26.2
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 1338,
+        "percentage": 33.7
+      },
+      "female": {
+        "count": 2250,
+        "percentage": 56.6
+      },
+      "unknown": {
+        "count": 386,
+        "percentage": 9.7
+      }
+    },
+    "total_sample_records": 3974
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 550,
+      "percentage": 13.8
+    },
+    "hospitalization": {
+      "count": 1638,
+      "percentage": 41.2
+    },
+    "disability": {
+      "count": 120,
+      "percentage": 3.0
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 1884,
+      "percentage": 47.4
+    },
+    "not_serious": {
+      "count": 452,
+      "percentage": 11.4
+    }
+  },
+  "timeline": [
+    {
+      "year": 1988,
+      "event": "FDA approval as Ansaid",
+      "type": "approval",
+      "significance": "NSAID approved for arthritis pain."
+    },
+    {
+      "year": 2005,
+      "event": "NSAID class label update",
+      "type": "label_change",
+      "significance": "Cardiovascular/GI warnings added class-wide."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": true,
+    "black_box_warning": false,
+    "recall_history": false,
+    "label_updated": true,
+    "withdrawn": false,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ANGIOEDEMA shows a strong disproportionality signal (PRR=21.75).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "URTICARIA shows a strong disproportionality signal (PRR=4.71).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ACUTE KIDNEY INJURY shows a strong disproportionality signal (PRR=4.17).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DRUG INTERACTION shows a strong disproportionality signal (PRR=3.45).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "PYREXIA shows a strong disproportionality signal (PRR=3.19).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 13.8,
+    "serious_rate_pct": 88.6,
+    "hospitalization_rate_pct": 41.2,
+    "avg_patient_age": 267.8,
+    "flagged_signal_count": 9,
+    "strongest_signal_prr": 21.75,
+    "strongest_signal_reaction": "ANGIOEDEMA"
+  },
+  "meta": {
+    "drug_queried": "FLURBIPROFEN",
+    "sample_record_count": 3974,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-11T10:19:03.135115Z",
+    "cache_expires": "2026-07-12T10:19:03.135115Z"
+  },
+  "ai_summary": null
+}

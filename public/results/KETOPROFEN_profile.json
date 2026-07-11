@@ -1,0 +1,572 @@
+{
+  "drug_name": "KETOPROFEN",
+  "brand_name": "Ketoprofen",
+  "drug_class": "Nonsteroidal Anti-inflammatory Drug [EPC]",
+  "indication": "INDICATIONS AND USAGE Carefully consider the potential benefits and risks of ketoprofen extended-release capsules before deciding to use ketoprofen extended-release capsules. Use the lowest effective ",
+  "manufacturer": "Mylan Pharmaceuticals Inc.",
+  "approval_year": 1986,
+  "status": "Active",
+  "withdrawal_year": null,
+  "live_counts": {
+    "total_reports": 13039,
+    "serious_reports": 11367,
+    "death_reports": 1214,
+    "hospitalization_reports": 6551,
+    "disability_reports": 324,
+    "life_threatening_reports": 1186,
+    "latest_report_year": 2026
+  },
+  "signals": [
+    {
+      "reaction": "INFUSION SITE PAIN",
+      "drug_reaction_count": 720,
+      "prr": 96.37,
+      "ror": 101.94,
+      "chi_square": 63942.31,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "HEPATIC ENZYME INCREASED",
+      "drug_reaction_count": 593,
+      "prr": 14.14,
+      "ror": 14.77,
+      "chi_square": 7187.43,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "RHEUMATOID ARTHRITIS",
+      "drug_reaction_count": 690,
+      "prr": 9.86,
+      "ror": 10.35,
+      "chi_square": 5478.1,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ASTHMA",
+      "drug_reaction_count": 602,
+      "prr": 8.74,
+      "ror": 9.11,
+      "chi_square": 4114.68,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "HYPERHIDROSIS",
+      "drug_reaction_count": 676,
+      "prr": 8.42,
+      "ror": 8.83,
+      "chi_square": 4419.48,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "HYPERSENSITIVITY",
+      "drug_reaction_count": 693,
+      "prr": 6.02,
+      "ror": 6.31,
+      "chi_square": 2913.06,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ERYTHEMA",
+      "drug_reaction_count": 663,
+      "prr": 5.2,
+      "ror": 5.42,
+      "chi_square": 2259.31,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "DRUG HYPERSENSITIVITY",
+      "drug_reaction_count": 627,
+      "prr": 5.17,
+      "ror": 5.38,
+      "chi_square": 2115.56,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "CONSTIPATION",
+      "drug_reaction_count": 646,
+      "prr": 4.85,
+      "ror": 5.05,
+      "chi_square": 1981.82,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "BACK PAIN",
+      "drug_reaction_count": 673,
+      "prr": 4.65,
+      "ror": 4.85,
+      "chi_square": 1941.92,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "PYREXIA",
+      "drug_reaction_count": 740,
+      "prr": 3.43,
+      "ror": 3.58,
+      "chi_square": 1289.67,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "HEADACHE",
+      "drug_reaction_count": 1187,
+      "prr": 3.05,
+      "ror": 3.25,
+      "chi_square": 1678.57,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "PAIN",
+      "drug_reaction_count": 1109,
+      "prr": 2.89,
+      "ror": 3.06,
+      "chi_square": 1406.59,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "RASH",
+      "drug_reaction_count": 654,
+      "prr": 2.44,
+      "ror": 2.51,
+      "chi_square": 562.44,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "VOMITING",
+      "drug_reaction_count": 671,
+      "prr": 2.31,
+      "ror": 2.38,
+      "chi_square": 505.93,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FATIGUE",
+      "drug_reaction_count": 894,
+      "prr": 1.85,
+      "ror": 1.91,
+      "chi_square": 362.27,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 662,
+      "prr": 1.66,
+      "ror": 1.7,
+      "chi_square": 179.02,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "NAUSEA",
+      "drug_reaction_count": 792,
+      "prr": 1.62,
+      "ror": 1.66,
+      "chi_square": 193.01,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "OFF LABEL USE",
+      "drug_reaction_count": 739,
+      "prr": 1.38,
+      "ror": 1.4,
+      "chi_square": 79.88,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "drug_reaction_count": 771,
+      "prr": 0.94,
+      "ror": 0.94,
+      "chi_square": 3.17,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 8.75,
+    "signal_score": 10.0,
+    "volume_score": 4.12,
+    "risk_index": 85.11,
+    "risk_tier": "CRITICAL",
+    "risk_color": "red",
+    "death_pct": 9.31,
+    "hosp_pct": 50.24,
+    "disab_pct": 2.48
+  },
+  "cost_of_harm": {
+    "death_cost_usd": 607000000,
+    "hospitalization_cost_usd": 98265000,
+    "disability_cost_usd": 64800000,
+    "total_estimated_cost_usd": 770065000,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 2003,
+      "count": 1
+    },
+    {
+      "year": 2004,
+      "count": 204
+    },
+    {
+      "year": 2005,
+      "count": 228
+    },
+    {
+      "year": 2006,
+      "count": 207
+    },
+    {
+      "year": 2007,
+      "count": 238
+    },
+    {
+      "year": 2008,
+      "count": 221
+    },
+    {
+      "year": 2009,
+      "count": 220
+    },
+    {
+      "year": 2010,
+      "count": 310
+    },
+    {
+      "year": 2011,
+      "count": 493
+    },
+    {
+      "year": 2012,
+      "count": 520
+    },
+    {
+      "year": 2013,
+      "count": 274
+    },
+    {
+      "year": 2014,
+      "count": 321
+    },
+    {
+      "year": 2015,
+      "count": 303
+    },
+    {
+      "year": 2016,
+      "count": 350
+    },
+    {
+      "year": 2017,
+      "count": 457
+    },
+    {
+      "year": 2018,
+      "count": 711
+    },
+    {
+      "year": 2019,
+      "count": 758
+    },
+    {
+      "year": 2020,
+      "count": 768
+    },
+    {
+      "year": 2021,
+      "count": 671
+    },
+    {
+      "year": 2022,
+      "count": 830
+    },
+    {
+      "year": 2023,
+      "count": 1346
+    },
+    {
+      "year": 2024,
+      "count": 1737
+    },
+    {
+      "year": 2025,
+      "count": 1561
+    },
+    {
+      "year": 2026,
+      "count": 338
+    }
+  ],
+  "top_reactions": [
+    {
+      "reaction": "Pain",
+      "count": 968,
+      "percentage": 9.7
+    },
+    {
+      "reaction": "Headache",
+      "count": 924,
+      "percentage": 9.2
+    },
+    {
+      "reaction": "Fatigue",
+      "count": 818,
+      "percentage": 8.2
+    },
+    {
+      "reaction": "Drug hypersensitivity",
+      "count": 730,
+      "percentage": 7.3
+    },
+    {
+      "reaction": "Drug ineffective",
+      "count": 716,
+      "percentage": 7.2
+    },
+    {
+      "reaction": "Back pain",
+      "count": 676,
+      "percentage": 6.8
+    },
+    {
+      "reaction": "Constipation",
+      "count": 674,
+      "percentage": 6.7
+    },
+    {
+      "reaction": "Erythema",
+      "count": 664,
+      "percentage": 6.6
+    },
+    {
+      "reaction": "Acute kidney injury",
+      "count": 660,
+      "percentage": 6.6
+    },
+    {
+      "reaction": "Rheumatoid arthritis",
+      "count": 644,
+      "percentage": 6.4
+    },
+    {
+      "reaction": "Hypersensitivity",
+      "count": 602,
+      "percentage": 6.0
+    },
+    {
+      "reaction": "Hyperhidrosis",
+      "count": 580,
+      "percentage": 5.8
+    },
+    {
+      "reaction": "Asthma",
+      "count": 548,
+      "percentage": 5.5
+    },
+    {
+      "reaction": "Nausea",
+      "count": 546,
+      "percentage": 5.5
+    },
+    {
+      "reaction": "Off label use",
+      "count": 544,
+      "percentage": 5.4
+    }
+  ],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 396,
+        "percentage": 4.0
+      },
+      "18-44": {
+        "count": 2170,
+        "percentage": 21.7
+      },
+      "45-64": {
+        "count": 3172,
+        "percentage": 31.7
+      },
+      "65-74": {
+        "count": 1484,
+        "percentage": 14.8
+      },
+      "75+": {
+        "count": 1102,
+        "percentage": 11.0
+      },
+      "unknown": {
+        "count": 1562,
+        "percentage": 15.6
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 3952,
+        "percentage": 39.5
+      },
+      "female": {
+        "count": 5218,
+        "percentage": 52.2
+      },
+      "unknown": {
+        "count": 830,
+        "percentage": 8.3
+      }
+    },
+    "total_sample_records": 10000
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 854,
+      "percentage": 8.5
+    },
+    "hospitalization": {
+      "count": 5544,
+      "percentage": 55.4
+    },
+    "disability": {
+      "count": 284,
+      "percentage": 2.8
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 3918,
+      "percentage": 39.2
+    },
+    "not_serious": {
+      "count": 538,
+      "percentage": 5.4
+    }
+  },
+  "timeline": [
+    {
+      "year": 1986,
+      "event": "FDA approval as Orudis",
+      "type": "approval",
+      "significance": "Approved for pain and inflammation."
+    },
+    {
+      "year": 2005,
+      "event": "NSAID class label update",
+      "type": "label_change",
+      "significance": "Cardiovascular/GI warnings added class-wide."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": true,
+    "black_box_warning": true,
+    "recall_history": false,
+    "label_updated": true,
+    "withdrawn": false,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "TREND_INCREASE",
+      "description": "Reports rose 27.7% in the most recent 3 years (3636) versus the prior 3 years (2847).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "INFUSION SITE PAIN shows a strong disproportionality signal (PRR=96.37).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "HEPATIC ENZYME INCREASED shows a strong disproportionality signal (PRR=14.14).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "RHEUMATOID ARTHRITIS shows a strong disproportionality signal (PRR=9.86).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ASTHMA shows a strong disproportionality signal (PRR=8.74).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "HYPERHIDROSIS shows a strong disproportionality signal (PRR=8.42).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "HYPERSENSITIVITY shows a strong disproportionality signal (PRR=6.02).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ERYTHEMA shows a strong disproportionality signal (PRR=5.2).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DRUG HYPERSENSITIVITY shows a strong disproportionality signal (PRR=5.17).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "CONSTIPATION shows a strong disproportionality signal (PRR=4.85).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "BACK PAIN shows a strong disproportionality signal (PRR=4.65).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "PYREXIA shows a strong disproportionality signal (PRR=3.43).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "HEADACHE shows a strong disproportionality signal (PRR=3.05).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 9.3,
+    "serious_rate_pct": 87.2,
+    "hospitalization_rate_pct": 50.2,
+    "avg_patient_age": 295.4,
+    "flagged_signal_count": 15,
+    "strongest_signal_prr": 96.37,
+    "strongest_signal_reaction": "INFUSION SITE PAIN"
+  },
+  "meta": {
+    "drug_queried": "KETOPROFEN",
+    "sample_record_count": 10000,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-11T10:15:09.340708Z",
+    "cache_expires": "2026-07-12T10:15:09.340708Z"
+  },
+  "ai_summary": null
+}

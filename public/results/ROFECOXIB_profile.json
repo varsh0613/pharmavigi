@@ -1,0 +1,546 @@
+{
+  "drug_name": "ROFECOXIB",
+  "brand_name": "Vioxx",
+  "drug_class": null,
+  "indication": null,
+  "manufacturer": null,
+  "approval_year": 1999,
+  "status": "Withdrawn",
+  "withdrawal_year": 2004,
+  "live_counts": {
+    "total_reports": 1555,
+    "serious_reports": 1154,
+    "death_reports": 177,
+    "hospitalization_reports": 649,
+    "disability_reports": 52,
+    "life_threatening_reports": 99,
+    "latest_report_year": 2026
+  },
+  "signals": [
+    {
+      "reaction": "DRUG INTERACTION",
+      "drug_reaction_count": 68,
+      "prr": 5.77,
+      "ror": 5.98,
+      "chi_square": 265.05,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "RENAL FAILURE",
+      "drug_reaction_count": 57,
+      "prr": 5.69,
+      "ror": 5.87,
+      "chi_square": 217.2,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "DRUG HYPERSENSITIVITY",
+      "drug_reaction_count": 71,
+      "prr": 4.89,
+      "ror": 5.08,
+      "chi_square": 218.08,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "MYOCARDIAL INFARCTION",
+      "drug_reaction_count": 64,
+      "prr": 4.86,
+      "ror": 5.02,
+      "chi_square": 193.81,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "CONFUSIONAL STATE",
+      "drug_reaction_count": 40,
+      "prr": 3.32,
+      "ror": 3.38,
+      "chi_square": 62.96,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "HYPERTENSION",
+      "drug_reaction_count": 45,
+      "prr": 2.85,
+      "ror": 2.91,
+      "chi_square": 52.9,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "CONDITION AGGRAVATED",
+      "drug_reaction_count": 46,
+      "prr": 2.06,
+      "ror": 2.09,
+      "chi_square": 24.45,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PAIN IN EXTREMITY",
+      "drug_reaction_count": 44,
+      "prr": 2.0,
+      "ror": 2.03,
+      "chi_square": 21.32,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "VOMITING",
+      "drug_reaction_count": 66,
+      "prr": 1.9,
+      "ror": 1.94,
+      "chi_square": 27.91,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIZZINESS",
+      "drug_reaction_count": 62,
+      "prr": 1.68,
+      "ror": 1.71,
+      "chi_square": 16.69,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FALL",
+      "drug_reaction_count": 40,
+      "prr": 1.62,
+      "ror": 1.64,
+      "chi_square": 9.01,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "drug_reaction_count": 49,
+      "prr": 1.6,
+      "ror": 1.62,
+      "chi_square": 10.59,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DYSPNOEA",
+      "drug_reaction_count": 60,
+      "prr": 1.43,
+      "ror": 1.44,
+      "chi_square": 7.46,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PAIN",
+      "drug_reaction_count": 61,
+      "prr": 1.33,
+      "ror": 1.34,
+      "chi_square": 4.83,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "RASH",
+      "drug_reaction_count": 41,
+      "prr": 1.28,
+      "ror": 1.29,
+      "chi_square": 2.27,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "NAUSEA",
+      "drug_reaction_count": 70,
+      "prr": 1.2,
+      "ror": 1.21,
+      "chi_square": 2.18,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "MALAISE",
+      "drug_reaction_count": 39,
+      "prr": 1.19,
+      "ror": 1.2,
+      "chi_square": 1.03,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 49,
+      "prr": 1.03,
+      "ror": 1.03,
+      "chi_square": 0.02,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "HEADACHE",
+      "drug_reaction_count": 48,
+      "prr": 1.03,
+      "ror": 1.03,
+      "chi_square": 0.02,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "drug_reaction_count": 100,
+      "prr": 1.02,
+      "ror": 1.02,
+      "chi_square": 0.03,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 8.83,
+    "signal_score": 3.22,
+    "volume_score": 3.19,
+    "risk_index": 76.0,
+    "risk_tier": "CRITICAL",
+    "risk_color": "red",
+    "death_pct": 11.38,
+    "hosp_pct": 41.74,
+    "disab_pct": 3.34
+  },
+  "cost_of_harm": {
+    "death_cost_usd": 88500000,
+    "hospitalization_cost_usd": 9735000,
+    "disability_cost_usd": 10400000,
+    "total_estimated_cost_usd": 108635000,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 2004,
+      "count": 711
+    },
+    {
+      "year": 2005,
+      "count": 327
+    },
+    {
+      "year": 2006,
+      "count": 83
+    },
+    {
+      "year": 2007,
+      "count": 65
+    },
+    {
+      "year": 2008,
+      "count": 36
+    },
+    {
+      "year": 2009,
+      "count": 30
+    },
+    {
+      "year": 2010,
+      "count": 27
+    },
+    {
+      "year": 2011,
+      "count": 22
+    },
+    {
+      "year": 2012,
+      "count": 10
+    },
+    {
+      "year": 2013,
+      "count": 44
+    },
+    {
+      "year": 2014,
+      "count": 24
+    },
+    {
+      "year": 2015,
+      "count": 13
+    },
+    {
+      "year": 2016,
+      "count": 30
+    },
+    {
+      "year": 2017,
+      "count": 15
+    },
+    {
+      "year": 2018,
+      "count": 51
+    },
+    {
+      "year": 2019,
+      "count": 18
+    },
+    {
+      "year": 2020,
+      "count": 9
+    },
+    {
+      "year": 2021,
+      "count": 14
+    },
+    {
+      "year": 2022,
+      "count": 2
+    },
+    {
+      "year": 2023,
+      "count": 5
+    },
+    {
+      "year": 2024,
+      "count": 12
+    },
+    {
+      "year": 2025,
+      "count": 6
+    },
+    {
+      "year": 2026,
+      "count": 1
+    }
+  ],
+  "top_reactions": [
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "count": 180,
+      "percentage": 5.8
+    },
+    {
+      "reaction": "Drug hypersensitivity",
+      "count": 122,
+      "percentage": 3.9
+    },
+    {
+      "reaction": "DRUG INTERACTION",
+      "count": 120,
+      "percentage": 3.9
+    },
+    {
+      "reaction": "NAUSEA",
+      "count": 118,
+      "percentage": 3.8
+    },
+    {
+      "reaction": "PAIN",
+      "count": 114,
+      "percentage": 3.7
+    },
+    {
+      "reaction": "VOMITING",
+      "count": 106,
+      "percentage": 3.4
+    },
+    {
+      "reaction": "MYOCARDIAL INFARCTION",
+      "count": 104,
+      "percentage": 3.3
+    },
+    {
+      "reaction": "DYSPNOEA",
+      "count": 104,
+      "percentage": 3.3
+    },
+    {
+      "reaction": "DIZZINESS",
+      "count": 98,
+      "percentage": 3.2
+    },
+    {
+      "reaction": "HEADACHE",
+      "count": 90,
+      "percentage": 2.9
+    },
+    {
+      "reaction": "CONDITION AGGRAVATED",
+      "count": 82,
+      "percentage": 2.6
+    },
+    {
+      "reaction": "HYPERTENSION",
+      "count": 76,
+      "percentage": 2.4
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "count": 74,
+      "percentage": 2.4
+    },
+    {
+      "reaction": "RENAL FAILURE",
+      "count": 72,
+      "percentage": 2.3
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "count": 72,
+      "percentage": 2.3
+    }
+  ],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 22,
+        "percentage": 0.7
+      },
+      "18-44": {
+        "count": 294,
+        "percentage": 9.5
+      },
+      "45-64": {
+        "count": 1006,
+        "percentage": 32.4
+      },
+      "65-74": {
+        "count": 548,
+        "percentage": 17.6
+      },
+      "75+": {
+        "count": 358,
+        "percentage": 11.5
+      },
+      "unknown": {
+        "count": 862,
+        "percentage": 27.7
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 892,
+        "percentage": 28.7
+      },
+      "female": {
+        "count": 2024,
+        "percentage": 65.1
+      },
+      "unknown": {
+        "count": 192,
+        "percentage": 6.2
+      }
+    },
+    "total_sample_records": 3108
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 354,
+      "percentage": 11.4
+    },
+    "hospitalization": {
+      "count": 1296,
+      "percentage": 41.7
+    },
+    "disability": {
+      "count": 104,
+      "percentage": 3.3
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 1010,
+      "percentage": 32.5
+    },
+    "not_serious": {
+      "count": 802,
+      "percentage": 25.8
+    }
+  },
+  "timeline": [
+    {
+      "year": 1999,
+      "event": "FDA approval as Vioxx",
+      "type": "approval",
+      "significance": "First COX-2 selective inhibitor approved for osteoarthritis and acute pain."
+    },
+    {
+      "year": 2000,
+      "event": "VIGOR trial signals cardiovascular risk",
+      "type": "signal",
+      "significance": "Trial data showed elevated cardiovascular event rates versus naproxen."
+    },
+    {
+      "year": 2002,
+      "event": "Label updated with cardiovascular risk language",
+      "type": "label_change",
+      "significance": "FDA required label changes reflecting emerging CV safety concerns."
+    },
+    {
+      "year": 2004,
+      "event": "Voluntary market withdrawal",
+      "type": "withdrawal",
+      "significance": "Merck withdrew Vioxx worldwide after APPROVe trial confirmed doubled cardiovascular risk."
+    },
+    {
+      "year": 2005,
+      "event": "FDA advisory committee reviews COX-2 class safety",
+      "type": "warning",
+      "significance": "Triggered black-box warnings across the COX-2 and broader NSAID class."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": true,
+    "black_box_warning": false,
+    "recall_history": true,
+    "label_updated": true,
+    "withdrawn": true,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DRUG INTERACTION shows a strong disproportionality signal (PRR=5.77).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "RENAL FAILURE shows a strong disproportionality signal (PRR=5.69).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DRUG HYPERSENSITIVITY shows a strong disproportionality signal (PRR=4.89).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "MYOCARDIAL INFARCTION shows a strong disproportionality signal (PRR=4.86).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "CONFUSIONAL STATE shows a strong disproportionality signal (PRR=3.32).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 11.4,
+    "serious_rate_pct": 74.2,
+    "hospitalization_rate_pct": 41.7,
+    "avg_patient_age": 226.9,
+    "flagged_signal_count": 8,
+    "strongest_signal_prr": 5.77,
+    "strongest_signal_reaction": "DRUG INTERACTION"
+  },
+  "meta": {
+    "drug_queried": "ROFECOXIB",
+    "sample_record_count": 3108,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-11T10:03:22.697053Z",
+    "cache_expires": "2026-07-12T10:03:22.697053Z"
+  },
+  "ai_summary": null
+}

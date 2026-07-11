@@ -1,0 +1,560 @@
+{
+  "drug_name": "CELECOXIB",
+  "brand_name": "CELECOXIB",
+  "drug_class": "Nonsteroidal Anti-inflammatory Drug [EPC]",
+  "indication": "1. INDICATIONS AND USAGE Celecoxib is indicated Celecoxib is a nonsteroidal anti-inflammatory drug indicated for: Osteoarthritis (OA) ( 1.1 ) Rheumatoid Arthritis (RA) ( 1.2 ) Juvenile Rheumatoid Arth",
+  "manufacturer": "A-S Medication Solutions",
+  "approval_year": 1998,
+  "status": "Active",
+  "withdrawal_year": null,
+  "live_counts": {
+    "total_reports": 36399,
+    "serious_reports": 27320,
+    "death_reports": 5634,
+    "hospitalization_reports": 14199,
+    "disability_reports": 3471,
+    "life_threatening_reports": 3853,
+    "latest_report_year": 2026
+  },
+  "signals": [
+    {
+      "reaction": "RHEUMATOID ARTHRITIS",
+      "drug_reaction_count": 2382,
+      "prr": 12.37,
+      "ror": 13.16,
+      "chi_square": 24471.15,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "DRUG HYPERSENSITIVITY",
+      "drug_reaction_count": 2044,
+      "prr": 6.07,
+      "ror": 6.37,
+      "chi_square": 8642.82,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "HYPERTENSION",
+      "drug_reaction_count": 1899,
+      "prr": 5.18,
+      "ror": 5.41,
+      "chi_square": 6414.1,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "drug_reaction_count": 3213,
+      "prr": 4.5,
+      "ror": 4.84,
+      "chi_square": 8861.83,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "CONDITION AGGRAVATED",
+      "drug_reaction_count": 2328,
+      "prr": 4.49,
+      "ror": 4.72,
+      "chi_square": 6342.28,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "PYREXIA",
+      "drug_reaction_count": 1949,
+      "prr": 3.24,
+      "ror": 3.37,
+      "chi_square": 3055.4,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "RASH",
+      "drug_reaction_count": 2406,
+      "prr": 3.22,
+      "ror": 3.38,
+      "chi_square": 3733.93,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "VOMITING",
+      "drug_reaction_count": 2546,
+      "prr": 3.14,
+      "ror": 3.31,
+      "chi_square": 3785.49,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "PAIN",
+      "drug_reaction_count": 3279,
+      "prr": 3.07,
+      "ror": 3.27,
+      "chi_square": 4679.6,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "ASTHENIA",
+      "drug_reaction_count": 1881,
+      "prr": 2.88,
+      "ror": 2.99,
+      "chi_square": 2344.56,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PRURITUS",
+      "drug_reaction_count": 1834,
+      "prr": 2.84,
+      "ror": 2.94,
+      "chi_square": 2218.2,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "MALAISE",
+      "drug_reaction_count": 2143,
+      "prr": 2.8,
+      "ror": 2.92,
+      "chi_square": 2525.86,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIZZINESS",
+      "drug_reaction_count": 2282,
+      "prr": 2.65,
+      "ror": 2.76,
+      "chi_square": 2379.62,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 2874,
+      "prr": 2.59,
+      "ror": 2.73,
+      "chi_square": 2879.75,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FATIGUE",
+      "drug_reaction_count": 3258,
+      "prr": 2.42,
+      "ror": 2.56,
+      "chi_square": 2810.93,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "drug_reaction_count": 5418,
+      "prr": 2.37,
+      "ror": 2.61,
+      "chi_square": 4559.55,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "NAUSEA",
+      "drug_reaction_count": 3160,
+      "prr": 2.32,
+      "ror": 2.44,
+      "chi_square": 2443.65,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "HEADACHE",
+      "drug_reaction_count": 2416,
+      "prr": 2.22,
+      "ror": 2.31,
+      "chi_square": 1670.66,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "OFF LABEL USE",
+      "drug_reaction_count": 3230,
+      "prr": 2.16,
+      "ror": 2.28,
+      "chi_square": 2098.09,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DYSPNOEA",
+      "drug_reaction_count": 2089,
+      "prr": 2.13,
+      "ror": 2.2,
+      "chi_square": 1276.89,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 9.45,
+    "signal_score": 2.72,
+    "volume_score": 4.56,
+    "risk_index": 47.7,
+    "risk_tier": "MODERATE",
+    "risk_color": "yellow",
+    "death_pct": 15.48,
+    "hosp_pct": 39.01,
+    "disab_pct": 9.54
+  },
+  "cost_of_harm": {
+    "death_cost_usd": null,
+    "hospitalization_cost_usd": null,
+    "disability_cost_usd": null,
+    "total_estimated_cost_usd": null,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 2004,
+      "count": 1099
+    },
+    {
+      "year": 2005,
+      "count": 893
+    },
+    {
+      "year": 2006,
+      "count": 319
+    },
+    {
+      "year": 2007,
+      "count": 366
+    },
+    {
+      "year": 2008,
+      "count": 567
+    },
+    {
+      "year": 2009,
+      "count": 532
+    },
+    {
+      "year": 2010,
+      "count": 470
+    },
+    {
+      "year": 2011,
+      "count": 679
+    },
+    {
+      "year": 2012,
+      "count": 618
+    },
+    {
+      "year": 2013,
+      "count": 699
+    },
+    {
+      "year": 2014,
+      "count": 568
+    },
+    {
+      "year": 2015,
+      "count": 1423
+    },
+    {
+      "year": 2016,
+      "count": 1782
+    },
+    {
+      "year": 2017,
+      "count": 1801
+    },
+    {
+      "year": 2018,
+      "count": 2067
+    },
+    {
+      "year": 2019,
+      "count": 2660
+    },
+    {
+      "year": 2020,
+      "count": 3030
+    },
+    {
+      "year": 2021,
+      "count": 2909
+    },
+    {
+      "year": 2022,
+      "count": 3056
+    },
+    {
+      "year": 2023,
+      "count": 2761
+    },
+    {
+      "year": 2024,
+      "count": 3372
+    },
+    {
+      "year": 2025,
+      "count": 4078
+    },
+    {
+      "year": 2026,
+      "count": 663
+    }
+  ],
+  "top_reactions": [
+    {
+      "reaction": "Drug ineffective",
+      "count": 2300,
+      "percentage": 23.0
+    },
+    {
+      "reaction": "Pain",
+      "count": 800,
+      "percentage": 8.0
+    },
+    {
+      "reaction": "Nausea",
+      "count": 582,
+      "percentage": 5.8
+    },
+    {
+      "reaction": "Arthralgia",
+      "count": 574,
+      "percentage": 5.7
+    },
+    {
+      "reaction": "Product substitution issue",
+      "count": 570,
+      "percentage": 5.7
+    },
+    {
+      "reaction": "Diarrhoea",
+      "count": 468,
+      "percentage": 4.7
+    },
+    {
+      "reaction": "Fatigue",
+      "count": 444,
+      "percentage": 4.4
+    },
+    {
+      "reaction": "Malaise",
+      "count": 402,
+      "percentage": 4.0
+    },
+    {
+      "reaction": "Headache",
+      "count": 368,
+      "percentage": 3.7
+    },
+    {
+      "reaction": "Drug hypersensitivity",
+      "count": 356,
+      "percentage": 3.6
+    },
+    {
+      "reaction": "Condition aggravated",
+      "count": 356,
+      "percentage": 3.6
+    },
+    {
+      "reaction": "Pain in extremity",
+      "count": 330,
+      "percentage": 3.3
+    },
+    {
+      "reaction": "Vomiting",
+      "count": 306,
+      "percentage": 3.1
+    },
+    {
+      "reaction": "Rash",
+      "count": 304,
+      "percentage": 3.0
+    },
+    {
+      "reaction": "Dizziness",
+      "count": 296,
+      "percentage": 3.0
+    }
+  ],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 142,
+        "percentage": 1.4
+      },
+      "18-44": {
+        "count": 636,
+        "percentage": 6.4
+      },
+      "45-64": {
+        "count": 2894,
+        "percentage": 28.9
+      },
+      "65-74": {
+        "count": 2054,
+        "percentage": 20.5
+      },
+      "75+": {
+        "count": 1342,
+        "percentage": 13.4
+      },
+      "unknown": {
+        "count": 2890,
+        "percentage": 28.9
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 2882,
+        "percentage": 28.8
+      },
+      "female": {
+        "count": 6028,
+        "percentage": 60.3
+      },
+      "unknown": {
+        "count": 1090,
+        "percentage": 10.9
+      }
+    },
+    "total_sample_records": 10000
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 760,
+      "percentage": 7.6
+    },
+    "hospitalization": {
+      "count": 2916,
+      "percentage": 29.2
+    },
+    "disability": {
+      "count": 406,
+      "percentage": 4.1
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 3086,
+      "percentage": 30.9
+    },
+    "not_serious": {
+      "count": 3998,
+      "percentage": 40.0
+    }
+  },
+  "timeline": [
+    {
+      "year": 1998,
+      "event": "FDA approval as Celebrex",
+      "type": "approval",
+      "significance": "First-in-class COX-2 inhibitor approved for arthritis pain."
+    },
+    {
+      "year": 2005,
+      "event": "Black box warning added",
+      "type": "black_box",
+      "significance": "FDA mandated cardiovascular and GI risk warnings following the Vioxx/Bextra reviews."
+    },
+    {
+      "year": 2014,
+      "event": "Generic celecoxib approved",
+      "type": "generic_approved",
+      "significance": "Loss of exclusivity broadened access and lowered cost."
+    },
+    {
+      "year": 2026,
+      "event": "Remains marketed under ongoing FDA surveillance",
+      "type": "current_status",
+      "significance": "Continues to carry class-wide cardiovascular and GI warnings."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": true,
+    "black_box_warning": true,
+    "recall_history": false,
+    "label_updated": false,
+    "withdrawn": false,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "RHEUMATOID ARTHRITIS shows a strong disproportionality signal (PRR=12.37).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DRUG HYPERSENSITIVITY shows a strong disproportionality signal (PRR=6.07).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "HYPERTENSION shows a strong disproportionality signal (PRR=5.18).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ARTHRALGIA shows a strong disproportionality signal (PRR=4.5).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "CONDITION AGGRAVATED shows a strong disproportionality signal (PRR=4.49).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "PYREXIA shows a strong disproportionality signal (PRR=3.24).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "RASH shows a strong disproportionality signal (PRR=3.22).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "VOMITING shows a strong disproportionality signal (PRR=3.14).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "PAIN shows a strong disproportionality signal (PRR=3.07).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 15.5,
+    "serious_rate_pct": 75.1,
+    "hospitalization_rate_pct": 39.0,
+    "avg_patient_age": 186.4,
+    "flagged_signal_count": 20,
+    "strongest_signal_prr": 12.37,
+    "strongest_signal_reaction": "RHEUMATOID ARTHRITIS"
+  },
+  "meta": {
+    "drug_queried": "CELECOXIB",
+    "sample_record_count": 10000,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-11T10:05:57.430090Z",
+    "cache_expires": "2026-07-12T10:05:57.430090Z"
+  },
+  "ai_summary": null
+}

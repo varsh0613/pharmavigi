@@ -1,0 +1,523 @@
+{
+  "drug_name": "SULINDAC",
+  "brand_name": "SULINDAC",
+  "drug_class": "Nonsteroidal Anti-inflammatory Drug [EPC]",
+  "indication": "INDICATIONS AND USAGE Carefully consider the potential benefits and risks of sulindac and other treatment options before deciding to use sulindac. Use the lowest effective dose for the shortest durati",
+  "manufacturer": "PuraCap Laboratories LLC dba Blu Pharmaceuticals",
+  "approval_year": 1978,
+  "status": "Active",
+  "withdrawal_year": null,
+  "live_counts": {
+    "total_reports": 2464,
+    "serious_reports": 1440,
+    "death_reports": 138,
+    "hospitalization_reports": 641,
+    "disability_reports": 71,
+    "life_threatening_reports": 66,
+    "latest_report_year": 2026
+  },
+  "signals": [
+    {
+      "reaction": "CHRONIC KIDNEY DISEASE",
+      "drug_reaction_count": 78,
+      "prr": 8.58,
+      "ror": 8.82,
+      "chi_square": 515.94,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "DRUG HYPERSENSITIVITY",
+      "drug_reaction_count": 93,
+      "prr": 4.05,
+      "ror": 4.17,
+      "chi_square": 212.12,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "BACK PAIN",
+      "drug_reaction_count": 103,
+      "prr": 3.76,
+      "ror": 3.88,
+      "chi_square": 208.18,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "PAIN IN EXTREMITY",
+      "drug_reaction_count": 117,
+      "prr": 3.36,
+      "ror": 3.47,
+      "chi_square": 193.97,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "drug_reaction_count": 142,
+      "prr": 2.92,
+      "ror": 3.04,
+      "chi_square": 181.28,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PAIN",
+      "drug_reaction_count": 190,
+      "prr": 2.62,
+      "ror": 2.75,
+      "chi_square": 193.77,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ASTHENIA",
+      "drug_reaction_count": 111,
+      "prr": 2.51,
+      "ror": 2.58,
+      "chi_square": 100.81,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FALL",
+      "drug_reaction_count": 86,
+      "prr": 2.2,
+      "ror": 2.24,
+      "chi_square": 55.8,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PNEUMONIA",
+      "drug_reaction_count": 79,
+      "prr": 2.08,
+      "ror": 2.12,
+      "chi_square": 43.96,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PRURITUS",
+      "drug_reaction_count": 82,
+      "prr": 1.87,
+      "ror": 1.9,
+      "chi_square": 33.02,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FATIGUE",
+      "drug_reaction_count": 157,
+      "prr": 1.72,
+      "ror": 1.77,
+      "chi_square": 48.37,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "RASH",
+      "drug_reaction_count": 78,
+      "prr": 1.54,
+      "ror": 1.55,
+      "chi_square": 14.33,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIZZINESS",
+      "drug_reaction_count": 87,
+      "prr": 1.49,
+      "ror": 1.5,
+      "chi_square": 13.65,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DYSPNOEA",
+      "drug_reaction_count": 98,
+      "prr": 1.47,
+      "ror": 1.49,
+      "chi_square": 14.73,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 109,
+      "prr": 1.45,
+      "ror": 1.47,
+      "chi_square": 15.08,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "MALAISE",
+      "drug_reaction_count": 75,
+      "prr": 1.44,
+      "ror": 1.46,
+      "chi_square": 10.05,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "drug_reaction_count": 221,
+      "prr": 1.42,
+      "ror": 1.47,
+      "chi_square": 29.42,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "NAUSEA",
+      "drug_reaction_count": 128,
+      "prr": 1.38,
+      "ror": 1.4,
+      "chi_square": 13.69,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "HEADACHE",
+      "drug_reaction_count": 101,
+      "prr": 1.37,
+      "ror": 1.39,
+      "chi_square": 10.06,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "OFF LABEL USE",
+      "drug_reaction_count": 68,
+      "prr": 0.67,
+      "ror": 0.66,
+      "chi_square": 11.06,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 8.32,
+    "signal_score": 2.61,
+    "volume_score": 3.39,
+    "risk_index": 41.94,
+    "risk_tier": "MODERATE",
+    "risk_color": "yellow",
+    "death_pct": 5.6,
+    "hosp_pct": 26.01,
+    "disab_pct": 2.88
+  },
+  "cost_of_harm": {
+    "death_cost_usd": null,
+    "hospitalization_cost_usd": null,
+    "disability_cost_usd": null,
+    "total_estimated_cost_usd": null,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 2004,
+      "count": 87
+    },
+    {
+      "year": 2005,
+      "count": 89
+    },
+    {
+      "year": 2006,
+      "count": 59
+    },
+    {
+      "year": 2007,
+      "count": 52
+    },
+    {
+      "year": 2008,
+      "count": 79
+    },
+    {
+      "year": 2009,
+      "count": 76
+    },
+    {
+      "year": 2010,
+      "count": 77
+    },
+    {
+      "year": 2011,
+      "count": 92
+    },
+    {
+      "year": 2012,
+      "count": 144
+    },
+    {
+      "year": 2013,
+      "count": 131
+    },
+    {
+      "year": 2014,
+      "count": 126
+    },
+    {
+      "year": 2015,
+      "count": 182
+    },
+    {
+      "year": 2016,
+      "count": 241
+    },
+    {
+      "year": 2017,
+      "count": 168
+    },
+    {
+      "year": 2018,
+      "count": 176
+    },
+    {
+      "year": 2019,
+      "count": 159
+    },
+    {
+      "year": 2020,
+      "count": 139
+    },
+    {
+      "year": 2021,
+      "count": 107
+    },
+    {
+      "year": 2022,
+      "count": 91
+    },
+    {
+      "year": 2023,
+      "count": 82
+    },
+    {
+      "year": 2024,
+      "count": 54
+    },
+    {
+      "year": 2025,
+      "count": 42
+    },
+    {
+      "year": 2026,
+      "count": 11
+    }
+  ],
+  "top_reactions": [
+    {
+      "reaction": "Drug ineffective",
+      "count": 368,
+      "percentage": 7.5
+    },
+    {
+      "reaction": "Pain",
+      "count": 330,
+      "percentage": 6.7
+    },
+    {
+      "reaction": "Fatigue",
+      "count": 254,
+      "percentage": 5.2
+    },
+    {
+      "reaction": "Arthralgia",
+      "count": 246,
+      "percentage": 5.0
+    },
+    {
+      "reaction": "Pain in extremity",
+      "count": 204,
+      "percentage": 4.1
+    },
+    {
+      "reaction": "Nausea",
+      "count": 174,
+      "percentage": 3.5
+    },
+    {
+      "reaction": "Drug hypersensitivity",
+      "count": 172,
+      "percentage": 3.5
+    },
+    {
+      "reaction": "Back pain",
+      "count": 172,
+      "percentage": 3.5
+    },
+    {
+      "reaction": "Diarrhoea",
+      "count": 170,
+      "percentage": 3.4
+    },
+    {
+      "reaction": "Asthenia",
+      "count": 170,
+      "percentage": 3.4
+    },
+    {
+      "reaction": "Chronic kidney disease",
+      "count": 156,
+      "percentage": 3.2
+    },
+    {
+      "reaction": "Headache",
+      "count": 152,
+      "percentage": 3.1
+    },
+    {
+      "reaction": "Fall",
+      "count": 140,
+      "percentage": 2.8
+    },
+    {
+      "reaction": "Pneumonia",
+      "count": 138,
+      "percentage": 2.8
+    },
+    {
+      "reaction": "Off label use",
+      "count": 134,
+      "percentage": 2.7
+    }
+  ],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 58,
+        "percentage": 1.2
+      },
+      "18-44": {
+        "count": 458,
+        "percentage": 9.3
+      },
+      "45-64": {
+        "count": 1550,
+        "percentage": 31.5
+      },
+      "65-74": {
+        "count": 750,
+        "percentage": 15.2
+      },
+      "75+": {
+        "count": 412,
+        "percentage": 8.4
+      },
+      "unknown": {
+        "count": 1586,
+        "percentage": 32.2
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 1416,
+        "percentage": 28.7
+      },
+      "female": {
+        "count": 3268,
+        "percentage": 66.3
+      },
+      "unknown": {
+        "count": 244,
+        "percentage": 5.0
+      }
+    },
+    "total_sample_records": 4928
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 276,
+      "percentage": 5.6
+    },
+    "hospitalization": {
+      "count": 1282,
+      "percentage": 26.0
+    },
+    "disability": {
+      "count": 142,
+      "percentage": 2.9
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 1598,
+      "percentage": 32.4
+    },
+    "not_serious": {
+      "count": 2048,
+      "percentage": 41.6
+    }
+  },
+  "timeline": [
+    {
+      "year": 1978,
+      "event": "FDA approval as Clinoril",
+      "type": "approval",
+      "significance": "NSAID approved for arthritis and acute pain."
+    },
+    {
+      "year": 2005,
+      "event": "NSAID class label update",
+      "type": "label_change",
+      "significance": "Cardiovascular/GI warnings added class-wide."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": true,
+    "black_box_warning": true,
+    "recall_history": false,
+    "label_updated": true,
+    "withdrawn": false,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "CHRONIC KIDNEY DISEASE shows a strong disproportionality signal (PRR=8.58).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DRUG HYPERSENSITIVITY shows a strong disproportionality signal (PRR=4.05).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "BACK PAIN shows a strong disproportionality signal (PRR=3.76).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "PAIN IN EXTREMITY shows a strong disproportionality signal (PRR=3.36).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 5.6,
+    "serious_rate_pct": 58.4,
+    "hospitalization_rate_pct": 26.0,
+    "avg_patient_age": 648.4,
+    "flagged_signal_count": 9,
+    "strongest_signal_prr": 8.58,
+    "strongest_signal_reaction": "CHRONIC KIDNEY DISEASE"
+  },
+  "meta": {
+    "drug_queried": "SULINDAC",
+    "sample_record_count": 4928,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-11T10:17:41.511892Z",
+    "cache_expires": "2026-07-12T10:17:41.511892Z"
+  },
+  "ai_summary": null
+}

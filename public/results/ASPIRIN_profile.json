@@ -1,0 +1,526 @@
+{
+  "drug_name": "ASPIRIN",
+  "brand_name": "Low Dose Aspirin",
+  "drug_class": "Nonsteroidal Anti-inflammatory Drug [EPC]",
+  "indication": "Uses for the temporary relief of minor aches and pains or as recommended by your doctor. Because of its delayed action, this product will not provide fast relief of headaches or other symptoms needing",
+  "manufacturer": "P & L Development, LLC",
+  "approval_year": 1965,
+  "status": "Active",
+  "withdrawal_year": null,
+  "live_counts": {
+    "total_reports": 609210,
+    "serious_reports": 429677,
+    "death_reports": 54695,
+    "hospitalization_reports": 232572,
+    "disability_reports": 17676,
+    "life_threatening_reports": 27780,
+    "latest_report_year": 2026
+  },
+  "signals": [
+    {
+      "reaction": "MYOCARDIAL INFARCTION",
+      "drug_reaction_count": 16356,
+      "prr": 3.4,
+      "ror": 3.46,
+      "chi_square": 25226.42,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "FALL",
+      "drug_reaction_count": 21720,
+      "prr": 2.33,
+      "ror": 2.38,
+      "chi_square": 15696.72,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ASTHENIA",
+      "drug_reaction_count": 22147,
+      "prr": 2.09,
+      "ror": 2.13,
+      "chi_square": 12016.91,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PNEUMONIA",
+      "drug_reaction_count": 18443,
+      "prr": 2.03,
+      "ror": 2.06,
+      "chi_square": 9146.73,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DYSPNOEA",
+      "drug_reaction_count": 31828,
+      "prr": 1.99,
+      "ror": 2.04,
+      "chi_square": 15179.82,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "WEIGHT DECREASED",
+      "drug_reaction_count": 15572,
+      "prr": 1.97,
+      "ror": 2.0,
+      "chi_square": 7141.15,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIZZINESS",
+      "drug_reaction_count": 26445,
+      "prr": 1.87,
+      "ror": 1.91,
+      "chi_square": 10440.29,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PAIN IN EXTREMITY",
+      "drug_reaction_count": 15302,
+      "prr": 1.82,
+      "ror": 1.84,
+      "chi_square": 5418.17,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FATIGUE",
+      "drug_reaction_count": 38026,
+      "prr": 1.72,
+      "ror": 1.77,
+      "chi_square": 11326.5,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 31177,
+      "prr": 1.71,
+      "ror": 1.75,
+      "chi_square": 8999.56,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PRURITUS",
+      "drug_reaction_count": 15507,
+      "prr": 1.45,
+      "ror": 1.46,
+      "chi_square": 2117.93,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "drug_reaction_count": 16602,
+      "prr": 1.4,
+      "ror": 1.41,
+      "chi_square": 1843.25,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "NAUSEA",
+      "drug_reaction_count": 31453,
+      "prr": 1.39,
+      "ror": 1.41,
+      "chi_square": 3430.24,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "VOMITING",
+      "drug_reaction_count": 18415,
+      "prr": 1.37,
+      "ror": 1.38,
+      "chi_square": 1794.68,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "HEADACHE",
+      "drug_reaction_count": 23504,
+      "prr": 1.3,
+      "ror": 1.31,
+      "chi_square": 1629.37,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "MALAISE",
+      "drug_reaction_count": 16119,
+      "prr": 1.27,
+      "ror": 1.27,
+      "chi_square": 885.3,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PAIN",
+      "drug_reaction_count": 21654,
+      "prr": 1.21,
+      "ror": 1.22,
+      "chi_square": 807.51,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "OFF LABEL USE",
+      "drug_reaction_count": 22998,
+      "prr": 0.92,
+      "ror": 0.91,
+      "chi_square": 179.1,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "drug_reaction_count": 26658,
+      "prr": 0.69,
+      "ror": 0.67,
+      "chi_square": 3922.21,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DEATH",
+      "drug_reaction_count": 17409,
+      "prr": 0.69,
+      "ror": 0.68,
+      "chi_square": 2531.76,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 8.79,
+    "signal_score": 0.77,
+    "volume_score": 5.78,
+    "risk_index": 37.77,
+    "risk_tier": "MODERATE",
+    "risk_color": "yellow",
+    "death_pct": 8.98,
+    "hosp_pct": 38.18,
+    "disab_pct": 2.9
+  },
+  "cost_of_harm": {
+    "death_cost_usd": null,
+    "hospitalization_cost_usd": null,
+    "disability_cost_usd": null,
+    "total_estimated_cost_usd": null,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 2001,
+      "count": 4
+    },
+    {
+      "year": 2002,
+      "count": 1
+    },
+    {
+      "year": 2003,
+      "count": 7
+    },
+    {
+      "year": 2004,
+      "count": 9255
+    },
+    {
+      "year": 2005,
+      "count": 11392
+    },
+    {
+      "year": 2006,
+      "count": 12580
+    },
+    {
+      "year": 2007,
+      "count": 10322
+    },
+    {
+      "year": 2008,
+      "count": 11868
+    },
+    {
+      "year": 2009,
+      "count": 17976
+    },
+    {
+      "year": 2010,
+      "count": 19959
+    },
+    {
+      "year": 2011,
+      "count": 23462
+    },
+    {
+      "year": 2012,
+      "count": 26843
+    },
+    {
+      "year": 2013,
+      "count": 21862
+    },
+    {
+      "year": 2014,
+      "count": 35051
+    },
+    {
+      "year": 2015,
+      "count": 38663
+    },
+    {
+      "year": 2016,
+      "count": 42007
+    },
+    {
+      "year": 2017,
+      "count": 39576
+    },
+    {
+      "year": 2018,
+      "count": 41394
+    },
+    {
+      "year": 2019,
+      "count": 38563
+    },
+    {
+      "year": 2020,
+      "count": 35194
+    },
+    {
+      "year": 2021,
+      "count": 35613
+    },
+    {
+      "year": 2022,
+      "count": 36431
+    },
+    {
+      "year": 2023,
+      "count": 31717
+    },
+    {
+      "year": 2024,
+      "count": 30826
+    },
+    {
+      "year": 2025,
+      "count": 31812
+    },
+    {
+      "year": 2026,
+      "count": 7100
+    }
+  ],
+  "top_reactions": [
+    {
+      "reaction": "Multiple injuries",
+      "count": 242,
+      "percentage": 12.1
+    },
+    {
+      "reaction": "Gastrointestinal haemorrhage",
+      "count": 212,
+      "percentage": 10.6
+    },
+    {
+      "reaction": "Fatigue",
+      "count": 140,
+      "percentage": 7.0
+    },
+    {
+      "reaction": "Dizziness",
+      "count": 110,
+      "percentage": 5.5
+    },
+    {
+      "reaction": "Anaemia",
+      "count": 102,
+      "percentage": 5.1
+    },
+    {
+      "reaction": "Dyspnoea",
+      "count": 98,
+      "percentage": 4.9
+    },
+    {
+      "reaction": "Diarrhoea",
+      "count": 92,
+      "percentage": 4.6
+    },
+    {
+      "reaction": "Pain",
+      "count": 90,
+      "percentage": 4.5
+    },
+    {
+      "reaction": "Nausea",
+      "count": 84,
+      "percentage": 4.2
+    },
+    {
+      "reaction": "Headache",
+      "count": 84,
+      "percentage": 4.2
+    },
+    {
+      "reaction": "Asthenia",
+      "count": 82,
+      "percentage": 4.1
+    },
+    {
+      "reaction": "Haemoglobin decreased",
+      "count": 76,
+      "percentage": 3.8
+    },
+    {
+      "reaction": "Rash",
+      "count": 72,
+      "percentage": 3.6
+    },
+    {
+      "reaction": "Drug ineffective",
+      "count": 72,
+      "percentage": 3.6
+    },
+    {
+      "reaction": "Weight decreased",
+      "count": 70,
+      "percentage": 3.5
+    }
+  ],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 18,
+        "percentage": 0.9
+      },
+      "18-44": {
+        "count": 72,
+        "percentage": 3.6
+      },
+      "45-64": {
+        "count": 608,
+        "percentage": 30.4
+      },
+      "65-74": {
+        "count": 514,
+        "percentage": 25.7
+      },
+      "75+": {
+        "count": 460,
+        "percentage": 23.0
+      },
+      "unknown": {
+        "count": 328,
+        "percentage": 16.4
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 978,
+        "percentage": 48.9
+      },
+      "female": {
+        "count": 968,
+        "percentage": 48.4
+      },
+      "unknown": {
+        "count": 54,
+        "percentage": 2.7
+      }
+    },
+    "total_sample_records": 2000
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 164,
+      "percentage": 8.2
+    },
+    "hospitalization": {
+      "count": 750,
+      "percentage": 37.5
+    },
+    "disability": {
+      "count": 118,
+      "percentage": 5.9
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 660,
+      "percentage": 33.0
+    },
+    "not_serious": {
+      "count": 590,
+      "percentage": 29.5
+    }
+  },
+  "timeline": [
+    {
+      "year": 1899,
+      "event": "Commercial introduction by Bayer",
+      "type": "discovery",
+      "significance": "One of the earliest and most widely used analgesic/anti-inflammatory compounds."
+    },
+    {
+      "year": 1965,
+      "event": "FDA regulatory framework applied (OTC monograph era)",
+      "type": "approval",
+      "significance": "Regulated under the modern OTC drug framework alongside newer NSAIDs."
+    },
+    {
+      "year": 1986,
+      "event": "Reye's syndrome warning added",
+      "type": "warning",
+      "significance": "Label warns against use in children/teens with viral illness."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": true,
+    "black_box_warning": false,
+    "recall_history": false,
+    "label_updated": false,
+    "withdrawn": false,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "MYOCARDIAL INFARCTION shows a strong disproportionality signal (PRR=3.4).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 9.0,
+    "serious_rate_pct": 70.5,
+    "hospitalization_rate_pct": 38.2,
+    "avg_patient_age": 65.9,
+    "flagged_signal_count": 4,
+    "strongest_signal_prr": 3.4,
+    "strongest_signal_reaction": "MYOCARDIAL INFARCTION"
+  },
+  "meta": {
+    "drug_queried": "ASPIRIN",
+    "sample_record_count": 2000,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-11T10:24:17.036044Z",
+    "cache_expires": "2026-07-12T10:24:17.036044Z"
+  },
+  "ai_summary": null
+}

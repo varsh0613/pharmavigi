@@ -1,0 +1,533 @@
+{
+  "drug_name": "OXAPROZIN",
+  "brand_name": "Oxaprozin",
+  "drug_class": "Nonsteroidal Anti-inflammatory Drug [EPC]",
+  "indication": "Oxaprozin tablets are indicated: For relief of the signs and symptoms of osteoarthritis For relief of the signs and symptoms of rheumatoid arthritis For relief of the signs and symptoms of juvenile rh",
+  "manufacturer": "Direct_Rx",
+  "approval_year": 1992,
+  "status": "Active",
+  "withdrawal_year": null,
+  "live_counts": {
+    "total_reports": 919,
+    "serious_reports": 509,
+    "death_reports": 32,
+    "hospitalization_reports": 236,
+    "disability_reports": 32,
+    "life_threatening_reports": 14,
+    "latest_report_year": 2026
+  },
+  "signals": [
+    {
+      "reaction": "CHRONIC KIDNEY DISEASE",
+      "drug_reaction_count": 82,
+      "prr": 24.18,
+      "ror": 26.45,
+      "chi_square": 1803.71,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "RENAL FAILURE",
+      "drug_reaction_count": 54,
+      "prr": 9.13,
+      "ror": 9.63,
+      "chi_square": 385.04,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "GASTROOESOPHAGEAL REFLUX DISEASE",
+      "drug_reaction_count": 32,
+      "prr": 9.13,
+      "ror": 9.42,
+      "chi_square": 224.42,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ACUTE KIDNEY INJURY",
+      "drug_reaction_count": 51,
+      "prr": 7.66,
+      "ror": 8.05,
+      "chi_square": 290.59,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "DRUG HYPERSENSITIVITY",
+      "drug_reaction_count": 61,
+      "prr": 7.11,
+      "ror": 7.55,
+      "chi_square": 317.36,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "DEPRESSION",
+      "drug_reaction_count": 33,
+      "prr": 3.27,
+      "ror": 3.36,
+      "chi_square": 50.33,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "HYPERTENSION",
+      "drug_reaction_count": 27,
+      "prr": 2.9,
+      "ror": 2.96,
+      "chi_square": 32.01,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "drug_reaction_count": 52,
+      "prr": 2.87,
+      "ror": 2.98,
+      "chi_square": 62.72,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PAIN",
+      "drug_reaction_count": 69,
+      "prr": 2.55,
+      "ror": 2.67,
+      "chi_square": 65.22,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FALL",
+      "drug_reaction_count": 34,
+      "prr": 2.33,
+      "ror": 2.38,
+      "chi_square": 24.87,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIZZINESS",
+      "drug_reaction_count": 50,
+      "prr": 2.29,
+      "ror": 2.36,
+      "chi_square": 35.87,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PAIN IN EXTREMITY",
+      "drug_reaction_count": 26,
+      "prr": 2.0,
+      "ror": 2.03,
+      "chi_square": 12.19,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "NAUSEA",
+      "drug_reaction_count": 64,
+      "prr": 1.85,
+      "ror": 1.92,
+      "chi_square": 25.25,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "RASH",
+      "drug_reaction_count": 34,
+      "prr": 1.79,
+      "ror": 1.83,
+      "chi_square": 11.42,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DYSPNOEA",
+      "drug_reaction_count": 39,
+      "prr": 1.57,
+      "ror": 1.6,
+      "chi_square": 7.72,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "HEADACHE",
+      "drug_reaction_count": 39,
+      "prr": 1.42,
+      "ror": 1.44,
+      "chi_square": 4.55,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FATIGUE",
+      "drug_reaction_count": 46,
+      "prr": 1.35,
+      "ror": 1.37,
+      "chi_square": 4.0,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "VOMITING",
+      "drug_reaction_count": 27,
+      "prr": 1.32,
+      "ror": 1.33,
+      "chi_square": 1.78,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 35,
+      "prr": 1.25,
+      "ror": 1.26,
+      "chi_square": 1.51,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "drug_reaction_count": 71,
+      "prr": 1.23,
+      "ror": 1.25,
+      "chi_square": 2.95,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 6.83,
+    "signal_score": 7.14,
+    "volume_score": 2.96,
+    "risk_index": 62.27,
+    "risk_tier": "HIGH",
+    "risk_color": "orange",
+    "death_pct": 3.48,
+    "hosp_pct": 25.68,
+    "disab_pct": 3.48
+  },
+  "cost_of_harm": {
+    "death_cost_usd": 16000000,
+    "hospitalization_cost_usd": 3540000,
+    "disability_cost_usd": 6400000,
+    "total_estimated_cost_usd": 25940000,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 2004,
+      "count": 29
+    },
+    {
+      "year": 2005,
+      "count": 58
+    },
+    {
+      "year": 2006,
+      "count": 24
+    },
+    {
+      "year": 2007,
+      "count": 16
+    },
+    {
+      "year": 2008,
+      "count": 38
+    },
+    {
+      "year": 2009,
+      "count": 37
+    },
+    {
+      "year": 2010,
+      "count": 33
+    },
+    {
+      "year": 2011,
+      "count": 37
+    },
+    {
+      "year": 2012,
+      "count": 47
+    },
+    {
+      "year": 2013,
+      "count": 59
+    },
+    {
+      "year": 2014,
+      "count": 41
+    },
+    {
+      "year": 2015,
+      "count": 56
+    },
+    {
+      "year": 2016,
+      "count": 73
+    },
+    {
+      "year": 2017,
+      "count": 55
+    },
+    {
+      "year": 2018,
+      "count": 80
+    },
+    {
+      "year": 2019,
+      "count": 84
+    },
+    {
+      "year": 2020,
+      "count": 59
+    },
+    {
+      "year": 2021,
+      "count": 22
+    },
+    {
+      "year": 2022,
+      "count": 23
+    },
+    {
+      "year": 2023,
+      "count": 24
+    },
+    {
+      "year": 2024,
+      "count": 10
+    },
+    {
+      "year": 2025,
+      "count": 11
+    },
+    {
+      "year": 2026,
+      "count": 3
+    }
+  ],
+  "top_reactions": [
+    {
+      "reaction": "Chronic kidney disease",
+      "count": 164,
+      "percentage": 8.9
+    },
+    {
+      "reaction": "Drug hypersensitivity",
+      "count": 120,
+      "percentage": 6.5
+    },
+    {
+      "reaction": "Renal failure",
+      "count": 110,
+      "percentage": 6.0
+    },
+    {
+      "reaction": "Drug ineffective",
+      "count": 102,
+      "percentage": 5.5
+    },
+    {
+      "reaction": "Acute kidney injury",
+      "count": 102,
+      "percentage": 5.5
+    },
+    {
+      "reaction": "Pain",
+      "count": 96,
+      "percentage": 5.2
+    },
+    {
+      "reaction": "Nausea",
+      "count": 88,
+      "percentage": 4.8
+    },
+    {
+      "reaction": "Arthralgia",
+      "count": 82,
+      "percentage": 4.5
+    },
+    {
+      "reaction": "Headache",
+      "count": 66,
+      "percentage": 3.6
+    },
+    {
+      "reaction": "Fatigue",
+      "count": 60,
+      "percentage": 3.3
+    },
+    {
+      "reaction": "Diarrhoea",
+      "count": 56,
+      "percentage": 3.0
+    },
+    {
+      "reaction": "DIZZINESS",
+      "count": 52,
+      "percentage": 2.8
+    },
+    {
+      "reaction": "Fall",
+      "count": 50,
+      "percentage": 2.7
+    },
+    {
+      "reaction": "Dizziness",
+      "count": 48,
+      "percentage": 2.6
+    },
+    {
+      "reaction": "Pain in extremity",
+      "count": 48,
+      "percentage": 2.6
+    }
+  ],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 8,
+        "percentage": 0.4
+      },
+      "18-44": {
+        "count": 152,
+        "percentage": 8.3
+      },
+      "45-64": {
+        "count": 574,
+        "percentage": 31.2
+      },
+      "65-74": {
+        "count": 244,
+        "percentage": 13.3
+      },
+      "75+": {
+        "count": 120,
+        "percentage": 6.5
+      },
+      "unknown": {
+        "count": 658,
+        "percentage": 35.8
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 528,
+        "percentage": 28.7
+      },
+      "female": {
+        "count": 1198,
+        "percentage": 65.2
+      },
+      "unknown": {
+        "count": 112,
+        "percentage": 6.1
+      }
+    },
+    "total_sample_records": 1838
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 64,
+      "percentage": 3.5
+    },
+    "hospitalization": {
+      "count": 472,
+      "percentage": 25.7
+    },
+    "disability": {
+      "count": 64,
+      "percentage": 3.5
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 546,
+      "percentage": 29.7
+    },
+    "not_serious": {
+      "count": 820,
+      "percentage": 44.6
+    }
+  },
+  "timeline": [
+    {
+      "year": 1992,
+      "event": "FDA approval as Daypro",
+      "type": "approval",
+      "significance": "Long half-life NSAID approved for once-daily dosing."
+    },
+    {
+      "year": 2005,
+      "event": "NSAID class label update",
+      "type": "label_change",
+      "significance": "Cardiovascular/GI warnings added class-wide."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": true,
+    "black_box_warning": true,
+    "recall_history": false,
+    "label_updated": true,
+    "withdrawn": false,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "CHRONIC KIDNEY DISEASE shows a strong disproportionality signal (PRR=24.18).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "RENAL FAILURE shows a strong disproportionality signal (PRR=9.13).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "GASTROOESOPHAGEAL REFLUX DISEASE shows a strong disproportionality signal (PRR=9.13).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ACUTE KIDNEY INJURY shows a strong disproportionality signal (PRR=7.66).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DRUG HYPERSENSITIVITY shows a strong disproportionality signal (PRR=7.11).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "DEPRESSION shows a strong disproportionality signal (PRR=3.27).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 3.5,
+    "serious_rate_pct": 55.4,
+    "hospitalization_rate_pct": 25.7,
+    "avg_patient_age": 1399.4,
+    "flagged_signal_count": 12,
+    "strongest_signal_prr": 24.18,
+    "strongest_signal_reaction": "CHRONIC KIDNEY DISEASE"
+  },
+  "meta": {
+    "drug_queried": "OXAPROZIN",
+    "sample_record_count": 1838,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-11T10:22:11.328790Z",
+    "cache_expires": "2026-07-12T10:22:11.328790Z"
+  },
+  "ai_summary": null
+}

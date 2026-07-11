@@ -1,0 +1,528 @@
+{
+  "drug_name": "MELOXICAM",
+  "brand_name": "Meloxicam",
+  "drug_class": "Nonsteroidal Anti-inflammatory Drug [EPC]",
+  "indication": "1 INDICATIONS AND USAGE Meloxicam tablet USP is a non-steroidal anti-inflammatory drug indicated for: Osteoarthritis (OA) ( 1.1 ) Rheumatoid Arthritis (RA) ( 1.2 ) Juvenile Rheumatoid Arthritis (JRA) ",
+  "manufacturer": "Lupin Pharmaceuticals, Inc.",
+  "approval_year": 2000,
+  "status": "Active",
+  "withdrawal_year": null,
+  "live_counts": {
+    "total_reports": 57978,
+    "serious_reports": 33790,
+    "death_reports": 3753,
+    "hospitalization_reports": 14043,
+    "disability_reports": 2369,
+    "life_threatening_reports": 2147,
+    "latest_report_year": 2026
+  },
+  "signals": [
+    {
+      "reaction": "CHRONIC KIDNEY DISEASE",
+      "drug_reaction_count": 2341,
+      "prr": 11.25,
+      "ror": 11.68,
+      "chi_square": 21249.03,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "RHEUMATOID ARTHRITIS",
+      "drug_reaction_count": 2304,
+      "prr": 7.5,
+      "ror": 7.77,
+      "chi_square": 12763.34,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "JOINT SWELLING",
+      "drug_reaction_count": 2139,
+      "prr": 6.52,
+      "ror": 6.73,
+      "chi_square": 9866.64,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "ARTHRALGIA",
+      "drug_reaction_count": 4353,
+      "prr": 3.84,
+      "ror": 4.07,
+      "chi_square": 9216.4,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "PAIN IN EXTREMITY",
+      "drug_reaction_count": 2669,
+      "prr": 3.28,
+      "ror": 3.38,
+      "chi_square": 4236.58,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "PAIN",
+      "drug_reaction_count": 4809,
+      "prr": 2.83,
+      "ror": 2.99,
+      "chi_square": 5808.08,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "CONDITION AGGRAVATED",
+      "drug_reaction_count": 2148,
+      "prr": 2.59,
+      "ror": 2.66,
+      "chi_square": 2117.03,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FATIGUE",
+      "drug_reaction_count": 4741,
+      "prr": 2.21,
+      "ror": 2.32,
+      "chi_square": 3258.14,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "MALAISE",
+      "drug_reaction_count": 2589,
+      "prr": 2.13,
+      "ror": 2.18,
+      "chi_square": 1567.69,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PRURITUS",
+      "drug_reaction_count": 2130,
+      "prr": 2.07,
+      "ror": 2.11,
+      "chi_square": 1195.68,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ASTHENIA",
+      "drug_reaction_count": 2118,
+      "prr": 2.04,
+      "ror": 2.08,
+      "chi_square": 1133.21,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIZZINESS",
+      "drug_reaction_count": 2756,
+      "prr": 2.01,
+      "ror": 2.06,
+      "chi_square": 1414.55,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "HEADACHE",
+      "drug_reaction_count": 3463,
+      "prr": 2.0,
+      "ror": 2.07,
+      "chi_square": 1781.84,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "RASH",
+      "drug_reaction_count": 2291,
+      "prr": 1.92,
+      "ror": 1.96,
+      "chi_square": 1027.55,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 3350,
+      "prr": 1.9,
+      "ror": 1.95,
+      "chi_square": 1452.06,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "NAUSEA",
+      "drug_reaction_count": 3968,
+      "prr": 1.83,
+      "ror": 1.89,
+      "chi_square": 1530.96,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DYSPNOEA",
+      "drug_reaction_count": 2800,
+      "prr": 1.79,
+      "ror": 1.83,
+      "chi_square": 998.77,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "VOMITING",
+      "drug_reaction_count": 2312,
+      "prr": 1.79,
+      "ror": 1.82,
+      "chi_square": 819.45,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DRUG INEFFECTIVE",
+      "drug_reaction_count": 6078,
+      "prr": 1.67,
+      "ror": 1.75,
+      "chi_square": 1728.13,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "OFF LABEL USE",
+      "drug_reaction_count": 2661,
+      "prr": 1.12,
+      "ror": 1.12,
+      "chi_square": 33.77,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    }
+  ],
+  "risk_scoring": {
+    "severity_score": 8.23,
+    "signal_score": 3.11,
+    "volume_score": 4.76,
+    "risk_index": 47.2,
+    "risk_tier": "MODERATE",
+    "risk_color": "yellow",
+    "death_pct": 6.47,
+    "hosp_pct": 24.22,
+    "disab_pct": 4.09
+  },
+  "cost_of_harm": {
+    "death_cost_usd": null,
+    "hospitalization_cost_usd": null,
+    "disability_cost_usd": null,
+    "total_estimated_cost_usd": null,
+    "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
+  },
+  "trend_by_year": [
+    {
+      "year": 2004,
+      "count": 272
+    },
+    {
+      "year": 2005,
+      "count": 345
+    },
+    {
+      "year": 2006,
+      "count": 218
+    },
+    {
+      "year": 2007,
+      "count": 342
+    },
+    {
+      "year": 2008,
+      "count": 530
+    },
+    {
+      "year": 2009,
+      "count": 664
+    },
+    {
+      "year": 2010,
+      "count": 852
+    },
+    {
+      "year": 2011,
+      "count": 1144
+    },
+    {
+      "year": 2012,
+      "count": 1803
+    },
+    {
+      "year": 2013,
+      "count": 1976
+    },
+    {
+      "year": 2014,
+      "count": 2397
+    },
+    {
+      "year": 2015,
+      "count": 3560
+    },
+    {
+      "year": 2016,
+      "count": 4764
+    },
+    {
+      "year": 2017,
+      "count": 4267
+    },
+    {
+      "year": 2018,
+      "count": 4980
+    },
+    {
+      "year": 2019,
+      "count": 5378
+    },
+    {
+      "year": 2020,
+      "count": 5142
+    },
+    {
+      "year": 2021,
+      "count": 4000
+    },
+    {
+      "year": 2022,
+      "count": 3788
+    },
+    {
+      "year": 2023,
+      "count": 3586
+    },
+    {
+      "year": 2024,
+      "count": 3610
+    },
+    {
+      "year": 2025,
+      "count": 3636
+    },
+    {
+      "year": 2026,
+      "count": 756
+    }
+  ],
+  "top_reactions": [
+    {
+      "reaction": "Drug ineffective",
+      "count": 998,
+      "percentage": 10.0
+    },
+    {
+      "reaction": "Pain",
+      "count": 750,
+      "percentage": 7.5
+    },
+    {
+      "reaction": "Nausea",
+      "count": 716,
+      "percentage": 7.2
+    },
+    {
+      "reaction": "Fatigue",
+      "count": 606,
+      "percentage": 6.1
+    },
+    {
+      "reaction": "Arthralgia",
+      "count": 596,
+      "percentage": 6.0
+    },
+    {
+      "reaction": "Headache",
+      "count": 570,
+      "percentage": 5.7
+    },
+    {
+      "reaction": "Dizziness",
+      "count": 508,
+      "percentage": 5.1
+    },
+    {
+      "reaction": "Diarrhoea",
+      "count": 504,
+      "percentage": 5.0
+    },
+    {
+      "reaction": "Pain in extremity",
+      "count": 454,
+      "percentage": 4.5
+    },
+    {
+      "reaction": "Dyspnoea",
+      "count": 424,
+      "percentage": 4.2
+    },
+    {
+      "reaction": "Fall",
+      "count": 398,
+      "percentage": 4.0
+    },
+    {
+      "reaction": "Malaise",
+      "count": 362,
+      "percentage": 3.6
+    },
+    {
+      "reaction": "Asthenia",
+      "count": 346,
+      "percentage": 3.5
+    },
+    {
+      "reaction": "Drug dose omission",
+      "count": 326,
+      "percentage": 3.3
+    },
+    {
+      "reaction": "Insomnia",
+      "count": 322,
+      "percentage": 3.2
+    }
+  ],
+  "demographics": {
+    "age_groups": {
+      "0-17": {
+        "count": 102,
+        "percentage": 1.0
+      },
+      "18-44": {
+        "count": 1048,
+        "percentage": 10.5
+      },
+      "45-64": {
+        "count": 3782,
+        "percentage": 37.8
+      },
+      "65-74": {
+        "count": 1678,
+        "percentage": 16.8
+      },
+      "75+": {
+        "count": 976,
+        "percentage": 9.8
+      },
+      "unknown": {
+        "count": 2296,
+        "percentage": 23.0
+      }
+    },
+    "gender": {
+      "male": {
+        "count": 2932,
+        "percentage": 29.3
+      },
+      "female": {
+        "count": 6644,
+        "percentage": 66.4
+      },
+      "unknown": {
+        "count": 424,
+        "percentage": 4.2
+      }
+    },
+    "total_sample_records": 10000
+  },
+  "outcome_distribution": {
+    "death": {
+      "count": 452,
+      "percentage": 4.5
+    },
+    "hospitalization": {
+      "count": 2362,
+      "percentage": 23.6
+    },
+    "disability": {
+      "count": 328,
+      "percentage": 3.3
+    },
+    "life_threatening": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "serious_other": {
+      "count": 2838,
+      "percentage": 28.4
+    },
+    "not_serious": {
+      "count": 4800,
+      "percentage": 48.0
+    }
+  },
+  "timeline": [
+    {
+      "year": 2000,
+      "event": "FDA approval as Mobic",
+      "type": "approval",
+      "significance": "Approved as a preferentially COX-2 selective NSAID."
+    },
+    {
+      "year": 2005,
+      "event": "NSAID class label update",
+      "type": "label_change",
+      "significance": "Cardiovascular/GI warnings added class-wide."
+    }
+  ],
+  "safety_indicators": {
+    "fda_approved": true,
+    "black_box_warning": true,
+    "recall_history": false,
+    "label_updated": true,
+    "withdrawn": false,
+    "safety_alert_recent": false
+  },
+  "emerging_signals": [
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "CHRONIC KIDNEY DISEASE shows a strong disproportionality signal (PRR=11.25).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "RHEUMATOID ARTHRITIS shows a strong disproportionality signal (PRR=7.5).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "JOINT SWELLING shows a strong disproportionality signal (PRR=6.52).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "ARTHRALGIA shows a strong disproportionality signal (PRR=3.84).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "PAIN IN EXTREMITY shows a strong disproportionality signal (PRR=3.28).",
+      "severity": "MEDIUM"
+    }
+  ],
+  "comparison_stats": {
+    "death_rate_pct": 6.5,
+    "serious_rate_pct": 58.3,
+    "hospitalization_rate_pct": 24.2,
+    "avg_patient_age": 295.6,
+    "flagged_signal_count": 13,
+    "strongest_signal_prr": 11.25,
+    "strongest_signal_reaction": "CHRONIC KIDNEY DISEASE"
+  },
+  "meta": {
+    "drug_queried": "MELOXICAM",
+    "sample_record_count": 10000,
+    "data_sources": [
+      "openFDA_live",
+      "faers_sample_csv"
+    ],
+    "analysis_timestamp": "2026-07-11T10:11:11.376823Z",
+    "cache_expires": "2026-07-12T10:11:11.376823Z"
+  },
+  "ai_summary": null
+}
