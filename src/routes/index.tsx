@@ -15,6 +15,7 @@ import {
   BarChart,
   CartesianGrid,
   Cell,
+  Line,
   Pie,
   PieChart,
   ReferenceLine,
@@ -24,49 +25,177 @@ import {
   YAxis,
 } from "recharts";
 import {
-  DRUGS,
   drugById,
   formatMoney,
   formatNumber,
-  tierColorClass,
   timelineDotClass,
+  type Drug,
 } from "@/data/drugs";
 import { DomeHeader } from "@/components/DomeHeader";
 import { AddDrugModal } from "@/components/AddDrugModal";
+import { useDrugs } from "@/hooks/use-drugs";
 
 export const Route = createFileRoute("/")({
   component: DrugProfile,
 });
 
+type TimeWindow = "ALL" | "10Y" | "5Y" | "CURRENT";
+type TrendMetric = "total" | "serious" | "deaths";
+
 function DrugProfile() {
+  const { data: drugs = [], isLoading, isError, error, refetch } = useDrugs();
   const [drugId, setDrugId] = useState<string>("rofecoxib");
   const [addOpen, setAddOpen] = useState(false);
-  const drug = useMemo(() => drugById(drugId), [drugId]);
+  const [timeWindow, setTimeWindow] = useState<TimeWindow>("ALL");
+  const [trendMetric, setTrendMetric] = useState<TrendMetric>("total");
+
+  const drug = useMemo(() => drugById(drugs, drugId) ?? drugs[0], [drugs, drugId]);
+
+  if (isLoading) {
+    return <DashboardLoading message="Loading analysis profiles…" />;
+  }
+
+  if (isError || !drug) {
+    return (
+      <DashboardError
+        message={error instanceof Error ? error.message : "Could not load drug profiles"}
+        onRetry={refetch}
+      />
+    );
+  }
 
   const outcomeData = [
     { name: "Death", value: drug.outcomes.death, color: "var(--critical)" },
     { name: "Hospitalization", value: drug.outcomes.hospitalization, color: "var(--lavender)" },
     { name: "Disability", value: drug.outcomes.disability, color: "var(--pink)" },
     { name: "Life-threatening", value: drug.outcomes.lifeThreatening, color: "var(--high)" },
-    { name: "Recovered", value: drug.outcomes.recovered, color: "var(--pistachio)" },
+    { name: "Recovered", value: drug.outcomes.recovered, color: "var(--low)" },
     { name: "Unknown", value: drug.outcomes.unknown, color: "var(--snow)" },
   ];
 
   const showCost = drug.tier === "CRITICAL" || drug.tier === "HIGH";
+  const filteredYearlyReports = useMemo(() => {
+    const startByWindow = {
+      ALL: Number.NEGATIVE_INFINITY,
+      "10Y": drug.latestYear - 9,
+      "5Y": drug.latestYear - 4,
+      CURRENT: drug.latestYear,
+    } satisfies Record<TimeWindow, number>;
+    return drug.yearlyReports.filter((row) => row.year >= startByWindow[timeWindow]);
+  }, [drug.latestYear, drug.yearlyReports, timeWindow]);
+  const windowTotals = filteredYearlyReports.reduce(
+    (sum, row) => ({
+      total: sum.total + row.total,
+      serious: sum.serious + row.serious,
+      deaths: sum.deaths + row.deaths,
+    }),
+    { total: 0, serious: 0, deaths: 0 },
+  );
+  const strongSignalCount = drug.signals.filter((signal) => signal.strength === "Strong").length;
+  const topReactionShare =
+    drug.totalReports > 0 ? (drug.topReactions[0]?.count ?? 0) / drug.totalReports * 100 : 0;
+  const deathRatePerK = drug.totalReports > 0 ? (drug.deaths / drug.totalReports) * 1000 : 0;
+  const hospitalizationRatePerK =
+    drug.totalReports > 0 ? (drug.hospitalizations / drug.totalReports) * 1000 : 0;
+  const prrBuckets = [
+    { label: "2-5", min: 2, max: 5 },
+    { label: "5-10", min: 5, max: 10 },
+    { label: "10-25", min: 10, max: 25 },
+    { label: "25-50", min: 25, max: 50 },
+    { label: "50+", min: 50, max: Number.POSITIVE_INFINITY },
+  ].map((bucket) => ({
+    label: bucket.label,
+    count: drug.signals.filter((signal) => signal.prr >= bucket.min && signal.prr < bucket.max).length,
+  }));
+  const outcomeRates = [
+    { label: "Deaths", value: deathRatePerK, color: "var(--critical)" },
+    { label: "Hospitalized", value: hospitalizationRatePerK, color: "var(--lavender)" },
+    {
+      label: "Disability",
+      value: drug.totalReports > 0 ? (drug.disabilities / drug.totalReports) * 1000 : 0,
+      color: "var(--pink)",
+    },
+    {
+      label: "Life threat",
+      value: drug.totalReports > 0 ? (drug.lifeThreatening / drug.totalReports) * 1000 : 0,
+      color: "var(--high)",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background pb-20">
       <DomeHeader
         drug={drug}
+        drugs={drugs}
         onSelect={setDrugId}
         onAddDrug={() => setAddOpen(true)}
       />
 
       {addOpen && (
-        <AddDrugModal drugName="Piroxicam" onClose={() => setAddOpen(false)} />
+        <AddDrugModal
+          onClose={() => {
+            setAddOpen(false);
+          }}
+          onSubmit={async (name) => {
+            const slug = name.trim().toLowerCase().replace(/\s+/g, "-");
+            const match = drugs.find(
+              (d) =>
+                d.id === slug ||
+                d.generic.toLowerCase() === name.trim().toLowerCase() ||
+                d.brand.toLowerCase() === name.trim().toLowerCase(),
+            );
+            if (match) {
+              setDrugId(match.id);
+              setAddOpen(false);
+            } else {
+              throw new Error(
+                `"${name}" is not in the local dataset. Only ${drugs.length} pre-analyzed drugs are available.`,
+              );
+            }
+          }}
+        />
       )}
 
-      <main className="mx-auto mt-32 max-w-7xl px-8">
+      <main className="mx-auto mt-14 max-w-7xl px-8">
+        <section className="mb-4 rounded-3xl bg-white p-3 ring-1 ring-black/5">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex flex-wrap gap-1 rounded-full bg-black/[0.04] p-1">
+              {(["ALL", "10Y", "5Y", "CURRENT"] as const).map((window) => (
+                <button
+                  key={window}
+                  onClick={() => setTimeWindow(window)}
+                  className={`rounded-full px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-widest ${
+                    timeWindow === window ? "bg-foreground text-background" : "text-foreground/65"
+                  }`}
+                >
+                  {window === "CURRENT" ? `${drug.latestYear}` : window === "ALL" ? "All years" : window}
+                </button>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-1 rounded-full bg-black/[0.04] p-1">
+              {(["total", "serious", "deaths"] as const).map((metric) => (
+                <button
+                  key={metric}
+                  onClick={() => setTrendMetric(metric)}
+                  className={`rounded-full px-3 py-1.5 text-[10px] font-semibold capitalize ${
+                    trendMetric === metric ? "bg-foreground text-background" : "text-foreground/65"
+                  }`}
+                >
+                  {metric}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="mt-3 grid grid-cols-2 gap-2 lg:grid-cols-6">
+            <MiniKPI label="Window reports" value={formatNumber(windowTotals.total)} />
+            <MiniKPI label="Window serious" value={formatNumber(windowTotals.serious)} />
+            <MiniKPI label="Deaths / 1k" value={deathRatePerK.toFixed(2)} danger />
+            <MiniKPI label="Hosp. / 1k" value={hospitalizationRatePerK.toFixed(2)} />
+            <MiniKPI label="Strong signals" value={String(strongSignalCount)} danger={strongSignalCount > 0} />
+            <MiniKPI label="Top reaction share" value={`${topReactionShare.toFixed(2)}%`} />
+          </div>
+        </section>
+
         {/* Row 1: Summary + KPIs + Timeline */}
         <div className="grid grid-cols-12 gap-4">
           {/* LEFT: AI Summary + KPIs + Cost */}
@@ -77,7 +206,9 @@ function DrugProfile() {
               </p>
               <div className="mt-4 flex items-center justify-between">
                 <span className="font-mono text-[9px] uppercase tracking-widest text-foreground/50">
-                  AI · generated 2m ago
+                  {drug.analysisTimestamp
+                    ? `Analysis · ${new Date(drug.analysisTimestamp).toLocaleDateString()}`
+                    : "Live analysis"}
                 </span>
                 <button className="rounded-full bg-black/10 px-2.5 py-1 text-[10px] font-medium hover:bg-black/15">
                   Regenerate
@@ -126,122 +257,128 @@ function DrugProfile() {
             </Card>
           </div>
 
-          {/* CENTER: Trend + Signals + Reactions/Outcomes */}
-          <div className="col-span-12 space-y-4 lg:col-span-6">
-            {/* Trend */}
-            <Card bg="bg-snow" label="Adverse Event Trend">
-              <div className="mb-2 flex items-center justify-between">
-                <div>
-                  <div className="text-sm font-semibold">
-                    Reports by year · {drug.yearlyReports[0].year}–{drug.latestYear}
-                  </div>
-                  <div className="mt-0.5 text-xs text-foreground/60">
-                    {drug.withdrawalYear
-                      ? `Withdrawal marker at ${drug.withdrawalYear}`
-                      : "Currently under active surveillance"}
-                  </div>
-                </div>
-                <div className="flex gap-1 rounded-full bg-white/50 p-1 text-[10px] font-medium">
-                  <span className="rounded-full bg-white px-2.5 py-1 shadow-sm">Total</span>
-                  <span className="rounded-full px-2.5 py-1 text-foreground/60">Serious</span>
-                  <span className="rounded-full px-2.5 py-1 text-foreground/60">Deaths</span>
-                </div>
-              </div>
-              <div className="h-56 w-full">
-                <ResponsiveContainer>
-                  <AreaChart data={drug.yearlyReports}>
-                    <defs>
-                      <linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="var(--critical)" stopOpacity={0.35} />
-                        <stop offset="100%" stopColor="var(--critical)" stopOpacity={0} />
-                      </linearGradient>
-                    </defs>
-                    <CartesianGrid strokeDasharray="2 4" stroke="rgba(0,0,0,0.08)" vertical={false} />
-                    <XAxis
-                      dataKey="year"
-                      tick={{ fontSize: 10, fontFamily: "var(--font-mono)" }}
-                      axisLine={false}
-                      tickLine={false}
-                    />
-                    <YAxis
-                      tick={{ fontSize: 10, fontFamily: "var(--font-mono)" }}
-                      axisLine={false}
-                      tickLine={false}
-                      tickFormatter={(v) => formatNumber(v as number)}
-                    />
-                    <RcTooltip
-                      contentStyle={{
-                        borderRadius: 12,
-                        border: "none",
-                        boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
-                        fontFamily: "var(--font-mono)",
-                        fontSize: 11,
-                      }}
-                      formatter={(v: number) => formatNumber(v)}
-                    />
-                    <Area
-                      type="monotone"
-                      dataKey="total"
-                      stroke="var(--critical)"
-                      strokeWidth={2.5}
-                      fill="url(#trendFill)"
-                    />
-                    {drug.withdrawalYear && (
-                      <ReferenceLine
-                        x={drug.withdrawalYear}
-                        stroke="var(--critical)"
-                        strokeDasharray="4 4"
-                        label={{
-                          value: "Withdrawal",
-                          position: "top",
-                          fill: "var(--critical)",
-                          fontSize: 10,
-                          fontFamily: "var(--font-mono)",
-                        }}
-                      />
-                    )}
-                  </AreaChart>
-                </ResponsiveContainer>
-              </div>
-            </Card>
+           {/* CENTER: Trend + Signals + Class comparison */}
+           <div className="col-span-12 space-y-4 lg:col-span-9">
+             {/* Trend */}
+             <Card bg="bg-snow" label="Adverse Event Trend">
+               <div className="mb-2 flex items-center justify-between">
+                 <div>
+                   <div className="text-sm font-semibold">
+                     Reports by year · {drug.yearlyReports[0]?.year ?? "—"}–{drug.latestYear}
+                   </div>
+                   <div className="mt-0.5 text-xs text-foreground/60">
+                     {drug.withdrawalYear
+                       ? `Withdrawal marker at ${drug.withdrawalYear}`
+                       : "Currently under active surveillance"}
+                   </div>
+                 </div>
+                 <div className="flex gap-1 rounded-full bg-white/50 p-1 text-[10px] font-medium">
+                   <span className="rounded-full bg-white px-2.5 py-1 shadow-sm">Total</span>
+                   <span className="rounded-full px-2.5 py-1 text-foreground/60">Serious</span>
+                   <span className="rounded-full px-2.5 py-1 text-foreground/60">Deaths</span>
+                 </div>
+               </div>
+               <div className="h-56 w-full">
+                 <ResponsiveContainer>
+                   <AreaChart data={filteredYearlyReports}>
+                     <defs>
+                       <linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1">
+                         <stop offset="0%" stopColor="var(--critical)" stopOpacity={0.35} />
+                         <stop offset="100%" stopColor="var(--critical)" stopOpacity={0} />
+                       </linearGradient>
+                     </defs>
+                     <CartesianGrid strokeDasharray="2 4" stroke="rgba(0,0,0,0.08)" vertical={false} />
+                     <XAxis
+                       dataKey="year"
+                       tick={{ fontSize: 10, fontFamily: "var(--font-mono)" }}
+                       axisLine={false}
+                       tickLine={false}
+                     />
+                     <YAxis
+                       tick={{ fontSize: 10, fontFamily: "var(--font-mono)" }}
+                       axisLine={false}
+                       tickLine={false}
+                       tickFormatter={(v) => formatNumber(v as number)}
+                     />
+                     <RcTooltip
+                       contentStyle={{
+                         borderRadius: 12,
+                         border: "none",
+                         boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
+                         fontFamily: "var(--font-mono)",
+                         fontSize: 11,
+                       }}
+                       formatter={(v: number) => formatNumber(v)}
+                     />
+                     <Area
+                       type="monotone"
+                       dataKey={trendMetric}
+                       stroke="var(--critical)"
+                       strokeWidth={2.5}
+                       fill="url(#trendFill)"
+                     />
+                     {trendMetric === "total" && (
+                       <>
+                         <Line type="monotone" dataKey="serious" stroke="var(--high)" strokeWidth={1.8} dot={false} />
+                         <Line type="monotone" dataKey="deaths" stroke="var(--foreground)" strokeWidth={1.6} dot={false} />
+                       </>
+                     )}
+                     {drug.withdrawalYear && (
+                       <ReferenceLine
+                         x={drug.withdrawalYear}
+                         stroke="var(--critical)"
+                         strokeDasharray="4 4"
+                         label={{
+                           value: "Withdrawal",
+                           position: "top",
+                           fill: "var(--critical)",
+                           fontSize: 10,
+                           fontFamily: "var(--font-mono)",
+                         }}
+                       />
+                     )}
+                   </AreaChart>
+                 </ResponsiveContainer>
+               </div>
+             </Card>
 
-            {/* Signal Detection Table */}
+             {/* Signal Detection Table */}
             <Card bg="bg-white ring-1 ring-black/5" label="Signal Detection · PRR / ROR / χ²">
-              <div className="overflow-hidden rounded-2xl">
+              <div className="max-h-40 overflow-y-auto rounded-2xl">
                 <table className="w-full text-left">
-                  <thead className="bg-black/[0.03]">
+                  <thead className="sticky top-0 bg-black/[0.03]">
                     <tr className="font-mono text-[9px] font-semibold uppercase tracking-widest text-foreground/60">
-                      <th className="px-4 py-2.5">Reaction</th>
-                      <th className="px-2 py-2.5">Reports</th>
-                      <th className="px-2 py-2.5">
+                      <th className="px-3 py-1.5">Reaction</th>
+                      <th className="px-2 py-1.5">Reports</th>
+                      <th className="px-2 py-1.5">
                         <Tip label="PRR" tip="Proportional Reporting Ratio — how much more often this reaction appears for this drug vs. all others in class. Threshold ≥ 2." />
                       </th>
-                      <th className="px-2 py-2.5">
+                      <th className="px-2 py-1.5">
                         <Tip label="ROR" tip="Reporting Odds Ratio — statistical odds. Threshold ≥ 2." />
                       </th>
-                      <th className="px-2 py-2.5">
+                      <th className="px-2 py-1.5">
                         <Tip label="χ²" tip="Chi-square significance. Threshold ≥ 4." />
                       </th>
-                      <th className="px-4 py-2.5 text-right">Strength</th>
+                      <th className="px-3 py-1.5 text-right">Strength</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-black/5">
                     {drug.signals.map((s) => (
                       <tr key={s.reaction} className={s.strength === "Strong" ? "bg-critical/[0.04]" : ""}>
-                        <td className="px-4 py-3 text-sm font-medium">{s.reaction}</td>
-                        <td className="px-2 py-3 font-mono text-xs tabular-nums">
+                        <td className="px-3 py-1.5 text-xs font-medium">{s.reaction}</td>
+                        <td className="px-2 py-1.5 font-mono text-[11px] tabular-nums">
                           {formatNumber(s.reports)}
                         </td>
-                        <td className="px-2 py-3 font-mono text-xs tabular-nums">
+                        <td className="px-2 py-1.5 font-mono text-[11px] tabular-nums">
                           {s.prr.toFixed(2)}
                         </td>
-                        <td className="px-2 py-3 font-mono text-xs tabular-nums">
+                        <td className="px-2 py-1.5 font-mono text-[11px] tabular-nums">
                           {s.ror.toFixed(2)}
                         </td>
-                        <td className="px-2 py-3 font-mono text-xs tabular-nums">
+                        <td className="px-2 py-1.5 font-mono text-[11px] tabular-nums">
                           {s.chi2.toFixed(1)}
                         </td>
-                        <td className="px-4 py-3 text-right">
+                        <td className="px-3 py-1.5 text-right">
                           <StrengthBadge strength={s.strength} />
                         </td>
                       </tr>
@@ -251,120 +388,34 @@ function DrugProfile() {
               </div>
             </Card>
 
-            {/* Reactions + Outcomes */}
-            <div className="grid grid-cols-2 gap-4">
-              <Card bg="bg-lavender" label="Top Adverse Reactions">
-                <div className="h-64 w-full">
-                  <ResponsiveContainer>
-                    <BarChart
-                      data={drug.topReactions.slice(0, 8)}
-                      layout="vertical"
-                      margin={{ left: 0, right: 12, top: 4, bottom: 0 }}
-                    >
-                      <XAxis
-                        type="number"
-                        hide
-                        domain={[0, "dataMax"]}
-                      />
-                      <YAxis
-                        type="category"
-                        dataKey="reaction"
-                        width={130}
-                        tick={{ fontSize: 10, fill: "rgba(0,0,0,0.75)" }}
-                        axisLine={false}
-                        tickLine={false}
-                      />
-                      <RcTooltip
-                        contentStyle={{
-                          borderRadius: 12,
-                          border: "none",
-                          boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
-                          fontFamily: "var(--font-mono)",
-                          fontSize: 11,
-                        }}
-                        formatter={(v: number) => formatNumber(v)}
-                      />
-                      <Bar dataKey="count" radius={[6, 6, 6, 6]}>
-                        {drug.topReactions.slice(0, 8).map((r, i) => (
-                          <Cell
-                            key={i}
-                            fill={r.isSignal ? "var(--critical)" : "rgba(0,0,0,0.35)"}
-                          />
-                        ))}
-                      </Bar>
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
+             {/* Class comparison callouts */}
+             <Card bg="bg-white ring-1 ring-black/5" label="vs. NSAID Class Average">
+               <div className="grid grid-cols-3 gap-3">
+                 <Callout
+                   label="Death rate"
+                   value={`${drug.deathRatePct.toFixed(2)}%`}
+                   bench={`class ${drug.classAvgDeathRatePct.toFixed(2)}%`}
+                   danger={drug.deathRatePct > drug.classAvgDeathRatePct}
+                 />
+                 <Callout
+                   label="Serious rate"
+                   value={`${drug.seriousRatePct.toFixed(2)}%`}
+                   bench={`class ${drug.classAvgSeriousRatePct.toFixed(2)}%`}
+                   danger={drug.seriousRatePct > drug.classAvgSeriousRatePct}
+                 />
+                 <Callout
+                   label="Strongest PRR"
+                   value={drug.strongestPRR.toFixed(2)}
+                   bench={`class ${drug.classAvgPRR.toFixed(2)}`}
+                   danger={drug.strongestPRR > 2}
+                 />
+               </div>
+             </Card>
+           </div>
 
-              <Card bg="bg-pistachio" label="Outcome Distribution">
-                <div className="flex items-center gap-3">
-                  <div className="h-40 w-40 shrink-0">
-                    <ResponsiveContainer>
-                      <PieChart>
-                        <Pie
-                          data={outcomeData}
-                          dataKey="value"
-                          innerRadius={38}
-                          outerRadius={70}
-                          strokeWidth={2}
-                          stroke="var(--pistachio)"
-                        >
-                          {outcomeData.map((o) => (
-                            <Cell key={o.name} fill={o.color} />
-                          ))}
-                        </Pie>
-                      </PieChart>
-                    </ResponsiveContainer>
-                  </div>
-                  <div className="flex-1 space-y-1.5">
-                    {outcomeData.map((o) => (
-                      <div key={o.name} className="flex items-center justify-between text-[11px]">
-                        <span className="flex items-center gap-1.5">
-                          <span
-                            className="size-2 rounded-full"
-                            style={{ background: o.color }}
-                          />
-                          <span className="text-foreground/80">{o.name}</span>
-                        </span>
-                        <span className="font-mono tabular-nums">
-                          {formatNumber(o.value)}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </Card>
-            </div>
-
-            {/* Class comparison callouts */}
-            <Card bg="bg-white ring-1 ring-black/5" label="vs. NSAID Class Average">
-              <div className="grid grid-cols-3 gap-3">
-                <Callout
-                  label="Death rate"
-                  value={`${drug.deathRatePct}%`}
-                  bench={`class ${drug.classAvgDeathRatePct}%`}
-                  danger={drug.deathRatePct > drug.classAvgDeathRatePct}
-                />
-                <Callout
-                  label="Serious rate"
-                  value={`${drug.seriousRatePct}%`}
-                  bench={`class ${drug.classAvgSeriousRatePct}%`}
-                  danger={drug.seriousRatePct > drug.classAvgSeriousRatePct}
-                />
-                <Callout
-                  label="Strongest PRR"
-                  value={drug.strongestPRR.toFixed(2)}
-                  bench={`class ${drug.classAvgPRR.toFixed(2)}`}
-                  danger={drug.strongestPRR > 2}
-                />
-              </div>
-            </Card>
-          </div>
-
-          {/* RIGHT: Timeline + Alerts + Demographics */}
-          <div className="col-span-12 space-y-4 lg:col-span-3">
-            <Card bg="bg-pink/60" label="Regulatory Timeline">
+           {/* RIGHT: Timeline + Alerts + Demographics */}
+           <div className="col-span-12 grid gap-4 lg:grid-cols-4">
+        <Card bg="bg-pink/60" label="Regulatory Timeline">
               <ol className="relative space-y-6 pl-6 before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-px before:bg-black/15">
                 {drug.timeline.map((e, i) => (
                   <li key={i} className="relative">
@@ -387,8 +438,13 @@ function DrugProfile() {
               </ol>
             </Card>
 
-            <Card bg="bg-critical/[0.06] ring-1 ring-critical/20" label="Emerging Signals">
-              <ul className="space-y-2">
+            <Card
+              bg="bg-critical/[0.06] ring-1 ring-critical/20"
+              label="Emerging Signals"
+              className="h-full min-h-[520px]"
+              contentClassName="min-h-0 flex-1"
+            >
+              <ul className="h-full space-y-2 overflow-y-auto pr-1">
                 {drug.emerging.map((e, i) => (
                   <li
                     key={i}
@@ -421,7 +477,7 @@ function DrugProfile() {
                       </span>
                     </div>
                     <p className="text-[11px] leading-snug text-foreground/85">
-                      {e.message}
+                      {formatSignalMessage(e.message)}
                     </p>
                   </li>
                 ))}
@@ -457,7 +513,7 @@ function DrugProfile() {
                       Female
                     </div>
                     <div className="text-lg font-semibold tabular-nums">
-                      {drug.demographics.genderFemalePct}%
+                      {drug.demographics.genderFemalePct.toFixed(2)}%
                     </div>
                   </div>
                   <div className="rounded-xl bg-white/70 p-2">
@@ -465,7 +521,7 @@ function DrugProfile() {
                       Male
                     </div>
                     <div className="text-lg font-semibold tabular-nums">
-                      {100 - drug.demographics.genderFemalePct}%
+                      {(100 - drug.demographics.genderFemalePct).toFixed(2)}%
                     </div>
                   </div>
                 </div>
@@ -530,6 +586,157 @@ function DrugProfile() {
           </div>
         </div>
 
+        {/* Charts row — below all columns, fits end-to-end */}
+        <div className="mt-4 grid grid-cols-1 gap-3 lg:grid-cols-2">
+          <Card bg="bg-lavender" label="Top Adverse Reactions">
+            <div className="h-44 w-full">
+              <ResponsiveContainer>
+                <BarChart
+                  data={drug.topReactions.slice(0, 8)}
+                  layout="vertical"
+                  margin={{ left: 10, right: 12, top: 4, bottom: 0 }}
+                >
+                  <XAxis
+                    type="number"
+                    hide
+                    domain={[0, "dataMax"]}
+                  />
+                  <YAxis
+                    type="category"
+                    dataKey="reaction"
+                    width={110}
+                    tick={{ fontSize: 9, fill: "rgba(0,0,0,0.75)" }}
+                    axisLine={false}
+                    tickLine={false}
+                  />
+                  <RcTooltip
+                    contentStyle={{
+                      borderRadius: 12,
+                      border: "none",
+                      boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 11,
+                    }}
+                    formatter={(v: number) => formatNumber(v)}
+                  />
+                  <Bar dataKey="count" radius={[6, 6, 6, 6]}>
+                    {drug.topReactions.slice(0, 8).map((r, i) => (
+                      <Cell
+                        key={i}
+                        fill={r.isSignal ? "var(--critical)" : "rgba(0,0,0,0.35)"}
+                      />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </Card>
+
+          <Card bg="bg-pistachio" label="Outcome Distribution">
+            <div className="grid min-h-44 grid-cols-1 items-center gap-4 sm:grid-cols-[170px_1fr]">
+              <div className="h-36 w-36 justify-self-center">
+                <ResponsiveContainer>
+                  <PieChart>
+                    <Pie
+                      data={outcomeData}
+                      dataKey="value"
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={42}
+                      outerRadius={68}
+                      strokeWidth={2}
+                      stroke="var(--pistachio)"
+                    >
+                      {outcomeData.map((o) => (
+                        <Cell key={o.name} fill={o.color} />
+                      ))}
+                    </Pie>
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+              <div className="flex-1 space-y-1">
+                {outcomeData.map((o) => (
+                  <div key={o.name} className="flex items-center justify-between text-[10px]">
+                    <span className="flex items-center gap-1.5">
+                      <span
+                        className="size-2 rounded-full"
+                        style={{ background: o.color }}
+                      />
+                      <span className="text-foreground/80">{o.name}</span>
+                    </span>
+                    <span className="font-mono tabular-nums">
+                      {formatNumber(o.value)}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Card>
+        </div>
+
+        <div className="mt-4 grid grid-cols-1 gap-3 lg:grid-cols-3">
+          <Card bg="bg-white ring-1 ring-black/5" label="PRR Distribution">
+            <div className="h-44 w-full">
+              <ResponsiveContainer>
+                <BarChart data={prrBuckets} margin={{ left: 0, right: 8, top: 8, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="2 4" stroke="rgba(0,0,0,0.08)" vertical={false} />
+                  <XAxis dataKey="label" tick={{ fontSize: 10, fontFamily: "var(--font-mono)" }} axisLine={false} tickLine={false} />
+                  <YAxis allowDecimals={false} tick={{ fontSize: 10, fontFamily: "var(--font-mono)" }} axisLine={false} tickLine={false} />
+                  <RcTooltip
+                    contentStyle={{
+                      borderRadius: 12,
+                      border: "none",
+                      boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 11,
+                    }}
+                  />
+                  <Bar dataKey="count" fill="var(--critical)" radius={[6, 6, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </Card>
+
+          <Card bg="bg-snow" label="Outcome Rates / 1k Reports">
+            <div className="space-y-3">
+              {outcomeRates.map((rate) => (
+                <div key={rate.label}>
+                  <div className="mb-1 flex items-center justify-between font-mono text-[10px] uppercase tracking-widest text-foreground/60">
+                    <span>{rate.label}</span>
+                    <span>{rate.value.toFixed(2)}</span>
+                  </div>
+                  <div className="h-2 overflow-hidden rounded-full bg-white/70">
+                    <div className="h-full rounded-full" style={{ width: `${Math.min(rate.value, 100)}%`, background: rate.color }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
+
+          <Card bg="bg-white ring-1 ring-black/5" label="Signal Watchlist">
+            <div className="max-h-44 overflow-y-auto">
+              <table className="w-full text-left">
+                <thead className="sticky top-0 bg-white">
+                  <tr className="font-mono text-[9px] uppercase tracking-widest text-foreground/50">
+                    <th className="py-1 pr-2">Reaction</th>
+                    <th className="px-2 py-1 text-right">PRR</th>
+                    <th className="px-2 py-1 text-right">ROR</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-black/5">
+                  {drug.signals.slice(0, 8).map((signal) => (
+                    <tr key={signal.reaction}>
+                      <td className="py-1.5 pr-2 text-xs font-medium">{signal.reaction}</td>
+                      <td className="px-2 py-1.5 text-right font-mono text-[11px]">{signal.prr.toFixed(2)}</td>
+                      <td className="px-2 py-1.5 text-right font-mono text-[11px]">{signal.ror.toFixed(2)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </Card>
+        </div>
+
         {/* Footer actions */}
         <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-3xl bg-white p-4 ring-1 ring-black/5">
           <div className="text-xs text-foreground/60">
@@ -550,7 +757,10 @@ function DrugProfile() {
         </div>
 
         <div className="mt-4 text-center font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          19 drugs loaded · {DRUGS.filter((d) => d.tier === "CRITICAL").length} critical · {DRUGS.filter((d) => d.tier === "HIGH").length} high · {DRUGS.filter((d) => d.tier === "MODERATE").length} moderate · {DRUGS.filter((d) => d.tier === "LOW").length} low
+          {drugs.length} drugs loaded · {drugs.filter((d) => d.tier === "CRITICAL").length} critical ·{" "}
+          {drugs.filter((d) => d.tier === "HIGH").length} high ·{" "}
+          {drugs.filter((d) => d.tier === "MODERATE").length} moderate ·{" "}
+          {drugs.filter((d) => d.tier === "LOW").length} low
         </div>
       </main>
     </div>
@@ -559,29 +769,68 @@ function DrugProfile() {
 
 // ---------- Reusable pieces ----------
 
+function DashboardLoading({ message }: { message: string }) {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-background">
+      <p className="font-mono text-sm text-muted-foreground">{message}</p>
+    </div>
+  );
+}
+
+function DashboardError({ message, onRetry }: { message: string; onRetry: () => void }) {
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-background px-6 text-center">
+      <p className="max-w-md text-sm text-foreground/80">{message}</p>
+      <button
+        onClick={onRetry}
+        className="rounded-full bg-foreground px-4 py-2 text-xs font-semibold text-background"
+      >
+        Retry
+      </button>
+    </div>
+  );
+}
+
 function Card({
   bg,
   label,
   children,
   icon,
+  className = "",
+  contentClassName = "",
 }: {
   bg: string;
   label?: string;
   children: React.ReactNode;
   icon?: React.ReactNode;
+  className?: string;
+  contentClassName?: string;
 }) {
   return (
-    <section className={`rounded-3xl p-5 ${bg}`}>
+    <section className={`flex flex-col rounded-3xl p-4 ${bg} ${className}`}>
       {label && (
-        <div className="mb-3 flex items-center gap-1.5">
+        <div className="mb-3 flex shrink-0 items-center gap-1.5">
           {icon}
           <h3 className="font-mono text-[10px] font-semibold uppercase tracking-widest text-foreground/60">
             {label}
           </h3>
         </div>
       )}
-      {children}
+      <div className={contentClassName}>{children}</div>
     </section>
+  );
+}
+
+function MiniKPI({ label, value, danger }: { label: string; value: string; danger?: boolean }) {
+  return (
+    <div className="rounded-2xl bg-black/[0.03] px-3 py-2">
+      <div className="font-mono text-[9px] font-semibold uppercase tracking-widest text-foreground/50">
+        {label}
+      </div>
+      <div className={`mt-0.5 text-lg font-semibold tabular-nums ${danger ? "text-critical" : ""}`}>
+        {value}
+      </div>
+    </div>
   );
 }
 
@@ -650,13 +899,17 @@ function ScoreBar({ label, value }: { label: string; value: number }) {
     <div>
       <div className="mb-1 flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-foreground/60">
         <span>{label}</span>
-        <span className="tabular-nums">{value.toFixed(1)}/10</span>
+        <span className="tabular-nums">{value.toFixed(2)}/10</span>
       </div>
       <div className="h-1.5 overflow-hidden rounded-full bg-white/70">
         <div className="h-full bg-foreground/80" style={{ width: `${value * 10}%` }} />
       </div>
     </div>
   );
+}
+
+function formatSignalMessage(message: string) {
+  return message.replace(/PRR=([0-9]+(?:\.[0-9]+)?)/g, (_, value: string) => `PRR=${Number(value).toFixed(2)}`);
 }
 
 function Tip({ label, tip }: { label: string; tip: string }) {

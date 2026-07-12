@@ -13,13 +13,13 @@ import {
   ZAxis,
 } from "recharts";
 import {
-  DRUGS,
   formatMoney,
   formatNumber,
   tierColorClass,
   type Drug,
   type Tier,
 } from "@/data/drugs";
+import { useDrugs } from "@/hooks/use-drugs";
 
 export const Route = createFileRoute("/class")({
   head: () => ({
@@ -39,32 +39,62 @@ const TIER_COLOR: Record<Tier, string> = {
 };
 
 function ClassPage() {
+  const { data: drugs = [], isLoading, isError } = useDrugs();
   const [tierFilter, setTierFilter] = useState<Tier | "ALL">("ALL");
+  const [scatterScope, setScatterScope] = useState<"ALL" | "HIGH_RISK">("ALL");
+  const [selectedDrugId, setSelectedDrugId] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<"riskIndex" | "totalReports" | "deathRatePct" | "strongestPRR" | "costOfHarmUSD">(
     "riskIndex",
   );
 
   const filtered = useMemo(() => {
-    let list = [...DRUGS];
+    let list = [...drugs];
     if (tierFilter !== "ALL") list = list.filter((d) => d.tier === tierFilter);
     list.sort((a, b) => (b[sortBy] as number) - (a[sortBy] as number));
     return list;
-  }, [tierFilter, sortBy]);
+  }, [drugs, tierFilter, sortBy]);
 
-  const scatterData = DRUGS.map((d) => ({
-    x: d.strongestPRR,
+  const scatterDrugs =
+    scatterScope === "HIGH_RISK"
+      ? drugs.filter((d) => d.tier === "CRITICAL" || d.tier === "HIGH")
+      : drugs;
+  const scatterData = scatterDrugs.map((d) => ({
+    id: d.id,
+    x: Math.max(d.strongestPRR, 1),
     y: d.deathRatePct,
     z: Math.log10(d.totalReports),
     name: d.generic,
+    riskIndex: d.riskIndex,
     tier: d.tier,
   }));
+  const maxSignal = Math.max(6, ...scatterData.map((d) => d.x));
+  const xMax = maxSignal <= 10 ? 10 : maxSignal <= 25 ? 25 : maxSignal <= 50 ? 50 : maxSignal <= 100 ? 100 : maxSignal <= 250 ? 250 : 500;
+  const xTicks = [1, 2, 5, 10, 25, 50, 100, 250, 500].filter((tick) => tick <= xMax);
+  const maxMortality = Math.max(10, ...scatterData.map((d) => d.y));
+  const yMax = Math.ceil(maxMortality / 5) * 5;
 
   const totals = {
-    reports: DRUGS.reduce((s, d) => s + d.totalReports, 0),
-    deaths: DRUGS.reduce((s, d) => s + d.deaths, 0),
-    critical: DRUGS.filter((d) => d.tier === "CRITICAL").length,
-    high: DRUGS.filter((d) => d.tier === "HIGH").length,
+    reports: drugs.reduce((s, d) => s + d.totalReports, 0),
+    deaths: drugs.reduce((s, d) => s + d.deaths, 0),
+    critical: drugs.filter((d) => d.tier === "CRITICAL").length,
+    high: drugs.filter((d) => d.tier === "HIGH").length,
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <p className="font-mono text-sm text-muted-foreground">Loading class overview…</p>
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background px-6 text-center">
+        <p className="text-sm text-foreground/80">Could not load drug profiles. Start the backend on port 8000.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background pb-20">
@@ -97,13 +127,23 @@ function ClassPage() {
                 X: strongest PRR · Y: death rate % · bubble size: report volume (log)
               </div>
             </div>
-            <div className="flex gap-2 text-[10px] font-medium">
-              {(["CRITICAL", "HIGH", "MODERATE", "LOW"] as Tier[]).map((t) => (
-                <span key={t} className="flex items-center gap-1.5 font-mono uppercase tracking-widest">
-                  <span className="size-2 rounded-full" style={{ background: TIER_COLOR[t] }} />
-                  {t}
-                </span>
-              ))}
+            <div className="flex flex-wrap justify-end gap-2">
+              <button
+                onClick={() => setScatterScope("ALL")}
+                className={`rounded-full px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest ${
+                  scatterScope === "ALL" ? "bg-foreground text-background" : "bg-black/[0.05] text-foreground/70"
+                }`}
+              >
+                All
+              </button>
+              <button
+                onClick={() => setScatterScope("HIGH_RISK")}
+                className={`rounded-full px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest ${
+                  scatterScope === "HIGH_RISK" ? "bg-foreground text-background" : "bg-black/[0.05] text-foreground/70"
+                }`}
+              >
+                High risk
+              </button>
             </div>
           </div>
           <div className="h-80 w-full">
@@ -114,7 +154,10 @@ function ClassPage() {
                   type="number"
                   dataKey="x"
                   name="PRR"
-                  domain={[0.8, 6]}
+                  domain={[1, xMax]}
+                  scale="log"
+                  ticks={xTicks}
+                  tickFormatter={(value) => Number(value).toFixed(0)}
                   tick={{ fontSize: 10, fontFamily: "var(--font-mono)" }}
                   axisLine={false}
                   tickLine={false}
@@ -125,14 +168,14 @@ function ClassPage() {
                   type="number"
                   dataKey="y"
                   name="Death rate %"
-                  domain={[0, 10]}
+                  domain={[0, yMax]}
                   tick={{ fontSize: 10, fontFamily: "var(--font-mono)" }}
                   axisLine={false}
                   tickLine={false}
                 >
                   <Label value="Death rate % →" angle={-90} position="insideLeft" style={{ fontSize: 10, fontFamily: "var(--font-mono)", fill: "rgba(0,0,0,0.5)", textAnchor: "middle" }} />
                 </YAxis>
-                <ZAxis type="number" dataKey="z" range={[80, 900]} />
+                <ZAxis type="number" dataKey="z" range={[70, 520]} />
                 <RcTooltip
                   cursor={{ strokeDasharray: "3 3" }}
                   contentStyle={{
@@ -148,9 +191,21 @@ function ClassPage() {
                   }}
                   labelFormatter={(_, payload) => (payload?.[0]?.payload?.name ?? "") as string}
                 />
-                <Scatter data={scatterData}>
+                <Scatter
+                  data={scatterData}
+                  cursor="pointer"
+                  onClick={(point: unknown) => {
+                    const payload = (point as { payload?: { id?: string } }).payload;
+                    if (payload?.id) setSelectedDrugId(payload.id);
+                  }}
+                >
                   {scatterData.map((p, i) => (
-                    <Cell key={i} fill={TIER_COLOR[p.tier]} />
+                    <Cell
+                      key={i}
+                      fill={TIER_COLOR[p.tier]}
+                      stroke={p.id === selectedDrugId ? "var(--foreground)" : "transparent"}
+                      strokeWidth={p.id === selectedDrugId ? 3 : 0}
+                    />
                   ))}
                 </Scatter>
               </ScatterChart>
@@ -262,6 +317,3 @@ function SumKpi({ bg, label, value, labelColor }: { bg: string; label: string; v
     </div>
   );
 }
-
-
-

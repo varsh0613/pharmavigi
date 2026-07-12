@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check } from "lucide-react";
-import { DRUGS } from "@/data/drugs";
+import { useDrugs } from "@/hooks/use-drugs";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -13,7 +13,18 @@ export const Route = createFileRoute("/about")({
 });
 
 function AboutPage() {
-  const validationDrugs = DRUGS.filter((d) => ["rofecoxib", "valdecoxib", "lumiracoxib"].includes(d.id));
+  const { data: drugs = [], isLoading } = useDrugs();
+  const validationDrugs = drugs.filter((d) =>
+    ["rofecoxib", "valdecoxib", "lumiracoxib"].includes(d.id),
+  );
+
+  if (isLoading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <p className="font-mono text-sm text-muted-foreground">Loading…</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background pb-20">
@@ -138,7 +149,7 @@ function AboutPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-black/5">
-              {DRUGS.map((d) => (
+              {drugs.map((d) => (
                 <tr key={d.id}>
                   <td className="px-4 py-2.5 font-medium">{d.generic}</td>
                   <td className="px-3 py-2.5 text-foreground/70">{d.brand}</td>

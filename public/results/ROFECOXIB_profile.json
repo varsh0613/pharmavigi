@@ -8,306 +8,218 @@
   "status": "Withdrawn",
   "withdrawal_year": 2004,
   "live_counts": {
-    "total_reports": 1555,
-    "serious_reports": 1154,
-    "death_reports": 177,
-    "hospitalization_reports": 649,
-    "disability_reports": 52,
-    "life_threatening_reports": 99,
-    "latest_report_year": 2026
+    "total_reports": 711,
+    "serious_reports": 417,
+    "death_reports": 52,
+    "hospitalization_reports": 260,
+    "disability_reports": 21,
+    "life_threatening_reports": 39,
+    "latest_report_year": 2004
   },
   "signals": [
     {
+      "reaction": "INJECTION SITE BURNING",
+      "drug_reaction_count": 35,
+      "prr": 1343.12,
+      "ror": 1412.61,
+      "chi_square": 43561.98,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "INJECTION SITE HAEMORRHAGE",
+      "drug_reaction_count": 19,
+      "prr": 7.09,
+      "ror": 7.25,
+      "chi_square": 93.66,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
       "reaction": "DRUG INTERACTION",
-      "drug_reaction_count": 68,
-      "prr": 5.77,
-      "ror": 5.98,
-      "chi_square": 265.05,
+      "drug_reaction_count": 32,
+      "prr": 5.93,
+      "ror": 6.17,
+      "chi_square": 127.35,
       "is_signal": true,
       "signal_strength": "STRONG"
     },
     {
-      "reaction": "RENAL FAILURE",
-      "drug_reaction_count": 57,
-      "prr": 5.69,
-      "ror": 5.87,
-      "chi_square": 217.2,
+      "reaction": "INJECTION SITE ERYTHEMA",
+      "drug_reaction_count": 24,
+      "prr": 5.75,
+      "ror": 5.91,
+      "chi_square": 89.94,
       "is_signal": true,
       "signal_strength": "STRONG"
     },
     {
-      "reaction": "DRUG HYPERSENSITIVITY",
-      "drug_reaction_count": 71,
-      "prr": 4.89,
-      "ror": 5.08,
-      "chi_square": 218.08,
-      "is_signal": true,
-      "signal_strength": "MODERATE"
-    },
-    {
-      "reaction": "MYOCARDIAL INFARCTION",
-      "drug_reaction_count": 64,
-      "prr": 4.86,
-      "ror": 5.02,
-      "chi_square": 193.81,
+      "reaction": "OEDEMA PERIPHERAL",
+      "drug_reaction_count": 20,
+      "prr": 4.79,
+      "ror": 4.9,
+      "chi_square": 56.54,
       "is_signal": true,
       "signal_strength": "MODERATE"
     },
     {
       "reaction": "CONFUSIONAL STATE",
-      "drug_reaction_count": 40,
-      "prr": 3.32,
-      "ror": 3.38,
-      "chi_square": 62.96,
+      "drug_reaction_count": 20,
+      "prr": 3.63,
+      "ror": 3.7,
+      "chi_square": 35.77,
       "is_signal": true,
       "signal_strength": "MODERATE"
     },
     {
-      "reaction": "HYPERTENSION",
-      "drug_reaction_count": 45,
-      "prr": 2.85,
-      "ror": 2.91,
-      "chi_square": 52.9,
+      "reaction": "TREMOR",
+      "drug_reaction_count": 19,
+      "prr": 3.36,
+      "ror": 3.42,
+      "chi_square": 29.35,
       "is_signal": true,
-      "signal_strength": "WEAK"
+      "signal_strength": "MODERATE"
     },
     {
-      "reaction": "CONDITION AGGRAVATED",
-      "drug_reaction_count": 46,
-      "prr": 2.06,
-      "ror": 2.09,
-      "chi_square": 24.45,
-      "is_signal": true,
-      "signal_strength": "WEAK"
-    },
-    {
-      "reaction": "PAIN IN EXTREMITY",
-      "drug_reaction_count": 44,
-      "prr": 2.0,
-      "ror": 2.03,
-      "chi_square": 21.32,
+      "reaction": "FEELING ABNORMAL",
+      "drug_reaction_count": 19,
+      "prr": 2.32,
+      "ror": 2.35,
+      "chi_square": 13.07,
       "is_signal": true,
       "signal_strength": "WEAK"
     },
     {
       "reaction": "VOMITING",
-      "drug_reaction_count": 66,
-      "prr": 1.9,
-      "ror": 1.94,
-      "chi_square": 27.91,
+      "drug_reaction_count": 32,
+      "prr": 2.02,
+      "ror": 2.06,
+      "chi_square": 15.73,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "PAIN IN EXTREMITY",
+      "drug_reaction_count": 20,
+      "prr": 1.99,
+      "ror": 2.02,
+      "chi_square": 8.99,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "ASTHENIA",
+      "drug_reaction_count": 24,
+      "prr": 1.88,
+      "ror": 1.91,
+      "chi_square": 9.16,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "CONDITION AGGRAVATED",
+      "drug_reaction_count": 18,
+      "prr": 1.76,
+      "ror": 1.78,
+      "chi_square": 5.3,
       "is_signal": false,
       "signal_strength": "WEAK"
     },
     {
       "reaction": "DIZZINESS",
-      "drug_reaction_count": 62,
-      "prr": 1.68,
-      "ror": 1.71,
-      "chi_square": 16.69,
-      "is_signal": false,
-      "signal_strength": "WEAK"
-    },
-    {
-      "reaction": "FALL",
-      "drug_reaction_count": 40,
-      "prr": 1.62,
-      "ror": 1.64,
-      "chi_square": 9.01,
+      "drug_reaction_count": 28,
+      "prr": 1.66,
+      "ror": 1.68,
+      "chi_square": 6.81,
       "is_signal": false,
       "signal_strength": "WEAK"
     },
     {
       "reaction": "ARTHRALGIA",
-      "drug_reaction_count": 49,
-      "prr": 1.6,
-      "ror": 1.62,
-      "chi_square": 10.59,
+      "drug_reaction_count": 22,
+      "prr": 1.57,
+      "ror": 1.59,
+      "chi_square": 4.07,
       "is_signal": false,
       "signal_strength": "WEAK"
     },
     {
       "reaction": "DYSPNOEA",
-      "drug_reaction_count": 60,
-      "prr": 1.43,
-      "ror": 1.44,
-      "chi_square": 7.46,
+      "drug_reaction_count": 29,
+      "prr": 1.51,
+      "ror": 1.53,
+      "chi_square": 4.61,
       "is_signal": false,
       "signal_strength": "WEAK"
     },
     {
       "reaction": "PAIN",
-      "drug_reaction_count": 61,
-      "prr": 1.33,
-      "ror": 1.34,
-      "chi_square": 4.83,
-      "is_signal": false,
-      "signal_strength": "WEAK"
-    },
-    {
-      "reaction": "RASH",
-      "drug_reaction_count": 41,
-      "prr": 1.28,
-      "ror": 1.29,
-      "chi_square": 2.27,
+      "drug_reaction_count": 29,
+      "prr": 1.38,
+      "ror": 1.4,
+      "chi_square": 2.8,
       "is_signal": false,
       "signal_strength": "WEAK"
     },
     {
       "reaction": "NAUSEA",
-      "drug_reaction_count": 70,
-      "prr": 1.2,
-      "ror": 1.21,
-      "chi_square": 2.18,
-      "is_signal": false,
-      "signal_strength": "WEAK"
-    },
-    {
-      "reaction": "MALAISE",
-      "drug_reaction_count": 39,
-      "prr": 1.19,
-      "ror": 1.2,
-      "chi_square": 1.03,
-      "is_signal": false,
-      "signal_strength": "WEAK"
-    },
-    {
-      "reaction": "DIARRHOEA",
-      "drug_reaction_count": 49,
-      "prr": 1.03,
-      "ror": 1.03,
-      "chi_square": 0.02,
+      "drug_reaction_count": 33,
+      "prr": 1.24,
+      "ror": 1.25,
+      "chi_square": 1.3,
       "is_signal": false,
       "signal_strength": "WEAK"
     },
     {
       "reaction": "HEADACHE",
-      "drug_reaction_count": 48,
-      "prr": 1.03,
-      "ror": 1.03,
-      "chi_square": 0.02,
+      "drug_reaction_count": 26,
+      "prr": 1.22,
+      "ror": 1.23,
+      "chi_square": 0.87,
       "is_signal": false,
       "signal_strength": "WEAK"
     },
     {
       "reaction": "DRUG INEFFECTIVE",
-      "drug_reaction_count": 100,
-      "prr": 1.02,
-      "ror": 1.02,
-      "chi_square": 0.03,
+      "drug_reaction_count": 51,
+      "prr": 1.14,
+      "ror": 1.15,
+      "chi_square": 0.79,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 19,
+      "prr": 0.87,
+      "ror": 0.87,
+      "chi_square": 0.24,
       "is_signal": false,
       "signal_strength": "WEAK"
     }
   ],
   "risk_scoring": {
-    "severity_score": 8.83,
-    "signal_score": 3.22,
-    "volume_score": 3.19,
-    "risk_index": 76.0,
+    "severity_score": 8.8,
+    "signal_score": 10.0,
+    "volume_score": 2.85,
+    "risk_index": 82.7,
     "risk_tier": "CRITICAL",
     "risk_color": "red",
-    "death_pct": 11.38,
-    "hosp_pct": 41.74,
-    "disab_pct": 3.34
+    "death_pct": 7.31,
+    "hosp_pct": 36.57,
+    "disab_pct": 2.95
   },
   "cost_of_harm": {
-    "death_cost_usd": 88500000,
-    "hospitalization_cost_usd": 9735000,
-    "disability_cost_usd": 10400000,
-    "total_estimated_cost_usd": 108635000,
+    "death_cost_usd": 26000000,
+    "hospitalization_cost_usd": 3900000,
+    "disability_cost_usd": 4200000,
+    "total_estimated_cost_usd": 34100000,
     "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
   },
   "trend_by_year": [
     {
       "year": 2004,
       "count": 711
-    },
-    {
-      "year": 2005,
-      "count": 327
-    },
-    {
-      "year": 2006,
-      "count": 83
-    },
-    {
-      "year": 2007,
-      "count": 65
-    },
-    {
-      "year": 2008,
-      "count": 36
-    },
-    {
-      "year": 2009,
-      "count": 30
-    },
-    {
-      "year": 2010,
-      "count": 27
-    },
-    {
-      "year": 2011,
-      "count": 22
-    },
-    {
-      "year": 2012,
-      "count": 10
-    },
-    {
-      "year": 2013,
-      "count": 44
-    },
-    {
-      "year": 2014,
-      "count": 24
-    },
-    {
-      "year": 2015,
-      "count": 13
-    },
-    {
-      "year": 2016,
-      "count": 30
-    },
-    {
-      "year": 2017,
-      "count": 15
-    },
-    {
-      "year": 2018,
-      "count": 51
-    },
-    {
-      "year": 2019,
-      "count": 18
-    },
-    {
-      "year": 2020,
-      "count": 9
-    },
-    {
-      "year": 2021,
-      "count": 14
-    },
-    {
-      "year": 2022,
-      "count": 2
-    },
-    {
-      "year": 2023,
-      "count": 5
-    },
-    {
-      "year": 2024,
-      "count": 12
-    },
-    {
-      "year": 2025,
-      "count": 6
-    },
-    {
-      "year": 2026,
-      "count": 1
     }
   ],
   "top_reactions": [
@@ -499,38 +411,48 @@
   "emerging_signals": [
     {
       "type": "STRONG_SIGNAL",
-      "description": "DRUG INTERACTION shows a strong disproportionality signal (PRR=5.77).",
+      "description": "INJECTION SITE BURNING shows a strong disproportionality signal (PRR=1343.12).",
       "severity": "HIGH"
     },
     {
       "type": "STRONG_SIGNAL",
-      "description": "RENAL FAILURE shows a strong disproportionality signal (PRR=5.69).",
+      "description": "INJECTION SITE HAEMORRHAGE shows a strong disproportionality signal (PRR=7.09).",
       "severity": "HIGH"
     },
     {
       "type": "STRONG_SIGNAL",
-      "description": "DRUG HYPERSENSITIVITY shows a strong disproportionality signal (PRR=4.89).",
+      "description": "DRUG INTERACTION shows a strong disproportionality signal (PRR=5.93).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "INJECTION SITE ERYTHEMA shows a strong disproportionality signal (PRR=5.75).",
+      "severity": "HIGH"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "OEDEMA PERIPHERAL shows a strong disproportionality signal (PRR=4.79).",
       "severity": "MEDIUM"
     },
     {
       "type": "STRONG_SIGNAL",
-      "description": "MYOCARDIAL INFARCTION shows a strong disproportionality signal (PRR=4.86).",
+      "description": "CONFUSIONAL STATE shows a strong disproportionality signal (PRR=3.63).",
       "severity": "MEDIUM"
     },
     {
       "type": "STRONG_SIGNAL",
-      "description": "CONFUSIONAL STATE shows a strong disproportionality signal (PRR=3.32).",
+      "description": "TREMOR shows a strong disproportionality signal (PRR=3.36).",
       "severity": "MEDIUM"
     }
   ],
   "comparison_stats": {
-    "death_rate_pct": 11.4,
-    "serious_rate_pct": 74.2,
-    "hospitalization_rate_pct": 41.7,
+    "death_rate_pct": 7.3,
+    "serious_rate_pct": 58.6,
+    "hospitalization_rate_pct": 36.6,
     "avg_patient_age": 226.9,
-    "flagged_signal_count": 8,
-    "strongest_signal_prr": 5.77,
-    "strongest_signal_reaction": "DRUG INTERACTION"
+    "flagged_signal_count": 9,
+    "strongest_signal_prr": 1343.12,
+    "strongest_signal_reaction": "INJECTION SITE BURNING"
   },
   "meta": {
     "drug_queried": "ROFECOXIB",
@@ -539,8 +461,8 @@
       "openFDA_live",
       "faers_sample_csv"
     ],
-    "analysis_timestamp": "2026-07-11T10:03:22.697053Z",
-    "cache_expires": "2026-07-12T10:03:22.697053Z"
+    "analysis_timestamp": "2026-07-11T13:12:52.775678Z",
+    "cache_expires": "2026-07-12T13:12:52.775678Z"
   },
   "ai_summary": null
 }

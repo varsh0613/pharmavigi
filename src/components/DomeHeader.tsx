@@ -1,20 +1,31 @@
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { ChevronDown, Plus } from "lucide-react";
-import { DRUGS, tierColorClass, formatNumber, type Drug } from "@/data/drugs";
+import { createPortal } from "react-dom";
+import { tierColorClass, formatNumber, type Drug } from "@/data/drugs";
 
 type Props = {
   drug: Drug;
+  drugs: Drug[];
   onSelect: (id: string) => void;
   onAddDrug?: () => void;
 };
 
-export function DomeHeader({ drug, onSelect, onAddDrug }: Props) {
+export function DomeHeader({ drug, drugs, onSelect, onAddDrug }: Props) {
   const [open, setOpen] = useState(false);
+  const [pos, setPos] = useState({ top: 0, left: 0 });
+  const buttonRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (open && buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      setPos({ top: rect.bottom + 8, left: rect.left });
+    }
+  }, [open]);
 
   return (
     <header className="relative">
       {/* Colored dome pane */}
-      <div className="relative h-[340px] bg-pistachio dome-cutout">
+      <div className="relative mx-auto h-[290px] max-w-[calc(100%-1.5rem)] rounded-b-[2rem] bg-pistachio dome-cutout">
         <div className="mx-auto flex h-full max-w-7xl items-start justify-between gap-6 px-8 pt-10">
           {/* Left: identity */}
           <div className="flex max-w-md flex-col gap-3">
@@ -40,7 +51,7 @@ export function DomeHeader({ drug, onSelect, onAddDrug }: Props) {
             </div>
 
             {/* Drug selector */}
-            <div className="relative">
+            <div ref={buttonRef}>
               <button
                 onClick={() => setOpen((o) => !o)}
                 className="group flex items-center gap-3 text-left"
@@ -50,62 +61,6 @@ export function DomeHeader({ drug, onSelect, onAddDrug }: Props) {
                 </h1>
                 <ChevronDown className="mt-2 size-6 text-foreground/60 transition-transform group-hover:translate-y-0.5" />
               </button>
-              {open && (
-                <>
-                  <div
-                    className="fixed inset-0 z-30"
-                    onClick={() => setOpen(false)}
-                  />
-                  <div className="absolute left-0 top-full z-40 mt-3 max-h-[420px] w-80 overflow-y-auto rounded-2xl bg-white p-2 shadow-2xl ring-1 ring-black/10">
-                    <div className="mb-2 flex items-center justify-between px-3 py-2">
-                      <span className="font-mono text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
-                        {DRUGS.length} drugs · NSAID class
-                      </span>
-                      <button
-                        onClick={() => {
-                          setOpen(false);
-                          onAddDrug?.();
-                        }}
-                        className="flex items-center gap-1 rounded-full bg-foreground px-2.5 py-1 text-[10px] font-semibold text-background"
-                      >
-                        <Plus className="size-3" />
-                        Add
-                      </button>
-                    </div>
-                    {DRUGS.map((d) => (
-                      <button
-                        key={d.id}
-                        onClick={() => {
-                          onSelect(d.id);
-                          setOpen(false);
-                        }}
-                        className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm transition-colors hover:bg-black/[0.04] ${
-                          d.id === drug.id ? "bg-black/[0.04]" : ""
-                        }`}
-                      >
-                        <div className="min-w-0">
-                          <div className="truncate font-medium">
-                            {d.generic}{" "}
-                            <span className="text-xs text-muted-foreground">
-                              ({d.brand})
-                            </span>
-                          </div>
-                          <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                            {d.status} · idx {d.riskIndex}
-                          </div>
-                        </div>
-                        <span
-                          className={`shrink-0 rounded-full px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest ${tierColorClass(
-                            d.tier,
-                          )}`}
-                        >
-                          {d.tier}
-                        </span>
-                      </button>
-                    ))}
-                  </div>
-                </>
-              )}
             </div>
 
             <p className="text-sm font-medium text-foreground/70">
@@ -146,9 +101,72 @@ export function DomeHeader({ drug, onSelect, onAddDrug }: Props) {
         </div>
       </div>
 
+      {/* Dropdown portal — outside dome-cutout so it doesn't get clipped */}
+      {open &&
+        createPortal(
+          <>
+            <div
+              className="fixed inset-0 z-30"
+              onClick={() => setOpen(false)}
+            />
+            <div
+              className="fixed z-40 w-80 max-h-[420px] overflow-y-auto rounded-2xl bg-white p-2 shadow-2xl ring-1 ring-black/10"
+              style={{ top: pos.top, left: pos.left }}
+            >
+              <div className="mb-2 flex items-center justify-between px-3 py-2">
+                <span className="font-mono text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+                  {drugs.length} drugs · NSAID class
+                </span>
+                <button
+                  onClick={() => {
+                    setOpen(false);
+                    onAddDrug?.();
+                  }}
+                  className="flex items-center gap-1 rounded-full bg-foreground px-2.5 py-1 text-[10px] font-semibold text-background"
+                >
+                  <Plus className="size-3" />
+                  Add
+                </button>
+              </div>
+              {drugs.map((d) => (
+                <button
+                  key={d.id}
+                  onClick={() => {
+                    onSelect(d.id);
+                    setOpen(false);
+                  }}
+                  className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm transition-colors hover:bg-black/[0.04] ${
+                    d.id === drug.id ? "bg-black/[0.04]" : ""
+                  }`}
+                >
+                  <div className="min-w-0">
+                    <div className="truncate font-medium">
+                      {d.generic}{" "}
+                      <span className="text-xs text-muted-foreground">
+                        ({d.brand})
+                      </span>
+                    </div>
+                    <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                      {d.status} · idx {d.riskIndex}
+                    </div>
+                  </div>
+                  <span
+                    className={`shrink-0 rounded-full px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest ${tierColorClass(
+                      d.tier,
+                    )}`}
+                  >
+                    {d.tier}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </>,
+          document.body
+        )}
+
       {/* Risk Index badge — sits inside the dome cutout, straddling header & body */}
-      <div className="pointer-events-none absolute left-1/2 top-[340px] -translate-x-1/2 -translate-y-1/2">
-        <div className="grid size-52 place-items-center rounded-full bg-background p-2 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.25)]">
+      <div className="pointer-events-none absolute left-1/2 top-[290px] -translate-x-1/2 -translate-y-1/2">
+        <div className="grid size-44 place-items-center rounded-full bg-background p-2 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.25)]">
           <div
             className={`flex size-full flex-col items-center justify-center rounded-full text-white ${
               drug.tier === "CRITICAL"
@@ -163,7 +181,7 @@ export function DomeHeader({ drug, onSelect, onAddDrug }: Props) {
             <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-white/70">
               Risk Index
             </span>
-            <span className="my-1 text-6xl font-semibold leading-none tabular-nums">
+            <span className="my-1 text-5xl font-semibold leading-none tabular-nums">
               {drug.riskIndex}
             </span>
             <span className="text-[11px] font-bold uppercase tracking-[0.2em]">

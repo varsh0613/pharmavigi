@@ -2,5 +2,7 @@ pandas>=2.2
 numpy>=1.26
 PyYAML>=6.0
 scikit-learn>=1.4
+scipy>=1.11
+requests>=2.31
 fastapi>=0.95
 uvicorn[standard]>=0.22

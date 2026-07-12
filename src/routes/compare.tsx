@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { ArrowLeftRight, Sparkles } from "lucide-react";
 import {
+  Bar,
+  BarChart,
   CartesianGrid,
   Line,
   LineChart,
@@ -10,7 +12,8 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { DRUGS, drugById, formatNumber, formatMoney, tierColorClass, timelineDotClass } from "@/data/drugs";
+import { drugById, formatNumber, formatMoney, tierColorClass, timelineDotClass, type Drug } from "@/data/drugs";
+import { useDrugs } from "@/hooks/use-drugs";
 
 export const Route = createFileRoute("/compare")({
   head: () => ({
@@ -23,10 +26,37 @@ export const Route = createFileRoute("/compare")({
 });
 
 function ComparePage() {
+  const { data: drugs = [], isLoading, isError } = useDrugs();
   const [aId, setAId] = useState("rofecoxib");
   const [bId, setBId] = useState("celecoxib");
-  const a = useMemo(() => drugById(aId), [aId]);
-  const b = useMemo(() => drugById(bId), [bId]);
+
+  const a = useMemo(() => drugById(drugs, aId) ?? drugs[0], [drugs, aId]);
+  const b = useMemo(() => drugById(drugs, bId) ?? drugs[1], [drugs, bId]);
+
+  const summary = useMemo(() => {
+    if (!a || !b) return null;
+    return `Compared to ${b.generic}, ${a.generic} shows a ${
+      a.deathRatePct > b.deathRatePct ? "higher" : "lower"
+    } death rate (${a.deathRatePct}% vs ${b.deathRatePct}%) and a ${
+      a.strongestPRR > b.strongestPRR ? "stronger" : "weaker"
+    } disproportionality signal (PRR ${a.strongestPRR.toFixed(2)} vs ${b.strongestPRR.toFixed(2)}). ${a.generic} sits at a <strong>${a.tier}</strong> risk tier while ${b.generic} is <strong>${b.tier}</strong>.`;
+  }, [a, b]);
+
+  if (isLoading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <p className="font-mono text-sm text-muted-foreground">Loading profiles…</p>
+      </div>
+    );
+  }
+
+  if (isError || !a || !b) {
+    return (
+      <div className="flex min-h-screen items-center justify-center px-6 text-center">
+        <p className="text-sm text-foreground/80">Could not load drug profiles.</p>
+      </div>
+    );
+  }
 
   const trendData = useMemo(() => {
     const years = new Set<number>();
@@ -54,7 +84,7 @@ function ComparePage() {
 
         {/* Selector row */}
         <div className="mb-6 grid grid-cols-[1fr_auto_1fr] items-center gap-4">
-          <DrugPicker label="Drug A" id={aId} onChange={setAId} bg="bg-lavender" />
+          <DrugPicker label="Drug A" id={aId} drugs={drugs} onChange={setAId} bg="bg-lavender" />
           <button
             onClick={() => {
               const t = aId;
@@ -65,7 +95,7 @@ function ComparePage() {
           >
             <ArrowLeftRight className="size-4" />
           </button>
-          <DrugPicker label="Drug B" id={bId} onChange={setBId} bg="bg-snow" />
+          <DrugPicker label="Drug B" id={bId} drugs={drugs} onChange={setBId} bg="bg-snow" />
         </div>
 
         {/* KPI row */}
@@ -159,14 +189,16 @@ function ComparePage() {
             </span>
           </div>
           <p className="text-sm leading-relaxed">
-            Compared to {b.generic}, {a.generic} shows{" "}
-            {a.deathRatePct > b.deathRatePct ? "a higher" : "a lower"} death rate
-            ({a.deathRatePct}% vs {b.deathRatePct}%) and{" "}
-            {a.strongestPRR > b.strongestPRR ? "a stronger" : "a weaker"} disproportionality signal
-            (PRR {a.strongestPRR.toFixed(2)} vs {b.strongestPRR.toFixed(2)}). {a.generic} sits at a{" "}
-            <strong>{a.tier}</strong> risk tier while {b.generic} is <strong>{b.tier}</strong>. Estimated cost
-            of harm differs by {formatMoney(Math.abs(a.costOfHarmUSD - b.costOfHarmUSD))}, driven primarily by
-            the difference in fatal outcomes and hospitalization volume.
+            {summary ?? (
+              <>
+                Compared to {b.generic}, {a.generic} shows{" "}
+                {a.deathRatePct > b.deathRatePct ? "a higher" : "a lower"} death rate ({a.deathRatePct}% vs{" "}
+                {b.deathRatePct}%) and {a.strongestPRR > b.strongestPRR ? "a stronger" : "a weaker"}{" "}
+                disproportionality signal (PRR {a.strongestPRR.toFixed(2)} vs {b.strongestPRR.toFixed(2)}).{" "}
+                {a.generic} sits at a <strong>{a.tier}</strong> risk tier while {b.generic} is{" "}
+                <strong>{b.tier}</strong>.
+              </>
+            )}
           </p>
         </div>
       </div>
@@ -177,15 +209,17 @@ function ComparePage() {
 function DrugPicker({
   label,
   id,
+  drugs,
   onChange,
   bg,
 }: {
   label: string;
   id: string;
+  drugs: Drug[];
   onChange: (id: string) => void;
   bg: string;
 }) {
-  const drug = drugById(id);
+  const drug = drugById(drugs, id) ?? drugs[0];
   return (
     <div className={`rounded-3xl p-4 ${bg}`}>
       <div className="mb-1 font-mono text-[10px] font-semibold uppercase tracking-widest text-foreground/60">
@@ -197,7 +231,7 @@ function DrugPicker({
           onChange={(e) => onChange(e.target.value)}
           className="flex-1 rounded-xl bg-white/70 px-3 py-2 text-sm font-semibold outline-none"
         >
-          {DRUGS.map((d) => (
+          {drugs.map((d) => (
             <option key={d.id} value={d.id}>
               {d.generic} ({d.brand})
             </option>
@@ -223,7 +257,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function PanelHead({ drug }: { drug: ReturnType<typeof drugById> }) {
+function PanelHead({ drug }: { drug: Drug }) {
   return (
     <div className="flex items-start justify-between gap-3">
       <div>
@@ -245,7 +279,7 @@ function PanelHead({ drug }: { drug: ReturnType<typeof drugById> }) {
   );
 }
 
-function KpiGrid({ drug, other }: { drug: ReturnType<typeof drugById>; other: ReturnType<typeof drugById> }) {
+function KpiGrid({ drug, other }: { drug: Drug; other: Drug }) {
   const rows: [string, string, boolean][] = [
     ["Total reports", formatNumber(drug.totalReports), drug.totalReports > other.totalReports],
     ["Serious", formatNumber(drug.serious), drug.serious > other.serious],
@@ -287,7 +321,7 @@ function SignalList({ items, accent }: { items: string[]; accent?: boolean }) {
   );
 }
 
-function Timeline({ drug }: { drug: ReturnType<typeof drugById> }) {
+function Timeline({ drug }: { drug: Drug }) {
   return (
     <ol className="relative space-y-4 pl-6 before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-px before:bg-black/15">
       {drug.timeline.map((e, i) => (

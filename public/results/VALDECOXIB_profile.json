@@ -8,212 +8,212 @@
   "status": "Withdrawn",
   "withdrawal_year": 2005,
   "live_counts": {
-    "total_reports": 349,
-    "serious_reports": 321,
-    "death_reports": 61,
-    "hospitalization_reports": 173,
-    "disability_reports": 15,
-    "life_threatening_reports": 27,
-    "latest_report_year": 2025
+    "total_reports": 221,
+    "serious_reports": 211,
+    "death_reports": 31,
+    "hospitalization_reports": 97,
+    "disability_reports": 10,
+    "life_threatening_reports": 22,
+    "latest_report_year": 2005
   },
   "signals": [
     {
-      "reaction": "GASTRITIS",
-      "drug_reaction_count": 14,
-      "prr": 31.88,
-      "ror": 33.17,
-      "chi_square": 388.69,
-      "is_signal": true,
-      "signal_strength": "STRONG"
-    },
-    {
       "reaction": "COMA",
-      "drug_reaction_count": 25,
-      "prr": 31.39,
-      "ror": 33.74,
-      "chi_square": 706.73,
+      "drug_reaction_count": 10,
+      "prr": 19.83,
+      "ror": 20.72,
+      "chi_square": 160.79,
       "is_signal": true,
       "signal_strength": "STRONG"
     },
     {
-      "reaction": "DIABETES MELLITUS",
-      "drug_reaction_count": 18,
-      "prr": 14.03,
-      "ror": 14.74,
-      "chi_square": 205.69,
+      "reaction": "RENAL FAILURE ACUTE",
+      "drug_reaction_count": 8,
+      "prr": 17.33,
+      "ror": 17.94,
+      "chi_square": 107.51,
       "is_signal": true,
       "signal_strength": "STRONG"
     },
     {
-      "reaction": "RENAL FAILURE",
-      "drug_reaction_count": 24,
-      "prr": 10.68,
-      "ror": 11.39,
-      "chi_square": 202.27,
-      "is_signal": true,
-      "signal_strength": "STRONG"
-    },
-    {
-      "reaction": "RESPIRATORY FAILURE",
-      "drug_reaction_count": 13,
-      "prr": 10.67,
-      "ror": 11.05,
-      "chi_square": 104.85,
-      "is_signal": true,
-      "signal_strength": "STRONG"
-    },
-    {
-      "reaction": "ARTHRITIS",
-      "drug_reaction_count": 13,
-      "prr": 9.89,
-      "ror": 10.23,
-      "chi_square": 95.47,
+      "reaction": "CARDIO-RESPIRATORY ARREST",
+      "drug_reaction_count": 7,
+      "prr": 15.62,
+      "ror": 16.1,
+      "chi_square": 81.88,
       "is_signal": true,
       "signal_strength": "STRONG"
     },
     {
       "reaction": "COMPLETED SUICIDE",
-      "drug_reaction_count": 13,
-      "prr": 9.17,
-      "ror": 9.48,
-      "chi_square": 86.94,
+      "drug_reaction_count": 12,
+      "prr": 13.36,
+      "ror": 14.07,
+      "chi_square": 125.67,
       "is_signal": true,
       "signal_strength": "STRONG"
     },
     {
-      "reaction": "HYPERTENSION",
-      "drug_reaction_count": 23,
-      "prr": 6.5,
-      "ror": 6.89,
-      "chi_square": 102.64,
+      "reaction": "ARTHRITIS",
+      "drug_reaction_count": 10,
+      "prr": 12.01,
+      "ror": 12.53,
+      "chi_square": 90.54,
+      "is_signal": true,
+      "signal_strength": "STRONG"
+    },
+    {
+      "reaction": "MEDICATION ERROR",
+      "drug_reaction_count": 7,
+      "prr": 11.97,
+      "ror": 12.33,
+      "chi_square": 59.99,
       "is_signal": true,
       "signal_strength": "STRONG"
     },
     {
       "reaction": "MYOCARDIAL INFARCTION",
-      "drug_reaction_count": 16,
-      "prr": 5.41,
-      "ror": 5.62,
-      "chi_square": 53.64,
+      "drug_reaction_count": 8,
+      "prr": 4.27,
+      "ror": 4.39,
+      "chi_square": 17.05,
       "is_signal": true,
-      "signal_strength": "STRONG"
+      "signal_strength": "MODERATE"
     },
     {
-      "reaction": "DRUG HYPERSENSITIVITY",
-      "drug_reaction_count": 16,
-      "prr": 4.91,
-      "ror": 5.1,
-      "chi_square": 46.46,
+      "reaction": "CONFUSIONAL STATE",
+      "drug_reaction_count": 7,
+      "prr": 4.09,
+      "ror": 4.19,
+      "chi_square": 13.47,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "SOMNOLENCE",
+      "drug_reaction_count": 8,
+      "prr": 3.77,
+      "ror": 3.87,
+      "chi_square": 13.75,
+      "is_signal": true,
+      "signal_strength": "MODERATE"
+    },
+    {
+      "reaction": "HYPOTENSION",
+      "drug_reaction_count": 7,
+      "prr": 3.31,
+      "ror": 3.39,
+      "chi_square": 9.18,
       "is_signal": true,
       "signal_strength": "MODERATE"
     },
     {
       "reaction": "BACK PAIN",
-      "drug_reaction_count": 16,
-      "prr": 4.12,
-      "ror": 4.27,
-      "chi_square": 35.18,
+      "drug_reaction_count": 8,
+      "prr": 3.26,
+      "ror": 3.34,
+      "chi_square": 10.46,
       "is_signal": true,
       "signal_strength": "MODERATE"
     },
     {
-      "reaction": "FALL",
-      "drug_reaction_count": 18,
-      "prr": 3.25,
-      "ror": 3.37,
-      "chi_square": 26.2,
-      "is_signal": true,
-      "signal_strength": "MODERATE"
-    },
-    {
-      "reaction": "PAIN IN EXTREMITY",
-      "drug_reaction_count": 15,
-      "prr": 3.04,
-      "ror": 3.13,
-      "chi_square": 18.79,
-      "is_signal": true,
-      "signal_strength": "MODERATE"
-    },
-    {
-      "reaction": "DIZZINESS",
-      "drug_reaction_count": 20,
-      "prr": 2.41,
-      "ror": 2.5,
-      "chi_square": 15.51,
+      "reaction": "ANAEMIA",
+      "drug_reaction_count": 6,
+      "prr": 2.97,
+      "ror": 3.02,
+      "chi_square": 6.05,
       "is_signal": true,
       "signal_strength": "WEAK"
     },
     {
-      "reaction": "VOMITING",
-      "drug_reaction_count": 16,
-      "prr": 2.05,
-      "ror": 2.1,
-      "chi_square": 7.8,
+      "reaction": "FEELING ABNORMAL",
+      "drug_reaction_count": 7,
+      "prr": 2.74,
+      "ror": 2.8,
+      "chi_square": 6.19,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIZZINESS",
+      "drug_reaction_count": 12,
+      "prr": 2.28,
+      "ror": 2.36,
+      "chi_square": 7.61,
+      "is_signal": true,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "FALL",
+      "drug_reaction_count": 8,
+      "prr": 2.28,
+      "ror": 2.33,
+      "chi_square": 4.61,
       "is_signal": true,
       "signal_strength": "WEAK"
     },
     {
       "reaction": "PAIN",
-      "drug_reaction_count": 21,
-      "prr": 2.04,
-      "ror": 2.11,
-      "chi_square": 10.45,
-      "is_signal": true,
-      "signal_strength": "WEAK"
-    },
-    {
-      "reaction": "ARTHRALGIA",
-      "drug_reaction_count": 14,
-      "prr": 2.03,
-      "ror": 2.08,
-      "chi_square": 6.49,
-      "is_signal": true,
-      "signal_strength": "WEAK"
-    },
-    {
-      "reaction": "ASTHENIA",
-      "drug_reaction_count": 12,
-      "prr": 1.91,
-      "ror": 1.95,
-      "chi_square": 4.43,
+      "drug_reaction_count": 11,
+      "prr": 1.69,
+      "ror": 1.72,
+      "chi_square": 2.51,
       "is_signal": false,
       "signal_strength": "WEAK"
     },
     {
-      "reaction": "DIARRHOEA",
-      "drug_reaction_count": 13,
-      "prr": 1.22,
-      "ror": 1.23,
-      "chi_square": 0.32,
+      "reaction": "VOMITING",
+      "drug_reaction_count": 8,
+      "prr": 1.62,
+      "ror": 1.64,
+      "chi_square": 1.36,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "HEADACHE",
+      "drug_reaction_count": 8,
+      "prr": 1.21,
+      "ror": 1.22,
+      "chi_square": 0.12,
       "is_signal": false,
       "signal_strength": "WEAK"
     },
     {
       "reaction": "DRUG INEFFECTIVE",
-      "drug_reaction_count": 21,
-      "prr": 0.96,
-      "ror": 0.95,
-      "chi_square": 0.01,
+      "drug_reaction_count": 15,
+      "prr": 1.08,
+      "ror": 1.08,
+      "chi_square": 0.03,
+      "is_signal": false,
+      "signal_strength": "WEAK"
+    },
+    {
+      "reaction": "DIARRHOEA",
+      "drug_reaction_count": 7,
+      "prr": 1.04,
+      "ror": 1.04,
+      "chi_square": 0.0,
       "is_signal": false,
       "signal_strength": "WEAK"
     }
   ],
   "risk_scoring": {
-    "severity_score": 8.93,
-    "signal_score": 10.0,
-    "volume_score": 2.54,
-    "risk_index": 82.41,
+    "severity_score": 8.95,
+    "signal_score": 9.9,
+    "volume_score": 2.34,
+    "risk_index": 81.51,
     "risk_tier": "CRITICAL",
     "risk_color": "red",
-    "death_pct": 17.48,
-    "hosp_pct": 49.57,
-    "disab_pct": 4.3
+    "death_pct": 14.03,
+    "hosp_pct": 43.89,
+    "disab_pct": 4.52
   },
   "cost_of_harm": {
-    "death_cost_usd": 30500000,
-    "hospitalization_cost_usd": 2595000,
-    "disability_cost_usd": 3000000,
-    "total_estimated_cost_usd": 36095000,
+    "death_cost_usd": 15500000,
+    "hospitalization_cost_usd": 1455000,
+    "disability_cost_usd": 2000000,
+    "total_estimated_cost_usd": 18955000,
     "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
   },
   "trend_by_year": [
@@ -224,86 +224,6 @@
     {
       "year": 2005,
       "count": 89
-    },
-    {
-      "year": 2006,
-      "count": 21
-    },
-    {
-      "year": 2007,
-      "count": 16
-    },
-    {
-      "year": 2008,
-      "count": 5
-    },
-    {
-      "year": 2009,
-      "count": 1
-    },
-    {
-      "year": 2010,
-      "count": 6
-    },
-    {
-      "year": 2011,
-      "count": 4
-    },
-    {
-      "year": 2012,
-      "count": 13
-    },
-    {
-      "year": 2013,
-      "count": 20
-    },
-    {
-      "year": 2014,
-      "count": 7
-    },
-    {
-      "year": 2015,
-      "count": 5
-    },
-    {
-      "year": 2016,
-      "count": 3
-    },
-    {
-      "year": 2017,
-      "count": 4
-    },
-    {
-      "year": 2018,
-      "count": 5
-    },
-    {
-      "year": 2019,
-      "count": 5
-    },
-    {
-      "year": 2020,
-      "count": 4
-    },
-    {
-      "year": 2021,
-      "count": 5
-    },
-    {
-      "year": 2022,
-      "count": 1
-    },
-    {
-      "year": 2023,
-      "count": 1
-    },
-    {
-      "year": 2024,
-      "count": 1
-    },
-    {
-      "year": 2025,
-      "count": 1
     }
   ],
   "top_reactions": [
@@ -483,78 +403,68 @@
   "emerging_signals": [
     {
       "type": "STRONG_SIGNAL",
-      "description": "GASTRITIS shows a strong disproportionality signal (PRR=31.88).",
+      "description": "COMA shows a strong disproportionality signal (PRR=19.83).",
       "severity": "HIGH"
     },
     {
       "type": "STRONG_SIGNAL",
-      "description": "COMA shows a strong disproportionality signal (PRR=31.39).",
+      "description": "RENAL FAILURE ACUTE shows a strong disproportionality signal (PRR=17.33).",
       "severity": "HIGH"
     },
     {
       "type": "STRONG_SIGNAL",
-      "description": "DIABETES MELLITUS shows a strong disproportionality signal (PRR=14.03).",
+      "description": "CARDIO-RESPIRATORY ARREST shows a strong disproportionality signal (PRR=15.62).",
       "severity": "HIGH"
     },
     {
       "type": "STRONG_SIGNAL",
-      "description": "RENAL FAILURE shows a strong disproportionality signal (PRR=10.68).",
+      "description": "COMPLETED SUICIDE shows a strong disproportionality signal (PRR=13.36).",
       "severity": "HIGH"
     },
     {
       "type": "STRONG_SIGNAL",
-      "description": "RESPIRATORY FAILURE shows a strong disproportionality signal (PRR=10.67).",
+      "description": "ARTHRITIS shows a strong disproportionality signal (PRR=12.01).",
       "severity": "HIGH"
     },
     {
       "type": "STRONG_SIGNAL",
-      "description": "ARTHRITIS shows a strong disproportionality signal (PRR=9.89).",
+      "description": "MEDICATION ERROR shows a strong disproportionality signal (PRR=11.97).",
       "severity": "HIGH"
     },
     {
       "type": "STRONG_SIGNAL",
-      "description": "COMPLETED SUICIDE shows a strong disproportionality signal (PRR=9.17).",
-      "severity": "HIGH"
-    },
-    {
-      "type": "STRONG_SIGNAL",
-      "description": "HYPERTENSION shows a strong disproportionality signal (PRR=6.5).",
-      "severity": "HIGH"
-    },
-    {
-      "type": "STRONG_SIGNAL",
-      "description": "MYOCARDIAL INFARCTION shows a strong disproportionality signal (PRR=5.41).",
-      "severity": "HIGH"
-    },
-    {
-      "type": "STRONG_SIGNAL",
-      "description": "DRUG HYPERSENSITIVITY shows a strong disproportionality signal (PRR=4.91).",
+      "description": "MYOCARDIAL INFARCTION shows a strong disproportionality signal (PRR=4.27).",
       "severity": "MEDIUM"
     },
     {
       "type": "STRONG_SIGNAL",
-      "description": "BACK PAIN shows a strong disproportionality signal (PRR=4.12).",
+      "description": "CONFUSIONAL STATE shows a strong disproportionality signal (PRR=4.09).",
       "severity": "MEDIUM"
     },
     {
       "type": "STRONG_SIGNAL",
-      "description": "FALL shows a strong disproportionality signal (PRR=3.25).",
+      "description": "SOMNOLENCE shows a strong disproportionality signal (PRR=3.77).",
       "severity": "MEDIUM"
     },
     {
       "type": "STRONG_SIGNAL",
-      "description": "PAIN IN EXTREMITY shows a strong disproportionality signal (PRR=3.04).",
+      "description": "HYPOTENSION shows a strong disproportionality signal (PRR=3.31).",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "STRONG_SIGNAL",
+      "description": "BACK PAIN shows a strong disproportionality signal (PRR=3.26).",
       "severity": "MEDIUM"
     }
   ],
   "comparison_stats": {
-    "death_rate_pct": 17.5,
-    "serious_rate_pct": 92.0,
-    "hospitalization_rate_pct": 49.6,
+    "death_rate_pct": 14.0,
+    "serious_rate_pct": 95.5,
+    "hospitalization_rate_pct": 43.9,
     "avg_patient_age": 247.0,
-    "flagged_signal_count": 17,
-    "strongest_signal_prr": 31.88,
-    "strongest_signal_reaction": "GASTRITIS"
+    "flagged_signal_count": 15,
+    "strongest_signal_prr": 19.83,
+    "strongest_signal_reaction": "COMA"
   },
   "meta": {
     "drug_queried": "VALDECOXIB",
@@ -563,8 +473,8 @@
       "openFDA_live",
       "faers_sample_csv"
     ],
-    "analysis_timestamp": "2026-07-11T10:04:32.788883Z",
-    "cache_expires": "2026-07-12T10:04:32.788883Z"
+    "analysis_timestamp": "2026-07-11T13:14:29.405021Z",
+    "cache_expires": "2026-07-12T13:14:29.405021Z"
   },
   "ai_summary": null
 }

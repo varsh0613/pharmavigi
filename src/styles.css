@@ -132,12 +132,12 @@
    The Risk Index badge sits inside this cutout, straddling header and body. */
 @utility dome-cutout {
   -webkit-mask-image: radial-gradient(
-    circle 110px at 50% 100%,
+    circle 96px at 50% 100%,
     transparent 99.5%,
     black 100%
   );
   mask-image: radial-gradient(
-    circle 110px at 50% 100%,
+    circle 96px at 50% 100%,
     transparent 99.5%,
     black 100%
   );

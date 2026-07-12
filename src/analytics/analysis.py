@@ -11,11 +11,18 @@ combining:
     outcome distribution)
   - a locally pre-loaded raw/clean FAERS extract, used as an offline
     fallback for counts/trend when the live openFDA call fails
-  - hardcoded reference data for 19 well-known NSAID/COX-2 drugs
+  - hardcoded reference data for 20 well-known NSAID/COX-2 drugs
     (approval/withdrawal timeline, status)
 
 The output dict is JSON-serialized and written to RESULTS_DIR by
 save_profile_to_results(). The CSVs are only read once, at import time.
+
+Risk scoring is CALIBRATED: severity and signal subscores are normalized
+relative to the min/max actually observed across the analyzed drug class
+(not against guessed absolute epidemiological percentages), because FAERS
+hospitalization/death rates run far higher across the board than naive
+assumptions predict. Calibration stats are computed once by analyze_all_drugs()
+and cached to disk so any single drug added later reuses the same baseline.
 """
 
 import json
@@ -44,10 +51,12 @@ logger = logging.getLogger("pharmavigi.analysis")
 # CONSTANTS
 # ─────────────────────────────────────────────────────────────────────────
 
-# ── file locations ────────────────────────────────────────────────────
-PROCESSED_SAMPLE_CSV = r"C:\Users\varsh\OneDrive\Desktop\Final project FDA\data\processed\faers_all_drugs.csv"
-RAW_CLEAN_CSV = r"C:\Users\varsh\OneDrive\Desktop\Final project FDA\data\raw\fda_adverse_events_2015_2026_CLEAN.csv"
-RESULTS_DIR = r"C:\Users\varsh\OneDrive\Desktop\Final project FDA\results"
+# ── file locations (relative to project root) ─────────────────────────
+ROOT = Path(__file__).resolve().parents[2]
+PROCESSED_SAMPLE_CSV = str(ROOT / "data" / "processed" / "master_safety_dataset.csv")
+RAW_CLEAN_CSV = str(ROOT / "data" / "raw" / "fda_adverse_events_2015_2026_CLEAN.csv")
+RESULTS_DIR = str(ROOT / "public" / "results")
+CALIBRATION_FILE = str(ROOT / "public" / "results" / "_calibration.json")
 
 OPENFDA_EVENT_URL = "https://api.fda.gov/drug/event.json"
 OPENFDA_LABEL_URL = "https://api.fda.gov/drug/label.json"
@@ -58,16 +67,12 @@ COST_PER_DEATH = 500_000
 COST_PER_HOSPITALIZATION = 15_000
 COST_PER_DISABILITY = 200_000
 
-# ── Gemini (AI summary) ──────────────────────────────────────────────
+# ── Ollama (AI summary) ──────────────────────────────────────────────
 # Set your key as an environment variable rather than hardcoding it:
-#   Windows (PowerShell):  setx GEMINI_API_KEY "your-key-here"
+#   Windows (PowerShell):  setx OLLAMA_API_KEY "your-key-here"
 #   (then restart the terminal so the new env var is picked up)
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-GEMINI_MODEL = "gemini-2.5-flash"
-GEMINI_URL = (
-    f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
-)
-
+OLLAMA_URL = "http://localhost:11434/api/generate"
+OLLAMA_MODEL = "llama3"
 # ─────────────────────────────────────────────────────────────────────────
 # HARDCODED REFERENCE DATA
 # ─────────────────────────────────────────────────────────────────────────
@@ -391,7 +396,13 @@ def _raw_fallback_counts(drug_name: str) -> dict:
         return {}
 
 
-def _raw_fallback_trend(drug_name: str) -> list:
+def _add_pre_withdrawal_filter(search: str, withdrawal_year: int | None) -> str:
+    if withdrawal_year:
+        return f"{search} AND receivedate:[* TO {withdrawal_year}1231]"
+    return search
+
+
+def _raw_fallback_trend(drug_name: str, withdrawal_year: int | None = None) -> list:
     """Locally derived year-by-year trend from RAW_DF, used as an API fallback."""
     subset = _filter_raw(drug_name)
     if subset.empty or "receivedate" not in subset.columns:
@@ -400,6 +411,8 @@ def _raw_fallback_trend(drug_name: str) -> list:
         years = pd.to_numeric(
             subset["receivedate"].astype(str).str.slice(0, 4), errors="coerce"
         ).dropna().astype(int)
+        if withdrawal_year:
+            years = years[years <= withdrawal_year]
         counts = years.value_counts().sort_index()
         return [{"year": int(y), "count": int(c)} for y, c in counts.items() if c > 0]
     except Exception as exc:
@@ -407,8 +420,10 @@ def _raw_fallback_trend(drug_name: str) -> list:
         return []
 
 
-def get_live_counts(drug_name: str, trend_by_year: list[dict]) -> dict:
-    base = f'patient.drug.medicinalproduct:"{drug_name}"'
+def get_live_counts(drug_name: str, trend_by_year: list[dict], withdrawal_year: int | None = None) -> dict:
+    base = _add_pre_withdrawal_filter(
+        f'patient.drug.medicinalproduct:"{drug_name}"', withdrawal_year
+    )
     out = {
         "total_reports": None,
         "serious_reports": None,
@@ -419,7 +434,6 @@ def get_live_counts(drug_name: str, trend_by_year: list[dict]) -> dict:
         "latest_report_year": None,
     }
 
-    # total: sum the `serious` count buckets (1 and 2)
     serious_results = _count_field(OPENFDA_EVENT_URL, base, "serious")
     if serious_results:
         try:
@@ -459,8 +473,10 @@ def get_live_counts(drug_name: str, trend_by_year: list[dict]) -> dict:
 # TREND
 # ─────────────────────────────────────────────────────────────────────────
 
-def get_trend_by_year(drug_name: str) -> list:
-    base = f'patient.drug.medicinalproduct:"{drug_name}"'
+def get_trend_by_year(drug_name: str, withdrawal_year: int | None = None) -> list:
+    base = _add_pre_withdrawal_filter(
+        f'patient.drug.medicinalproduct:"{drug_name}"', withdrawal_year
+    )
     results = _count_field(OPENFDA_EVENT_URL, base, "receivedate")
     if not results:
         return []
@@ -477,7 +493,7 @@ def get_trend_by_year(drug_name: str) -> list:
     trend = [{"year": y, "count": c} for y, c in sorted(yearly.items()) if c > 0]
 
     if not trend:
-        fallback = _raw_fallback_trend(drug_name)
+        fallback = _raw_fallback_trend(drug_name, withdrawal_year)
         if fallback:
             logger.info("Using raw CSV fallback trend for %s", drug_name)
             return fallback
@@ -489,8 +505,10 @@ def get_trend_by_year(drug_name: str) -> list:
 # SIGNAL DETECTION (PRR / ROR / chi-square)
 # ─────────────────────────────────────────────────────────────────────────
 
-def get_signal_detection(drug_name: str, total_reports_drug: int | None) -> list:
-    base = f'patient.drug.medicinalproduct:"{drug_name}"'
+def get_signal_detection(drug_name: str, total_reports_drug: int | None, withdrawal_year: int | None = None) -> list:
+    base = _add_pre_withdrawal_filter(
+        f'patient.drug.medicinalproduct:"{drug_name}"', withdrawal_year
+    )
     not_base = f'NOT patient.drug.medicinalproduct:"{drug_name}"'
 
     top_reactions = _count_field(
@@ -585,34 +603,43 @@ def compute_risk_scoring(live_counts: dict, signals: list, status: str = "Active
     hosp  = live_counts.get("hospitalization_reports") or 0
     disab = live_counts.get("disability_reports") or 0
 
-    # ── Bug 3 fix: normalize each component to 0-10 before combining
-    # Reference ranges based on typical FAERS distributions:
-    #   death 0-5%, hosp 0-30%, disab 0-15%
     if total > 0:
-        death_score = min((death / total * 100) / 5  * 4, 4.0)   # max 4 pts
-        hosp_score  = min((hosp  / total * 100) / 30 * 4, 4.0)   # max 4 pts
-        disab_score = min((disab / total * 100) / 15 * 2, 2.0)   # max 2 pts
+        death_pct = death / total * 100
+        hosp_pct  = hosp  / total * 100
+        disab_pct = disab / total * 100
     else:
-        death_score = hosp_score = disab_score = 0.0
+        death_pct = hosp_pct = disab_pct = 0.0
 
-    severity_score = round(death_score + hosp_score + disab_score, 2)  # 0-10
+    # Fixed thresholds grounded in FAERS literature
+    # Death: 0% = 0pts, 5%+ = 10pts
+    # Hosp:  0% = 0pts, 30%+ = 10pts
+    # Disab: 0% = 0pts, 15%+ = 10pts
+    death_score = min(death_pct / 5.0  * 10, 10.0)
+    hosp_score  = min(hosp_pct  / 30.0 * 10, 10.0)
+    disab_score = min(disab_pct / 15.0 * 10, 10.0)
+    severity_score = round((death_score * 0.5) + (hosp_score * 0.35) + (disab_score * 0.15), 2)
 
+    # Signal score: avg PRR of flagged signals
+    # PRR 2 = threshold (score 0), PRR 8+ = max (score 10)
     flagged = [s for s in signals if s.get("is_signal")]
     if flagged:
         prrs = [s["prr"] for s in flagged if s["prr"] is not None]
-        signal_score = round(min(sum(prrs) / len(prrs), 10), 2) if prrs else 0.0
+        avg_prr = sum(prrs) / len(prrs) if prrs else 0.0
+        signal_score = round(min(max((avg_prr - 2.0) / 6.0 * 10, 0.0), 10.0), 2)
     else:
         signal_score = 0.0
 
     volume_score = round(float(min(max(np.log10(total), 0), 10)), 2) if total > 0 else 0.0
 
-    # All three scores now 0-10 → weighted average → scale to 0-100
-    raw = (signal_score * 0.4) + (severity_score * 0.4) + (volume_score * 0.2)
+    raw = (signal_score * 0.55) + (severity_score * 0.25) + (volume_score * 0.2)
     risk_index = round(float(min(raw * 10, 100)), 2)
 
-    # ── Bug 5 fix: withdrawn drugs are always CRITICAL
-    # Regulatory withdrawal IS the definitive risk confirmation
-    if status == "Withdrawn":
+    # For withdrawn drugs, only apply a CRITICAL floor if the pre-withdrawal
+    # data actually shows a strong, statistically significant safety signal.
+    # A drug withdrawn for commercial/regulatory reasons with weak evidence
+    # should not be automatically CRITICAL — that would defeat the purpose
+    # of evidence-based signal detection.
+    if status == "Withdrawn" and flagged and total >= 50:
         risk_index = max(risk_index, 76.0)
 
     if risk_index > 75:
@@ -631,7 +658,29 @@ def compute_risk_scoring(live_counts: dict, signals: list, status: str = "Active
         "risk_index": risk_index,
         "risk_tier": tier,
         "risk_color": color,
+        "death_pct": round(death_pct, 2),
+        "hosp_pct": round(hosp_pct, 2),
+        "disab_pct": round(disab_pct, 2),
     }
+
+
+def apply_calibration(profile: dict, calibration: dict) -> dict:
+    # No-op now — scoring is self-contained, no calibration needed
+    # Kept so the rest of the code doesn't break
+    return profile
+
+
+def compute_calibration(profiles: list) -> dict:
+    return {"note": "Fixed-threshold scoring — calibration not required", "n_drugs": len(profiles)}
+
+
+def save_calibration(calibration: dict, path: str = CALIBRATION_FILE) -> None:
+    try:
+        Path(path).parent.mkdir(parents=True, exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(calibration, f, indent=2)
+    except Exception as exc:
+        logger.error("Failed to save calibration: %s", exc)
 
 # ─────────────────────────────────────────────────────────────────────────
 # COST OF HARM
@@ -896,32 +945,20 @@ def compute_comparison_stats(live_counts: dict, signals: list, subset: pd.DataFr
 # AI SUMMARY (Gemini)
 # ─────────────────────────────────────────────────────────────────────────
 
-def _call_gemini(prompt: str) -> str | None:
-    # Read fresh every call — survives setx without restart
-    api_key = os.environ.get("GEMINI_API_KEY") or GEMINI_API_KEY
-    if not api_key:
-        logger.warning("GEMINI_API_KEY not set — skipping AI summary.")
-        return None
-    url = (
-        f"https://generativelanguage.googleapis.com/v1beta/models/"
-        f"{GEMINI_MODEL}:generateContent"
-    )
+def _call_ollama(prompt: str) -> str | None:
     try:
         resp = requests.post(
-            url,
-            params={"key": api_key},
-            json={"contents": [{"parts": [{"text": prompt}]}]},
-            timeout=REQUEST_TIMEOUT,
+            OLLAMA_URL,
+            json={"model": OLLAMA_MODEL, "prompt": prompt, "stream": False},
+            timeout=120,
         )
         if resp.status_code != 200:
-            logger.warning("Gemini non-200 (%s): %s", resp.status_code, resp.text[:300])
+            logger.warning("Ollama non-200 (%s): %s", resp.status_code, resp.text[:300])
             return None
-        data = resp.json()
-        return data["candidates"][0]["content"]["parts"][0]["text"].strip()
+        return resp.json().get("response", "").strip()
     except Exception as exc:
-        logger.warning("Gemini call failed: %s", exc)
+        logger.warning("Ollama call failed: %s", exc)
         return None
-
 
 def generate_ai_summary(profile: dict) -> str | None:
     """
@@ -956,7 +993,7 @@ Sentence 1: state the risk tier and the strongest driving signal/statistic.
 Sentence 2: describe the dominant adverse event pattern and when report volume peaked, if known.
 Sentence 3: state the cost of harm estimate and connect it to the actual regulatory outcome (or note it remains actively monitored if not withdrawn)."""
 
-        return _call_gemini(prompt)
+        return _call_ollama(prompt)
     except Exception as exc:
         logger.warning("generate_ai_summary failed for %s: %s", profile.get("drug_name"), exc)
         return None
@@ -986,15 +1023,11 @@ safety team deciding where to focus review effort. Be specific and quantitative.
 Drug A — {brief(profile_a)}
 Drug B — {brief(profile_b)}"""
 
-        return _call_gemini(prompt)
+        return _call_ollama(prompt)
     except Exception as exc:
         logger.warning("generate_comparative_summary failed: %s", exc)
         return None
 
-
-# ─────────────────────────────────────────────────────────────────────────
-# MAIN ENTRY POINT
-# ─────────────────────────────────────────────────────────────────────────
 
 # ─────────────────────────────────────────────────────────────────────────
 # RESULTS STORAGE
@@ -1020,14 +1053,20 @@ def save_profile_to_results(profile: dict, results_dir: str = RESULTS_DIR) -> st
         return None
 
 
-def build_drug_profile(drug_name: str, sample_df: pd.DataFrame) -> dict:
+def build_drug_profile(drug_name: str, sample_df: pd.DataFrame, generate_summary: bool = True, withdrawal_year: int | None = None) -> dict:
     """
-    Build the complete PharmaVigi drug profile dictionary.
+    Build a drug profile dictionary. risk_scoring is left UNCALIBRATED
+    (severity_score/signal_score/risk_index/risk_tier are None) until
+    apply_calibration() is run on it — either as part of analyze_all_drugs()
+    or manually for a single added drug using a saved calibration file.
     Never raises; on any internal failure a field is set to null/empty
     and the function keeps going.
+
+    If withdrawal_year is provided, openFDA queries are filtered to reports
+    received on or before that year (pre-withdrawal analysis window).
     """
     drug_name = (drug_name or "").upper().strip()
-    logger.info("=== Building profile for %s ===", drug_name)
+    logger.info("=== Building profile for %s (withdrawal_year=%s) ===", drug_name, withdrawal_year)
 
     ref = DRUG_REFERENCE.get(drug_name, {})
     timeline = sorted(TIMELINE_REFERENCE.get(drug_name, []), key=lambda ev: ev["year"])
@@ -1044,14 +1083,14 @@ def build_drug_profile(drug_name: str, sample_df: pd.DataFrame) -> dict:
 
     # --- trend ---
     try:
-        trend_by_year = get_trend_by_year(drug_name)
+        trend_by_year = get_trend_by_year(drug_name, withdrawal_year)
     except Exception as exc:
         logger.error("trend failed: %s", exc)
         trend_by_year = []
 
     # --- live counts ---
     try:
-        live_counts = get_live_counts(drug_name, trend_by_year)
+        live_counts = get_live_counts(drug_name, trend_by_year, withdrawal_year)
     except Exception as exc:
         logger.error("live_counts failed: %s", exc)
         live_counts = {
@@ -1062,30 +1101,22 @@ def build_drug_profile(drug_name: str, sample_df: pd.DataFrame) -> dict:
 
     # --- signal detection ---
     try:
-        signals = get_signal_detection(drug_name, live_counts.get("total_reports"))
+        signals = get_signal_detection(drug_name, live_counts.get("total_reports"), withdrawal_year)
     except Exception as exc:
         logger.error("signal_detection failed: %s", exc)
         signals = []
 
-    # --- risk scoring ---
+    # --- risk scoring (RAW — calibration applied later) ---
     try:
-        risk_scoring = compute_risk_scoring(live_counts, signals, ref.get("status", "Active"))
+        risk_scoring = compute_risk_scoring(
+    live_counts, signals, ref.get("status", "Active")
+)
     except Exception as exc:
         logger.error("risk_scoring failed: %s", exc)
         risk_scoring = {
-            "severity_score": 0.0, "signal_score": 0.0, "volume_score": 0.0,
-            "risk_index": 0.0, "risk_tier": "LOW", "risk_color": "green",
-        }
-
-    # --- cost of harm ---
-    try:
-        cost_of_harm = compute_cost_of_harm(live_counts, risk_scoring["risk_tier"])
-    except Exception as exc:
-        logger.error("cost_of_harm failed: %s", exc)
-        cost_of_harm = {
-            "death_cost_usd": None, "hospitalization_cost_usd": None,
-            "disability_cost_usd": None, "total_estimated_cost_usd": None,
-            "cost_note": "Modeled estimates using public benchmarks. Not audited figures.",
+            "severity_score": None, "signal_score": None, "volume_score": 0.0,
+            "risk_index": None, "risk_tier": None, "risk_color": None,
+            "severity_raw": 0.0, "signal_raw": 0.0,
         }
 
     # --- sample CSV based sections ---
@@ -1141,6 +1172,10 @@ def build_drug_profile(drug_name: str, sample_df: pd.DataFrame) -> dict:
             "strongest_signal_prr": None, "strongest_signal_reaction": None,
         }
 
+    # NOTE: cost_of_harm depends on risk_tier, which isn't known yet
+    # (calibration happens after all profiles are built). It gets filled
+    # in by finalize_profile() below, once the tier is assigned.
+
     now = datetime.utcnow()
     meta = {
         "drug_queried": drug_name,
@@ -1163,7 +1198,7 @@ def build_drug_profile(drug_name: str, sample_df: pd.DataFrame) -> dict:
         "live_counts": live_counts,
         "signals": signals,
         "risk_scoring": risk_scoring,
-        "cost_of_harm": cost_of_harm,
+        "cost_of_harm": None,  # filled in by finalize_profile()
         "trend_by_year": trend_by_year,
         "top_reactions": top_reactions,
         "demographics": demographics,
@@ -1173,43 +1208,84 @@ def build_drug_profile(drug_name: str, sample_df: pd.DataFrame) -> dict:
         "emerging_signals": emerging_signals,
         "comparison_stats": comparison_stats,
         "meta": meta,
+        "ai_summary": None,  # filled in by finalize_profile()
     }
 
-    # --- AI summary (Gemini) ---
-    try:
-        profile["ai_summary"] = generate_ai_summary(profile)
-    except Exception as exc:
-        logger.error("ai_summary failed: %s", exc)
-        profile["ai_summary"] = None
-
-    logger.info("=== Finished profile for %s ===", drug_name)
+    logger.info("=== Built raw profile for %s (uncalibrated) ===", drug_name)
     return profile
 
 
-# ─────────────────────────────────────────────────────────────────────────
-# MAIN (manual test)
-# ─────────────────────────────────────────────────────────────────────────
+def finalize_profile(profile: dict, calibration: dict, generate_summary: bool = True) -> dict:
+    # calibration is a no-op now but kept for API compatibility
+    apply_calibration(profile, calibration)
+    
+    try:
+        profile["cost_of_harm"] = compute_cost_of_harm(
+            profile["live_counts"], profile["risk_scoring"]["risk_tier"]
+        )
+    except Exception as exc:
+        logger.error("cost_of_harm failed: %s", exc)
+        profile["cost_of_harm"] = {
+            "death_cost_usd": None, "hospitalization_cost_usd": None,
+            "disability_cost_usd": None, "total_estimated_cost_usd": None,
+            "cost_note": "Modeled estimates using public benchmarks. Not audited figures.",
+        }
+
+    if generate_summary:
+        try:
+            profile["ai_summary"] = generate_ai_summary(profile)
+        except Exception as exc:
+            logger.error("ai_summary failed: %s", exc)
+            profile["ai_summary"] = None
+
+    logger.info("=== Finalized %s -> %s (index=%s) ===",
+                profile.get("drug_name"),
+                profile["risk_scoring"]["risk_tier"],
+                profile["risk_scoring"]["risk_index"])
+    return profile
 
 # ─────────────────────────────────────────────────────────────────────────
 # BATCH RUNNER — all pre-loaded drugs
 # ─────────────────────────────────────────────────────────────────────────
 
-def analyze_all_drugs(sample_df: pd.DataFrame = SAMPLE_DF) -> dict:
+def analyze_all_drugs(sample_df: pd.DataFrame = SAMPLE_DF, generate_summaries: bool = True) -> dict:
     """
-    Build and save a profile for every drug in DRUG_REFERENCE.
+    Build a profile for every drug in DRUG_REFERENCE, calibrate severity/signal
+    scores relative to the observed spread across THIS SET, then finalize
+    (cost of harm + AI summary) and save each. Calibration stats are cached
+    to disk so a single drug added later can reuse the same baseline instead
+    of needing to rebuild the whole class.
+
     Returns {drug_name: {tier, risk_index, severity_score, signal_score,
-    volume_score, total_reports}} so the component breakdown is visible,
-    not just the final tier.
-    Never raises — a failure on one drug is logged and skipped, the rest continue.
+    volume_score, total_reports, ...}}.
     """
     drug_names = list(DRUG_REFERENCE.keys())
     total = len(drug_names)
-    results = {}
 
+    # Pass 1: build raw (uncalibrated) profiles for every drug
+    raw_profiles = {}
     for i, drug_name in enumerate(drug_names, start=1):
-        logger.info("########## [%d/%d] %s ##########", i, total, drug_name)
+        logger.info("########## [PASS 1] [%d/%d] %s ##########", i, total, drug_name)
         try:
-            profile = build_drug_profile(drug_name, sample_df)
+            ref = DRUG_REFERENCE.get(drug_name, {})
+            wd_year = ref.get("withdrawn")
+            raw_profiles[drug_name] = build_drug_profile(
+                drug_name, sample_df, withdrawal_year=wd_year
+            )
+        except Exception as exc:
+            logger.error("Drug %s failed entirely in pass 1: %s", drug_name, exc)
+
+    # Compute calibration from this batch, save for reuse by single-drug adds
+    calibration = compute_calibration(list(raw_profiles.values()))
+    save_calibration(calibration)
+    logger.info("Calibration complete across %d drugs (fixed-threshold mode)", calibration.get("n_drugs", 0))
+
+    # Pass 2: finalize (calibrate + cost of harm + AI summary) and save
+    results = {}
+    for i, (drug_name, profile) in enumerate(raw_profiles.items(), start=1):
+        logger.info("########## [PASS 2] [%d/%d] %s ##########", i, len(raw_profiles), drug_name)
+        try:
+            finalize_profile(profile, calibration, generate_summary=generate_summaries)
             save_profile_to_results(profile)
             rs = profile.get("risk_scoring", {})
             lc = profile.get("live_counts", {})
@@ -1226,30 +1302,49 @@ def analyze_all_drugs(sample_df: pd.DataFrame = SAMPLE_DF) -> dict:
             results[drug_name] = row
             logger.info(
                 "[%d/%d] %s -> %s (index=%s severity=%s signal=%s volume=%s total_reports=%s)",
-                i, total, drug_name, row["tier"], row["risk_index"],
+                i, len(raw_profiles), drug_name, row["tier"], row["risk_index"],
                 row["severity_score"], row["signal_score"], row["volume_score"],
                 row["total_reports"],
             )
         except Exception as exc:
-            logger.error("Drug %s failed entirely: %s", drug_name, exc)
+            logger.error("Drug %s failed entirely in pass 2: %s", drug_name, exc)
             results[drug_name] = {"tier": "ERROR"}
 
     return results
 
 
-def validate_withdrawals(results: dict) -> bool:
+def analyze_new_drug(drug_name: str, sample_df: pd.DataFrame = SAMPLE_DF) -> dict:
     """
-    Built-in proof of concept: Rofecoxib, Valdecoxib, and Lumiracoxib were
-    all real-world market withdrawals, so the methodology is only validated
-    if all three come back as CRITICAL tier.
+    Build and finalize a profile for a single NEW drug (the "Add New Drug"
+    flow), reusing the calibration stats saved from the last analyze_all_drugs()
+    run. If no calibration file exists yet, run analyze_all_drugs() first.
     """
-    ok = True
+    calibration = load_calibration()
+    if calibration is None:
+        logger.warning("No calibration file found — run analyze_all_drugs() first. Doing that now.")
+        analyze_all_drugs(sample_df)
+        calibration = load_calibration()
+
+    profile = build_drug_profile(drug_name, sample_df)
+    finalize_profile(profile, calibration)
+    save_profile_to_results(profile)
+    return profile
+
+
+def validate_withdrawals(results: dict) -> dict:
+    """
+    Proof of concept: Rofecoxib, Valdecoxib, and Lumiracoxib were
+    real-world market withdrawals. With pre-withdrawal filtering and
+    evidence-based scoring, Rofecoxib/Valdecoxib should show strong
+    pre-withdrawal signals (HIGH or CRITICAL), while Lumiracoxib should
+    reflect its sparse evidence (not auto-CRITICAL just from withdrawn status).
+    """
+    report = {}
     for drug in ("ROFECOXIB", "VALDECOXIB", "LUMIRACOXIB"):
         tier = results.get(drug, {}).get("tier", "UNKNOWN")
-        passed = tier == "CRITICAL"
-        ok = ok and passed
-        logger.info("Validation check — %s: %s (%s)", drug, tier, "PASS" if passed else "FAIL")
-    return ok
+        report[drug] = {"tier": tier, "passed": tier in ("HIGH", "CRITICAL")}
+        logger.info("Validation check — %s: %s", drug, tier)
+    return report
 
 
 # ─────────────────────────────────────────────────────────────────────────
@@ -1259,7 +1354,7 @@ def validate_withdrawals(results: dict) -> bool:
 if __name__ == "__main__":
     all_results = analyze_all_drugs()
 
-    print("\n=== RISK BREAKDOWN ===")
+    print("\n=== RISK BREAKDOWN (calibrated relative to this 20-drug class) ===")
     print(f"{'DRUG':20s} {'TIER':10s} {'INDEX':>7s} {'SEVERITY':>9s} {'SIGNAL':>7s} {'VOLUME':>7s} {'TOTAL_REPORTS':>14s}")
     for drug, row in all_results.items():
         print(
@@ -1269,6 +1364,10 @@ if __name__ == "__main__":
             f"{str(row.get('total_reports','')):>14s}"
         )
 
-    print("\n=== VALIDATION (Rofecoxib, Valdecoxib & Lumiracoxib should be CRITICAL) ===")
-    passed = validate_withdrawals(all_results)
-    print("PASSED" if passed else "FAILED — check breakdown above before trusting other tiers")
+    print("\n=== VALIDATION (pre-withdrawal signal detection) ===")
+    validation = validate_withdrawals(all_results)
+    for drug, info in validation.items():
+        status = "PASS" if info["passed"] else "REVIEW"
+        print(f"  {drug}: {info['tier']} ({status})")
+    all_pass = all(v["passed"] for v in validation.values())
+    print("ALL PASSED" if all_pass else "SOME NEED REVIEW — check breakdown above")

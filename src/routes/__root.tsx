@@ -136,8 +136,8 @@ function TopNav() {
 
   return (
     <nav className="sticky top-0 z-40 border-b border-black/5 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-        <Link to="/" className="flex items-center gap-2.5">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
+        <Link to="/" className="hidden items-center gap-2.5 md:flex md:invisible">
           <span className="grid size-7 place-items-center rounded-full bg-critical text-[10px] font-bold text-white">
             ϕ
           </span>

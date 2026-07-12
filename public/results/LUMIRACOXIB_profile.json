@@ -8,95 +8,37 @@
   "status": "Withdrawn",
   "withdrawal_year": 2007,
   "live_counts": {
-    "total_reports": 16,
-    "serious_reports": 16,
-    "death_reports": 2,
-    "hospitalization_reports": 9,
-    "disability_reports": 2,
-    "life_threatening_reports": 2,
-    "latest_report_year": 2016
+    "total_reports": 6,
+    "serious_reports": 6,
+    "death_reports": null,
+    "hospitalization_reports": 3,
+    "disability_reports": null,
+    "life_threatening_reports": 1,
+    "latest_report_year": 2007
   },
-  "signals": [
-    {
-      "reaction": "RENAL FAILURE ACUTE",
-      "drug_reaction_count": 3,
-      "prr": 89.74,
-      "ror": 110.22,
-      "chi_square": 182.36,
-      "is_signal": true,
-      "signal_strength": "STRONG"
-    },
-    {
-      "reaction": "SEPSIS",
-      "drug_reaction_count": 3,
-      "prr": 35.14,
-      "ror": 43.02,
-      "chi_square": 68.66,
-      "is_signal": true,
-      "signal_strength": "STRONG"
-    },
-    {
-      "reaction": "DRUG INTERACTION",
-      "drug_reaction_count": 3,
-      "prr": 24.72,
-      "ror": 30.19,
-      "chi_square": 46.97,
-      "is_signal": true,
-      "signal_strength": "STRONG"
-    },
-    {
-      "reaction": "VOMITING",
-      "drug_reaction_count": 4,
-      "prr": 11.2,
-      "ror": 14.6,
-      "chi_square": 28.28,
-      "is_signal": true,
-      "signal_strength": "STRONG"
-    },
-    {
-      "reaction": "NAUSEA",
-      "drug_reaction_count": 3,
-      "prr": 4.99,
-      "ror": 5.91,
-      "chi_square": 6.23,
-      "is_signal": true,
-      "signal_strength": "MODERATE"
-    }
-  ],
+  "signals": [],
   "risk_scoring": {
-    "severity_score": 9.75,
-    "signal_score": 10.0,
-    "volume_score": 1.2,
-    "risk_index": 81.78,
-    "risk_tier": "CRITICAL",
-    "risk_color": "red",
-    "death_pct": 12.5,
-    "hosp_pct": 56.25,
-    "disab_pct": 12.5
+    "severity_score": 3.5,
+    "signal_score": 0.0,
+    "volume_score": 0.78,
+    "risk_index": 10.31,
+    "risk_tier": "LOW",
+    "risk_color": "green",
+    "death_pct": 0.0,
+    "hosp_pct": 50.0,
+    "disab_pct": 0.0
   },
   "cost_of_harm": {
-    "death_cost_usd": 1000000,
-    "hospitalization_cost_usd": 135000,
-    "disability_cost_usd": 400000,
-    "total_estimated_cost_usd": 1535000,
+    "death_cost_usd": null,
+    "hospitalization_cost_usd": null,
+    "disability_cost_usd": null,
+    "total_estimated_cost_usd": null,
     "cost_note": "Modeled estimates using public benchmarks. Not audited figures."
   },
   "trend_by_year": [
     {
       "year": 2007,
       "count": 6
-    },
-    {
-      "year": 2008,
-      "count": 8
-    },
-    {
-      "year": 2009,
-      "count": 1
-    },
-    {
-      "year": 2016,
-      "count": 1
     }
   ],
   "top_reactions": [],
@@ -203,41 +145,15 @@
     "withdrawn": true,
     "safety_alert_recent": false
   },
-  "emerging_signals": [
-    {
-      "type": "STRONG_SIGNAL",
-      "description": "RENAL FAILURE ACUTE shows a strong disproportionality signal (PRR=89.74).",
-      "severity": "HIGH"
-    },
-    {
-      "type": "STRONG_SIGNAL",
-      "description": "SEPSIS shows a strong disproportionality signal (PRR=35.14).",
-      "severity": "HIGH"
-    },
-    {
-      "type": "STRONG_SIGNAL",
-      "description": "DRUG INTERACTION shows a strong disproportionality signal (PRR=24.72).",
-      "severity": "HIGH"
-    },
-    {
-      "type": "STRONG_SIGNAL",
-      "description": "VOMITING shows a strong disproportionality signal (PRR=11.2).",
-      "severity": "HIGH"
-    },
-    {
-      "type": "STRONG_SIGNAL",
-      "description": "NAUSEA shows a strong disproportionality signal (PRR=4.99).",
-      "severity": "MEDIUM"
-    }
-  ],
+  "emerging_signals": [],
   "comparison_stats": {
-    "death_rate_pct": 12.5,
+    "death_rate_pct": 0.0,
     "serious_rate_pct": 100.0,
-    "hospitalization_rate_pct": 56.2,
+    "hospitalization_rate_pct": 50.0,
     "avg_patient_age": null,
-    "flagged_signal_count": 5,
-    "strongest_signal_prr": 89.74,
-    "strongest_signal_reaction": "RENAL FAILURE ACUTE"
+    "flagged_signal_count": 0,
+    "strongest_signal_prr": null,
+    "strongest_signal_reaction": null
   },
   "meta": {
     "drug_queried": "LUMIRACOXIB",
@@ -246,8 +162,8 @@
       "openFDA_live",
       "faers_sample_csv"
     ],
-    "analysis_timestamp": "2026-07-11T10:25:49.834106Z",
-    "cache_expires": "2026-07-12T10:25:49.834106Z"
+    "analysis_timestamp": "2026-07-11T13:15:08.370787Z",
+    "cache_expires": "2026-07-12T13:15:08.370787Z"
   },
   "ai_summary": null
 }
