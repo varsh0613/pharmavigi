@@ -54,7 +54,6 @@ logger = logging.getLogger("pharmavigi.analysis")
 # ── file locations (relative to project root) ─────────────────────────
 ROOT = Path(__file__).resolve().parents[2]
 PROCESSED_SAMPLE_CSV = str(ROOT / "data" / "processed" / "master_safety_dataset.csv")
-RAW_CLEAN_CSV = str(ROOT / "data" / "raw" / "fda_adverse_events_2015_2026_CLEAN.csv")
 RESULTS_DIR = str(ROOT / "public" / "results")
 CALIBRATION_FILE = str(ROOT / "public" / "results" / "_calibration.json")
 
@@ -247,13 +246,6 @@ except Exception as exc:  # pragma: no cover - startup guard
     logger.error("Could not load processed sample CSV at %s: %s", PROCESSED_SAMPLE_CSV, exc)
     SAMPLE_DF = pd.DataFrame(columns=_EMPTY_SAMPLE_COLUMNS)
 
-try:
-    RAW_DF = pd.read_csv(RAW_CLEAN_CSV)
-    logger.info("Loaded raw clean CSV (%s) with %d rows", RAW_CLEAN_CSV, len(RAW_DF))
-except Exception as exc:  # pragma: no cover - startup guard
-    logger.error("Could not load raw clean CSV at %s: %s", RAW_CLEAN_CSV, exc)
-    RAW_DF = pd.DataFrame(columns=_EMPTY_SAMPLE_COLUMNS)
-
 # ─────────────────────────────────────────────────────────────────────────
 # LOW-LEVEL HTTP HELPERS
 # ─────────────────────────────────────────────────────────────────────────
@@ -349,77 +341,6 @@ def get_label_info(drug_name: str) -> dict:
 # LIVE COUNTS
 # ─────────────────────────────────────────────────────────────────────────
 
-def _filter_raw(drug_name: str) -> pd.DataFrame:
-    """
-    Filter RAW_DF (fda_adverse_events_2015_2026_CLEAN.csv) for a given drug.
-    Prefers an exact `drug_queried` match if that column exists; otherwise
-    falls back to a substring match against the semicolon-separated
-    `drug_names` column. Returns an empty frame on any failure.
-    """
-    try:
-        if "drug_queried" in RAW_DF.columns:
-            return RAW_DF[RAW_DF["drug_queried"].astype(str).str.upper() == drug_name.upper()]
-        if "drug_names" in RAW_DF.columns:
-            return RAW_DF[
-                RAW_DF["drug_names"].astype(str).str.upper().str.contains(drug_name.upper(), na=False)
-            ]
-    except Exception as exc:
-        logger.warning("Raw CSV filter failed for %s: %s", drug_name, exc)
-    return RAW_DF.iloc[0:0]
-
-
-def _raw_fallback_counts(drug_name: str) -> dict:
-    """Locally derived counts from RAW_DF, used only when the live API is unreachable."""
-    subset = _filter_raw(drug_name)
-    if subset.empty:
-        return {}
-    try:
-        def flag_count(col):
-            if col not in subset.columns:
-                return None
-            return int(pd.to_numeric(subset[col], errors="coerce").fillna(0).eq(1).sum())
-
-        serious = None
-        if "serious" in subset.columns:
-            serious = int(pd.to_numeric(subset["serious"], errors="coerce").eq(1).sum())
-
-        return {
-            "total_reports": int(len(subset)),
-            "serious_reports": serious,
-            "death_reports": flag_count("seriousnessdeath"),
-            "hospitalization_reports": flag_count("seriousnesshospitalization"),
-            "disability_reports": flag_count("seriousnessdisabling"),
-            "life_threatening_reports": flag_count("seriousnesslifethreatening"),
-        }
-    except Exception as exc:
-        logger.warning("Raw fallback counts failed for %s: %s", drug_name, exc)
-        return {}
-
-
-def _add_pre_withdrawal_filter(search: str, withdrawal_year: int | None) -> str:
-    if withdrawal_year:
-        return f"{search} AND receivedate:[* TO {withdrawal_year}1231]"
-    return search
-
-
-def _raw_fallback_trend(drug_name: str, withdrawal_year: int | None = None) -> list:
-    """Locally derived year-by-year trend from RAW_DF, used as an API fallback."""
-    subset = _filter_raw(drug_name)
-    if subset.empty or "receivedate" not in subset.columns:
-        return []
-    try:
-        years = pd.to_numeric(
-            subset["receivedate"].astype(str).str.slice(0, 4), errors="coerce"
-        ).dropna().astype(int)
-        if withdrawal_year:
-            years = years[years <= withdrawal_year]
-        counts = years.value_counts().sort_index()
-        return [{"year": int(y), "count": int(c)} for y, c in counts.items() if c > 0]
-    except Exception as exc:
-        logger.warning("Raw fallback trend failed for %s: %s", drug_name, exc)
-        return []
-
-
 def get_live_counts(drug_name: str, trend_by_year: list[dict], withdrawal_year: int | None = None) -> dict:
     base = _add_pre_withdrawal_filter(
         f'patient.drug.medicinalproduct:"{drug_name}"', withdrawal_year
@@ -456,16 +377,6 @@ def get_live_counts(drug_name: str, trend_by_year: list[dict], withdrawal_year: 
     if trend_by_year:
         out["latest_report_year"] = max(row["year"] for row in trend_by_year)
 
-    # If the live API gave us nothing at all, fall back to the local raw CSV
-    # so the dashboard still has numbers to show.
-    if out["total_reports"] is None:
-        fallback = _raw_fallback_counts(drug_name)
-        if fallback:
-            logger.info("Using raw CSV fallback counts for %s", drug_name)
-            for key, value in fallback.items():
-                if out.get(key) is None:
-                    out[key] = value
-
     return out
 
 
@@ -491,12 +402,6 @@ def get_trend_by_year(drug_name: str, withdrawal_year: int | None = None) -> lis
             continue
 
     trend = [{"year": y, "count": c} for y, c in sorted(yearly.items()) if c > 0]
-
-    if not trend:
-        fallback = _raw_fallback_trend(drug_name, withdrawal_year)
-        if fallback:
-            logger.info("Using raw CSV fallback trend for %s", drug_name)
-            return fallback
 
     return trend
 
