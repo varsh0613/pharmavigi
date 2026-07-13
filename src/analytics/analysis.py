@@ -384,10 +384,8 @@ def get_live_counts(drug_name: str, trend_by_year: list[dict], withdrawal_year: 
 # TREND
 # ─────────────────────────────────────────────────────────────────────────
 
-def get_trend_by_year(drug_name: str, withdrawal_year: int | None = None) -> list:
-    base = _add_pre_withdrawal_filter(
-        f'patient.drug.medicinalproduct:"{drug_name}"', withdrawal_year
-    )
+def get_trend_by_year(drug_name: str) -> list:
+    base = f'patient.drug.medicinalproduct:"{drug_name}"'
     results = _count_field(OPENFDA_EVENT_URL, base, "receivedate")
     if not results:
         return []
@@ -988,7 +986,7 @@ def build_drug_profile(drug_name: str, sample_df: pd.DataFrame, generate_summary
 
     # --- trend ---
     try:
-        trend_by_year = get_trend_by_year(drug_name, withdrawal_year)
+        trend_by_year = get_trend_by_year(drug_name)
     except Exception as exc:
         logger.error("trend failed: %s", exc)
         trend_by_year = []

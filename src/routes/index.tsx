@@ -51,11 +51,11 @@ function DrugProfile() {
 
   const drug = useMemo(() => drugById(drugs, drugId) ?? drugs[0], [drugs, drugId]);
 
-  if (isLoading) {
+  if (isLoading || !drug) {
     return <DashboardLoading message="Loading analysis profiles…" />;
   }
 
-  if (isError || !drug) {
+  if (isError) {
     return (
       <DashboardError
         message={error instanceof Error ? error.message : "Could not load drug profiles"}
